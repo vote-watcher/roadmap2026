@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Дорожная карта 2026</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** Original document styles retained locally; no external stylesheet is loaded.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    :root{--ink:#0b1724;--ink2:#122538;--paper:#f7f1e5;--paper2:#fffaf0;--line:#d8cdbb;--amber:#e4a83a;--red:#c95d43;--muted:#68727b;--blue:#1d516d;--shadow:0 14px 35px #03080d66}
+     *{box-sizing:border-box}body{max-width:none;margin:0;padding:0;background:var(--ink);color:#18232d;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;hyphens:none;overflow-x:hidden}body> :not(#app):not(#drawer){display:none!important}
+    #app{min-height:100vh;background:radial-gradient(circle at 12% 0,#1c4058 0,transparent 34rem),linear-gradient(135deg,#08121d,#11283b 55%,#08131d);padding:clamp(18px,4vw,54px)}
+    .wrap{max-width:1500px;margin:auto}.hero{color:#f8f3e9;display:flex;justify-content:space-between;gap:28px;align-items:end;border-bottom:1px solid #ffffff2e;padding-bottom:28px}.eyebrow,.mono,.tag,.badge,.card-id{font:600 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase}.eyebrow{color:var(--amber)}h1{font-size:clamp(2rem,5vw,4.8rem);line-height:.95;letter-spacing:-.06em;margin:10px 0 14px;max-width:850px}.dek{max-width:750px;color:#bdcbd2;margin:0;font-size:1.05rem}.hero-actions{display:flex;flex-wrap:wrap;justify-content:end;gap:8px}.button{border:1px solid #ffffff42;background:#ffffff12;color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer;font:600 12px ui-monospace,monospace;white-space:nowrap}.button:hover,.button:focus-visible{background:var(--amber);color:var(--ink);outline:3px solid #e4a83a66;outline-offset:2px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.stat{background:#ffffff0c;border:1px solid #ffffff1c;padding:15px;border-radius:12px;color:#fff}.stat strong{display:block;font-size:1.9rem;color:var(--amber);font-family:ui-monospace,monospace}.stat span{color:#b5c1c7;font-size:.8rem}.workbench{background:var(--paper);box-shadow:var(--shadow);border-radius:18px;overflow:hidden}.toolbar{padding:18px;display:grid;gap:12px;border-bottom:1px solid var(--line);background:#efe7d9}.search{display:flex;gap:10px}.search input,.select{width:100%;border:1px solid #b9ad99;background:var(--paper2);padding:13px 15px;border-radius:9px;color:var(--ink);font:inherit}.search input:focus,.select:focus{outline:3px solid #e4a83a99;outline-offset:2px}.filters{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.filter-label{font:600 10px ui-monospace,monospace;color:#626a67;text-transform:uppercase;display:block;margin:0 0 4px}.toolbar-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.search .button{background:var(--ink2);color:#fff;border-color:var(--ink2);white-space:nowrap}.search .button:hover,.search .button:focus-visible{background:var(--ink);color:#fff;border-color:var(--ink)}.toolbar-row .button{background:var(--ink2);color:#fff}.toolbar-row .button.alt{background:transparent;color:var(--ink);border-color:#918572}.result-count{margin-left:auto;font:700 12px ui-monospace,monospace;color:var(--blue)}.content{padding:20px}.notice{border-left:4px solid var(--amber);background:#fff5d9;padding:12px 15px;font-size:.88rem;margin-bottom:18px}.notice strong{color:var(--red)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:15px}.record{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:0 5px 14px #26344212;scroll-margin-top:20px}.record:hover{border-color:var(--amber)}.record-head{display:flex;justify-content:space-between;gap:10px;align-items:start}.card-id{color:var(--blue);letter-spacing:.04em}.kind{background:#dfe9e5;color:#24584e;border-radius:4px;padding:5px 7px;font-size:10px}.record h3{font-size:1.13rem;line-height:1.18;margin:12px 0 14px}.field{margin-top:11px}.field-label{font:700 10px ui-monospace,monospace;color:#7b6c57;text-transform:uppercase;letter-spacing:.08em}.field p,.field ul{margin:4px 0 0;font-size:.91rem;line-height:1.45}.field ul{padding-left:18px}.meta{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}.tag{background:#e9e0d0;color:#4e5a5d;padding:5px 7px;border-radius:4px;font-size:10px;letter-spacing:0}.tag.amber{background:#fae3ad;color:#654713}.law a{color:#1b607a;text-decoration-thickness:2px}.source{margin-top:16px;border-top:1px dashed var(--line);padding-top:10px}.source summary{cursor:pointer;color:var(--blue);font-weight:700;font-size:.86rem}.source-text{background:#f1eadf;border-left:3px solid #c7b898;margin-top:8px;padding:10px;white-space:pre-wrap;font-size:.83rem;line-height:1.45}.relations{font-size:.8rem;color:#59666b}.relations a{color:var(--red);font-weight:700;text-decoration:none}.empty{text-align:center;padding:60px 20px;color:var(--muted)}.empty .button{background:var(--ink2);color:#fff;border-color:var(--ink2);margin-top:12px}.empty .button:hover,.empty .button:focus-visible{background:var(--ink);color:#fff;border-color:var(--ink)}.table-wrap{overflow:auto}.data-table{width:100%;border-collapse:collapse;font-size:.83rem}.data-table th{background:var(--ink2);color:#fff;text-align:left;padding:10px;position:sticky;top:0}.data-table td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}.data-table tr:hover{background:#fff6df}.tabs{display:flex;gap:8px;margin-bottom:16px}.tab{border:0;background:transparent;border-bottom:3px solid transparent;padding:9px 12px;cursor:pointer;font-weight:700;color:var(--muted)}.tab.active{color:var(--ink);border-color:var(--amber)}.panel{display:none}.panel.active{display:block}.reference{margin-top:22px;background:#10263a;color:#edf2ee;border-radius:14px;padding:24px}.reference h2{color:var(--amber);margin-top:0}.reference-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.reference p,.reference li{color:#cbd6d9;font-size:.9rem;line-height:1.5}.reference a{color:#f2c56c}.drawer{position:fixed;inset:0;background:#02070dcc;display:none;z-index:5;padding:20px}.drawer.open{display:flex;align-items:center;justify-content:center}.drawer-card{background:var(--paper);max-width:650px;width:100%;max-height:90vh;overflow:auto;padding:26px;border-radius:16px}.close,.detail-close{background:var(--ink2);color:#fff;border-color:var(--ink2);box-shadow:0 1px 2px rgba(22,33,42,.25)}.close{float:right;margin:0 0 12px}.detail-close{margin:0 0 12px;display:inline-block}.close:hover,.detail-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}.source-note{font-size:11px;color:#6f7778;margin-top:20px}.highlight{background:#ffd267;color:#16212a;padding:0 2px;border-radius:2px}
+     @media(max-width:900px){.hero{display:block}.hero-actions{justify-content:start;margin-top:20px}.filters{grid-template-columns:repeat(3,1fr)}.reference-grid{grid-template-columns:1fr}}
+     @media(max-width:560px){#app{padding:12px}.filters{grid-template-columns:1fr 1fr}.search{display:block}.search .button{margin-top:8px}.grid{grid-template-columns:1fr}.content{padding:12px}h1{font-size:2.7rem}}
+      .field{min-width:0;overflow-wrap:anywhere;word-break:break-word}.item-list{border-left:2px solid var(--line);margin-top:14px;padding-left:14px;min-width:0;overflow-wrap:anywhere;word-break:break-word}.item-block{padding:12px 0;border-bottom:1px solid var(--line);min-width:0;overflow-wrap:anywhere;word-break:break-word}.item-block:last-child{border-bottom:0}.item-head{display:flex;gap:10px;align-items:flex-start;min-width:0}.item-id{min-width:72px;color:var(--blue);font:700 11px ui-monospace,monospace}.item-content{flex:1;min-width:0;overflow-wrap:anywhere;word-break:break-word}.item-action{font-weight:700;margin:0 0 7px}.item-step{display:flex;gap:8px;align-items:flex-start;margin:6px 0;min-width:0}.item-step input{margin-top:4px;accent-color:var(--blue);flex:0 0 auto}.item-step label{cursor:pointer;min-width:0;overflow-wrap:anywhere}.item-meta{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.law-note{color:var(--muted);font-size:.85em}.law a{word-break:break-word;overflow-wrap:anywhere}.item-legal{min-width:0;margin:8px 0 0;padding:6px 8px;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:6px;background:#fffaf0;font-size:.86em;overflow-wrap:anywhere;word-break:break-word}.item-legal .field-label{margin-bottom:3px}.item-legal p{margin:0;overflow-wrap:anywhere}.group-source{margin-top:16px}.group-source>summary,.source details>summary{min-height:44px;padding:10px 12px;display:flex;align-items:center;cursor:pointer;font-weight:600}
+      @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+      :focus-visible{outline:3px solid var(--amber);outline-offset:3px}.toolbar{position:sticky;top:0;z-index:5}.filters{display:none}.flow-nav{display:grid;gap:12px}.flow-section{display:grid;gap:8px}.flow-label{font:700 11px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.day-row,.moment-track{display:flex;gap:8px;align-items:center}.day-row{position:sticky;top:0;z-index:2;background:#efe7d9;padding:2px 0}.day-btn,.moment-btn,.picker-btn{min-height:44px;border:1px solid #b9ad99;background:var(--paper2);color:var(--ink);border-radius:10px;padding:10px 12px;font:700 13px ui-monospace,monospace;cursor:pointer}.day-btn[aria-pressed=true],.moment-btn[aria-pressed=true],.picker-btn[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}.timeline{overflow-x:auto;padding:8px 2px 5px}.moment-track{min-width:max-content;position:relative;padding:10px 4px}.moment-track:before{content:"";position:absolute;left:16px;right:16px;top:31px;height:3px;background:var(--line)}.moment-btn{position:relative;z-index:1;display:grid;gap:3px;min-width:92px;text-align:center}.moment-btn:before{content:"";width:15px;height:15px;margin:auto;border-radius:50%;background:var(--amber);border:3px solid var(--paper2)}.moment-btn small{font:600 10px ui-monospace,monospace;white-space:normal}.picker{display:grid;gap:6px}.picker-btn{display:grid;grid-template-columns:auto 1fr;gap:10px;text-align:left;align-items:center;border-radius:8px;font-family:inherit;font-size:14px}.picker-btn input{width:20px;height:20px;margin:0;accent-color:var(--blue)}.picker-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}.picker-meta .tag{font-size:10px;letter-spacing:.02em;text-transform:none}.action-card{background:#fffaf0;border:2px solid var(--blue);border-radius:14px;padding:16px;margin-top:12px}.action-card h3{margin:0 0 10px}.action-card .field{margin-top:14px}.action-card .item-step{padding:7px 0}.flow-empty{padding:18px;background:#fffaf0;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}.advanced{border:1px solid var(--line);border-radius:10px;padding:8px 12px}.advanced summary{cursor:pointer;font-weight:700;min-height:28px}.advanced .filters{display:grid;margin-top:10px}.secondary-view{margin-top:20px}@media(min-width:901px){.flow-layout{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(420px,1.2fr);gap:18px;align-items:start}.flow-picker{position:sticky;top:90px}.flow-detail{min-width:0}.secondary-view{margin-top:28px}}@media(max-width:560px){.toolbar{margin:0 -12px;padding:12px}.flow-layout{display:block}.flow-detail{margin-top:14px}.secondary-view{margin-top:18px}.day-row{overflow-x:auto}.day-btn{flex:1;white-space:nowrap}.hero-actions{justify-content:stretch}.hero-actions .button{flex:1}.flow-nav{gap:10px}#exportBtn{display:none}}
+  </style>
+  <style>
+     .toolbar{position:relative!important;top:auto!important}
+     .moment-btn:disabled,.type-btn:disabled{opacity:.42;cursor:not-allowed;filter:saturate(.35)}
+    .day-row{position:relative!important;top:auto!important}
+    .full-list-hidden{display:none!important}
+    .schedule-summary{font:700 12px ui-monospace,monospace;color:var(--blue)}
+       .context-day{color:var(--muted)!important}.search-hint{font-size:12px;color:var(--muted)}.search-hint summary,.advanced>summary{cursor:pointer;font-weight:700;color:var(--blue);min-height:44px;padding:10px 12px;display:flex;align-items:center}.search-hint span{display:block;padding-top:4px}.match-context{display:block;color:var(--amber);font-size:10px;font-weight:700;margin-top:3px}.picker-btn:disabled{opacity:.42;cursor:not-allowed;filter:saturate(.35)}.moment-btn small,.type-count{display:none}
+    .button,.select,.search input,.item-step label{min-height:44px}
+     .day-row{flex-wrap:wrap}
+      @media(max-width:760px){.flow-layout{grid-template-columns:1fr}.flow-detail{order:0}.button,.day-btn,.moment-btn,.picker-btn,.search .button,.toolbar select,.toolbar input,.item-step label,.item-step{min-height:44px}.item-step{padding:8px 0}.item-step input{width:24px;height:24px}}
+      .timeline-panel{display:grid;gap:8px;border:1px solid var(--line);border-radius:12px;padding:0 12px;background:#efe7d9}.timeline-panel>summary{display:flex;align-items:center;justify-content:space-between;min-height:52px;cursor:pointer;font-weight:700;color:var(--blue);list-style:none}.timeline-panel>summary::-webkit-details-marker{display:none}.timeline-panel>summary:after{content:'+';font-size:20px}.timeline-panel[open]>summary:after{content:'−'}.timeline-panel[open]{padding-bottom:10px}.line-status{font-size:12px;color:var(--muted)}.line-actions{display:flex;gap:8px;flex-wrap:wrap}.line-actions .moment-btn,.line-actions .type-btn{min-width:44px}.type-btn{min-height:44px;border:1px solid #b9ad99;background:var(--paper2);color:var(--ink);border-radius:10px;padding:10px 12px;font:700 12px ui-monospace,monospace;cursor:pointer}.type-btn[aria-pressed=true]{background:var(--red);color:#fff;border-color:var(--red)}.line-more{min-height:44px;border:0;background:transparent;color:var(--blue);font-weight:700;cursor:pointer;padding:10px}.moment-count,.type-count{font-size:10px;opacity:.8}.flow-nav,.flow-layout,.flow-picker,.flow-detail,.action-card,.reaction-card,.response-block{min-width:0;width:100%}.action-card{overflow:visible}.item-id{min-width:0}.source-text,.item-action,.item-meta,.tag,.picker-btn,.type-btn,.moment-btn{overflow-wrap:anywhere}.reaction-list{margin:0;padding-left:1.2em}.reaction-list li+li{margin-top:6px}
+               @media(max-width:700px){#app{padding:12px}.content{padding:0}.flow-nav{gap:12px;grid-template-columns:minmax(0,1fr)!important}.day-row{overflow:visible}.line-actions{display:grid;gap:8px;border-left:3px solid var(--amber);padding-left:12px}.line-actions>*{width:100%;text-align:left}.type-btn{display:grid;grid-template-columns:1fr auto}.action-card{padding:12px;margin-top:12px}.item-head{display:block}.item-id{margin-bottom:8px}.item-content{min-width:0}.day-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.day-row .day-btn{width:100%;padding-inline:6px}.day-row span[aria-hidden]{display:none}.flow-layout{gap:12px;grid-template-columns:minmax(0,1fr)!important}.flow-layout>*{min-width:0}.flow-detail{order:0}}
+       .moment-track{display:flex!important;flex-direction:row;flex-wrap:wrap;min-width:0!important;align-items:center;gap:8px;padding:10px 4px}.moment-track:before{display:none}.moment-btn{display:grid!important;grid-template-columns:none!important;flex:1 1 92px;min-width:92px!important;text-align:center!important}.moment-btn:before{grid-column:auto!important;margin:auto!important}.moment-btn span,.moment-btn small{grid-column:auto!important;text-align:center!important}
+          html,body{width:100%;min-width:0;overflow-x:clip}#app,.wrap,.workbench,.content,.flow-nav,.flow-layout,.flow-picker,.flow-detail{width:100%;min-width:0;max-width:100%}#app{overflow-x:clip}.wrap{overflow-wrap:anywhere}.hero>div,.hero-actions,.toolbar,.toolbar-row,.flow-nav>*,.flow-layout>*{min-width:0}.flow-nav{grid-template-columns:minmax(0,1fr)!important;overflow-x:clip}.flow-nav>*{width:100%;max-width:100%}.timeline-panel,.flow-section{grid-template-columns:minmax(0,1fr)!important;min-width:0;width:100%;max-width:100%}.flow-layout{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:18px}.flow-layout>*{width:100%;max-width:100%}.timeline{width:100%;min-width:0!important;max-width:100%;overflow-x:auto;overflow-y:visible}.picker,.picker-btn,.action-card,.reaction-card,.response-block{min-width:0;max-width:100%}.picker-btn>span:last-child{min-width:0}.action-card,.reaction-card,.response-block{overflow-wrap:anywhere}
+         .moment-track{min-width:0!important;flex-wrap:wrap}.moment-btn{width:110px!important;min-width:110px!important;max-width:110px!important;height:110px!important;min-height:110px!important;max-height:110px!important;flex:0 0 110px!important;display:grid!important;grid-template-rows:15px 1fr auto auto!important;align-content:center;overflow:hidden;padding:10px 6px!important}.moment-btn .moment-day{font-weight:800;font-size:12px;line-height:1.1}.moment-btn .moment-time{font-size:12px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.moment-btn .moment-date{color:var(--muted);font-size:11px;line-height:1.1}.moment-btn[aria-pressed=true] .moment-date{color:#d9eaf2}.moment-btn:before{grid-row:1;margin:0 auto!important}.moment-btn span,.moment-btn small{grid-column:auto!important;text-align:center!important}.moment-btn small{display:block!important;font:inherit}
+         @media(max-width:560px){.moment-btn{width:88px!important;min-width:88px!important;max-width:88px!important;height:88px!important;min-height:88px!important;max-height:88px!important;flex-basis:88px!important;padding:7px 4px!important}.moment-btn .moment-time{font-size:11px}.moment-btn .moment-date{font-size:10px}}
+   </style>
+  <style>
+        .topic-btn[aria-pressed=true]{background:var(--amber);color:var(--ink);border-color:var(--amber)}.topic-root-btn[aria-expanded=true]{box-shadow:inset 0 -3px 0 var(--amber)}.topic-root-btn .topic-expand-indicator{display:inline-grid;place-items:center;width:20px;height:20px;margin-left:4px;border:1px solid #b9ad99;border-radius:50%;font-size:11px;line-height:1;background:var(--paper);color:var(--blue)}.topic-children{display:grid;gap:8px;margin-left:12px;margin-top:8px}.slice-count{color:var(--blue);font:700 12px ui-monospace,monospace}.flow-picker>.flow-detail{margin-top:18px}
+        @media(max-width:560px){.day-btn,.moment-btn,.type-btn,.topic-btn{min-width:0;max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:center}.day-row .day-btn{display:flex;align-items:center;justify-content:center;min-height:44px;padding-block:6px;line-height:1.1}.topic-children{margin-left:12px}}
+  </style>
+  </head>
+<body>
+<main id="app" aria-labelledby="page-title"><div class="wrap">
+  <header class="hero"><div><div class="eyebrow">Полевой журнал наблюдателя · 2026</div><h1 id="page-title">Дорожная карта контроля голосования</h1><p class="dek">Быстрый поиск по действию, месту, времени, событию, норме или слову. Факты ниже воспроизводят исходный документ; приоритеты и связи помечены как аналитическая классификация.</p></div><div class="hero-actions"><button class="button" id="helpBtn">Как пользоваться</button><button class="button" id="exportBtn">TSV · 169 исходных пунктов</button></div></header>
+  <section class="workbench" aria-label="Навигатор дорожной карты"><div class="toolbar"><div class="search"><input id="query" type="search" aria-label="Полнотекстовый поиск" placeholder="Например: сейф-пакет, 08:00, ТЭГ, жалоба…"><button class="button" id="clearBtn">Очистить</button></div><div class="filters"><label><span class="filter-label">Тип</span><select class="select" id="kindFilter"><option value="">Все типы</option><option value="event">События</option><option value="block">Блоки</option><option value="glossary">Справочник</option></select></label><label><span class="filter-label">Раздел</span><select class="select" id="sectionFilter"><option value="">Все разделы</option></select></label><label><span class="filter-label">Период</span><select class="select" id="periodFilter"><option value="">Все периоды</option></select></label><label><span class="filter-label">Место/тег</span><select class="select" id="tagFilter"><option value="">Все метки</option></select></label><label><span class="filter-label">Право</span><select class="select" id="lawFilter"><option value="">Все источники</option></select></label><label><span class="filter-label">Приоритет</span><select class="select" id="priorityFilter"><option value="">Все</option><option value="высокий">Высокий</option><option value="средний">Средний</option><option value="обычный">Обычный</option></select></label></div><div class="toolbar-row"><label class="mono">Сортировка <select class="select" id="sort" style="width:auto;padding:7px"><option value="order">по порядку карты</option><option value="date">по времени/дате</option><option value="priority">по приоритету</option></select></label><span class="result-count" id="resultCount">Показано 169 из 169</span></div></div><div class="content"><div class="notice"><strong>Контрольный бейдж:</strong> ожидается 169 событий, 5 блоков и 19 разделов. Если поле нельзя надежно выделить автоматически, карточка показывает «Не выделено автоматически» и сохраняет полный исходный фрагмент.</div><div id="empty" class="empty" hidden>Ничего не найдено. Уберите фильтр или попробуйте одно слово из исходника: «сейф-пакет», «протокол», «наблюдатель».</div><p class="source-note">Источник: локальная копия <code>vote_roadmap_2026.md</code>, отображенная без внешних запросов. Правовые ссылки ведут наружу только при явном нажатии.</p></div></section>
+  <section class="reference"><div class="reference-grid"><div><h2>Справочник</h2><div id="glossary"></div></div><div><h2>Право</h2><p>Ссылки ниже ведут на внешний правовой текст. Они не являются самостоятельной юридической консультацией.</p><div id="legalPanel"></div></div></div></section>
+</div></main>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="helpTitle" aria-hidden="true"><div class="drawer-card"><button class="button close" id="closeHelp">Закрыть</button><h2 id="helpTitle">Как пользоваться</h2><p>Введите слово или фразу — поиск идёт по всем полям сразу, совпадение хотя бы в одном достаточно. Под полем поиска — раскрывающийся блок «Дополнительные фильтры» (Тип, Раздел, Период, Место/тег, Право, Приоритет); каждый селектор сужает выборку по AND. Справа в тулбаре — сортировка (по порядку карты / по времени / по приоритету) и кнопка «TSV · N из 169 исходных пунктов» для скачивания текущей выборки.</p>
+<p><strong>Линия моментов.</strong> Раскройте блок «Линия моментов» — увидите хронологическую шкалу событий с привязкой ко дню и времени; жёлтые точки — моменты, синие — кнопки моментов. Нажмите момент, чтобы оставить только события этого момента.</p>
+<p><strong>Тип события.</strong> Раскройте «Тип события» и выберите один из типов — выборка оставит только события этого типа; красная подсветка показывает активный тип.</p>
+<p><strong>Тема выборки.</strong> Раскройте «Тема выборки» и выберите корневую тему (например, бюллетень, подсчёт, протокол); чтобы сузить до подтемы, разверните тему треугольником и выберите подтему.</p>
+<p><strong>Как смотреть реакции.</strong> В карточке события поле «Как реагировать» содержит действия, внимание и связанные нормы: что делать наблюдателю, на что обратить внимание, с какими действиями связано событие. Несколько реакций выводятся списком, одна — абзацем.</p>
+<p><strong>Карточка события.</strong> Слева — список событий в срезе, справа — карточка с проверками (чекбоксы сохраняются в браузере), вниманием, реакциями, нормами и правовыми ссылками; на узких экранах карточка уходит вниз под списком. «Закрыть детали» возвращает к списку.</p>
+<p><strong>Внизу страницы.</strong> «Справочник» (ТЭГ, ЭСИ, УИК, ТИК, УФП, ПРГ, ИКСРФ, ФЗ, ТРИ, МГИК) и раздел «Право» со ссылками на источники.</p></div></aside>
+<header id="title-block-header">
+<h1 class="title">Дорожная карта 2026</h1>
+</header>
+<p><strong>ДОРОЖНАЯ КАРТА 2026</strong></p>
+<p><strong>Принятые сокращения:</strong></p>
+<p>ТРИ: Постановление ЦИК России от 08.06.2022 № 86/718-8 "Об
+особенностях голосования, установления итогов голосования в случае
+принятия решения о проведении голосования на выборах, референдумах в
+течение нескольких дней подряд" — текст: <a
+href="https://rulaws.ru/acts/Postanovlenie-TSIK-Rossii-ot-08.06.2022-N-86_718-8/">https://rulaws.ru/acts/Postanovlenie-TSIK-Rossii-ot-08.06.2022-N-86_718-8/</a>;
+прямой URL конкретного пункта не поддерживается, используйте поиск по
+странице (Ctrl+F) по номеру пункта (1.1, 1.9, 3.2, 3.3, 3.5–3.8, 3.11,
+3.14, 3.15, 4.2–4.6, 4.10).</p>
+<p>ФЗ: Федеральный закон от 12.06.2002 № 67-ФЗ «Об основных гарантиях
+избирательных прав и права на участие в референдуме граждан Российской
+Федерации».<br />
+п. - пункт, п/п - подпункт, ст. - статья, ч. – часть.</p>
+<p>ПРГ: член комиссии с правом решающего голоса.<br />
+ИКСРФ: избирательная комиссия субъекта РФ.<br />
+ТИК: территориальная избирательная комиссия.<br />
+УИК: участковая избирательная комиссия.<br />
+УФП: увеличенная форма протокола.</p>
+<p>ТЭГ: терминал электронного голосования (стационарный или переносной)
+в составе комплекса для электронного голосования.</p>
+<p>МГИК: решение Московской городской избирательной комиссии от
+14.08.2026 № 145/3 «Об электронном голосовании на территории города
+Москвы на выборах, назначенных на 20 сентября 2026 года» и утверждённый
+им Порядок (приложение № 2). <strong>Источник в открытом доступе не
+найден</strong> (сайт mosgorizbirkom.ru недоступен; в поисковой выдаче
+и веб-архиве по состоянию на 16.09.2026 нет). Ожидаемый путь при
+публикации: <a
+href="https://www.mosgorizbirkom.ru/solutions/">https://www.mosgorizbirkom.ru/solutions/</a>.</p>
+<p>ЭСИ: решение Московской городской избирательной комиссии от
+27.08.2026 № 147/4 и утверждённое им Положение об особенностях
+составления, уточнения и использования списков избирателей в электронном
+виде (приложение № 2); СПО ЭСИ — программное обеспечение этой системы;
+АРМ — автоматизированное рабочее место председателя или члена УИК.
+<strong>Источник в открытом доступе не найден</strong> (сайт
+mosgorizbirkom.ru недоступен; в поисковой выдаче и веб-архиве по
+состоянию на 16.09.2026 нет). Ожидаемый путь при публикации: <a
+href="https://www.mosgorizbirkom.ru/solutions/">https://www.mosgorizbirkom.ru/solutions/</a>.</p>
+<table>
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 9%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Контролируемое событие</strong></th>
+<th><strong>Отметка</strong></th>
+<th><strong>Каким законом установлено</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Прибытие на участок</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Доступ в помещение был предоставлен не позднее 8:00, сразу после
+прихода членов комиссии.</td>
+<td></td>
+<td>ФЗ: п. 3, 5 ст. 30, п. 1 ст. 64;</td>
+</tr>
+<tr>
+<td>У меня взяли направление наблюдателя, поставив на его копии отметку
+о принятии и допустили меня на участок. <strong>Запишите время своего
+прибытия на участок.</strong></td>
+<td></td>
+<td>ФЗ: п. 3, 7, 8 ст. 30</td>
+</tr>
+<tr>
+<td>У меня взяли требование о выдаче копии протокола, поставив на копии
+отметку о принятии. <strong>Предупредите председателя о намерении вести
+фото- и видеосъемку.</strong></td>
+<td></td>
+<td>ФЗ: п/п «к» п. 9 ст. 30, п. 29 ст. 68;</td>
+</tr>
+<tr>
+<td>Меня внесли в список лиц, присутствующих в помещении для
+голосования, записав туда номер моего мобильного телефона и время
+прибытия.</td>
+<td></td>
+<td>ФЗ: п. 11.2 ст. 64;</td>
+</tr>
+<tr>
+<td><strong>Перед открытием участка (пятница)</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустые переносные ящики (предварительно
+пронумерованные) предъявлены всем присутствующим и затем опломбированы
+(опечатаны). <strong>После опечатывания сфотографируете пломбы. Запишите
+число ящиков.</strong></td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64;</td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустой стационарный ящик предъявлен всем
+присутствующим и затем опломбирован (опечатан). Использование нескольких
+стационарных ящиков до воскресенья допускается по решению УИК.
+<strong>Запишите число ящиков.</strong></td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64; ТРИ: п. 3.2, 1.9</td>
+</tr>
+<tr>
+<td>Число переносных ящиков соответствует решению ТИК и не превышает
+трех (пяти при указанных в законе условиях).</td>
+<td></td>
+<td>ФЗ: п. 8, 8.1 ст. 66;</td>
+</tr>
+<tr>
+<td>Председатель огласил число избирателей в списке, число исключенных в
+связи с голосованием по месту нахождения, а также число избирателей,
+подавших заявления о голосовании по месту нахождения на данном
+участке.</td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64; ТРИ: п. 1.15</td>
+</tr>
+<tr>
+<td>Доступ к списку избирателей в СПО ЭСИ предоставлен председателю,
+заместителю председателя, секретарю УИК и тем членам УИК, на которых эта
+обязанность возложена решением УИК (вход через личный кабинет Портала
+Москвы, после обучения). Книги списка на бумаге выдаются только по части
+списка с избирателями-военнослужащими. <strong>Запишите, кто из членов
+УИК работает со списком.</strong></td>
+<td></td>
+<td>ЭСИ: п. 1.6, 1.2</td>
+</tr>
+<tr>
+<td>Членам УИК по ведомости выданы избирательные бюллетени.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Избирательный участок открылся в 8 часов утра.</td>
+<td></td>
+<td>ФЗ: п. 1 ст. 64;</td>
+</tr>
+<tr>
+<td colspan="3"><strong>Перед открытием участка (суббота)</strong></td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустой стационарный ящик предъявлен всем
+присутствующим и затем опломбирован (опечатан). Использование нескольких
+стационарных ящиков до воскресенья допускается по решению УИК</td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64; ТРИ: п. 3.2, 1.9</td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустые переносные ящики (не более пяти)
+предъявлены всем присутствующим и затем опломбированы (опечатаны). Ящики
+пронумерованы. <strong>После опечатывания сфотографируете пломбы.
+Запишите число ящиков.</strong></td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64;</td>
+</tr>
+<tr>
+<td>Число переносных ящиков соответствует решению ТИК и не превышает
+трех (пяти при указанных в законе условиях).</td>
+<td></td>
+<td>ФЗ: п. 8, 8.1 ст. 66;</td>
+</tr>
+<tr>
+<td>Доступ к списку избирателей в СПО ЭСИ предоставлен председателю,
+заместителю председателя, секретарю УИК и тем членам УИК, на которых эта
+обязанность возложена решением УИК (вход через личный кабинет Портала
+Москвы, после обучения). Книги списка на бумаге выдаются только по части
+списка с избирателями-военнослужащими. <strong>Запишите, кто из членов
+УИК работает со списком.</strong></td>
+<td></td>
+<td>ЭСИ: п. 1.6, 1.2</td>
+</tr>
+<tr>
+<td>Членам УИК по ведомости выданы избирательные бюллетени.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Избирательный участок открылся в 8 часов утра.</td>
+<td></td>
+<td>ФЗ: п. 1 ст. 64;</td>
+</tr>
+<tr>
+<td><strong>Перед открытием участка (воскресенье)</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустые стационарные ящики предъявлены
+всем присутствующим и затем опломбированы (опечатаны) <strong>Запишите
+число ящиков.</strong></td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64;</td>
+</tr>
+<tr>
+<td>Число стационарных ящиков соответствует нормативам (при единственных
+выборах на участке: 1 - при числе избирателей не более 1000, 2 - при
+числе избирателей не более 2000, 3 - если более 2000; при совмещенных
+выборах на участке - на стенде размещено решение комиссии о числе
+стационарных ящиков).</td>
+<td></td>
+<td>ФЗ: п/п «б» п. 9 ст. 21; ТРИ: п. 1.9;</td>
+</tr>
+<tr>
+<td>Непосредственно перед 08:00 пустые переносные ящики (не более пяти)
+предъявлены всем присутствующим и затем опломбированы (опечатаны). Ящики
+пронумерованы. <strong>После опечатывания сфотографируете пломбы.
+Запишите число ящиков.</strong></td>
+<td></td>
+<td>ФЗ: п. 3 ст. 64;</td>
+</tr>
+<tr>
+<td>Число переносных ящиков соответствует решению ТИК и не превышает
+трех (пяти при указанных в законе условиях).</td>
+<td></td>
+<td>ФЗ: п. 8, 8.1 ст. 66;</td>
+</tr>
+<tr>
+<td>Доступ к списку избирателей в СПО ЭСИ предоставлен председателю,
+заместителю председателя, секретарю УИК и тем членам УИК, на которых эта
+обязанность возложена решением УИК (вход через личный кабинет Портала
+Москвы, после обучения). Книги списка на бумаге выдаются только по части
+списка с избирателями-военнослужащими. <strong>Запишите, кто из членов
+УИК работает со списком.</strong></td>
+<td></td>
+<td>ЭСИ: п. 1.6, 1.2</td>
+</tr>
+<tr>
+<td>Членам УИК по ведомости выданы избирательные бюллетени.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Избирательный участок открылся в 8 часов утра.</td>
+<td></td>
+<td>ФЗ: п. 1 ст. 64;</td>
+</tr>
+<tr>
+<td><strong>Оценка помещения для голосования и документов
+комиссии</strong></td>
+<td colspan="2"></td>
+</tr>
+<tr>
+<td>В здании, где находится помещение для голосования, и на расстоянии
+50 метров от входа в него нет агитации за какого- либо кандидата или
+партию.</td>
+<td></td>
+<td>ФЗ: п. 10 ст. 54;</td>
+</tr>
+<tr>
+<td>Для избирателей-инвалидов обеспечен беспрепятственный доступ в
+помещение (пандусы и т. п.).</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 61;</td>
+</tr>
+<tr>
+<td>Наблюдателям дали ознакомиться со списком избирателей на АРМ
+председателя средствами СПО ЭСИ и с выписками из списка. Проверьте:
+правильность сведений об избирателях, адреса в границах участка либо
+иные законные основания для голосования на этом участке, отсутствие
+непредусмотренных записей в графе «Особые отметки». <strong>Запишите
+число избирателей в списке. Фото- и видеосъёмка, копирование
+персональных данных при ознакомлении со списком запрещены.</strong></td>
+<td></td>
+<td>ФЗ: п/п «а» п. 9 ст. 30; ЭСИ: п. 4.1–4.3</td>
+</tr>
+<tr>
+<td>Электронный список сформирован Мосгоризбиркомом не позднее
+08.09.2026 и подписан электронной подписью председателя и секретаря МГИК
+не позднее 18:00 17.09.2026; после подписания и до начала голосования
+изменения не вносятся. Бумажная копия списка изготовлена и хранится в
+ТИК, на участке её нет. Нумерация, прошивка и печать УИК сохраняются
+только для книг части списка с избирателями-военнослужащими.</td>
+<td></td>
+<td>ЭСИ: п. 2.1.3, 2.1.5, 2.3.10, 2.1.7</td>
+</tr>
+<tr>
+<td>Избиратели, находящиеся в больницах, заблаговременно включены в
+список на основании личного заявления, поданного в УИК <strong>не
+позднее 14:00 17 сентября 2026 года</strong> (на участках с электронным
+списком срок именно такой, а не «до 14:00 воскресенья»), сведений от
+руководителя учреждения и решения УИК.</td>
+<td></td>
+<td>ЭСИ: п. 2.3.3</td>
+</tr>
+<tr>
+<td>Отметки в электронном списке проставляются средствами СПО ЭСИ: дата
+получения бюллетеня; «Голосовал вне помещения для голосования» с номером
+переносного ящика и датой; «Получен доступ к электронному бюллетеню» с
+датой и временем; «Исключен в связи с подачей заявления о голосовании по
+месту нахождения». Подпись избирателя — электронная графическая.
+<strong>Проверяйте отметки на АРМ председателя.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.1.9, 3.1.16.9.1, 2.3.8, прил. 3</td>
+</tr>
+<tr>
+<td>Избиратели, оформившие заявление о голосовании по месту нахождения,
+исключены из списка избирателей с соответствующими пометками</td>
+<td></td>
+<td>ФЗ: п. 16 ст. 64;</td>
+</tr>
+<tr>
+<td>Наблюдателям дали ознакомиться с реестром обращении о голосовании
+вне помещения. В реестре указаны дата и время заявки, в соответствующих
+случаях указаны ФИО и адрес лица, передавшего заявку; номер телефона,
+<strong>выбранный способ голосования</strong> (через терминал или
+бюллетенем), указана фамилия члена комиссии, принявшего заявление.
+<strong>Запишите число избирателей̆ в реестре. При значительном
+количестве надомников (более 30 чел.) известите штаб.</strong></td>
+<td></td>
+<td>ФЗ: п/п «а» п. 9 ст. 30, п. 2-5 ст. 66; ЭСИ: п. 3.1.16.3</td>
+</tr>
+<tr>
+<td>С места, которые предоставлены наблюдателям, одновременно видны
+места выдачи бюллетеней кабины и ящики для голосования (в т. ч.
+переносные!).</td>
+<td></td>
+<td>ФЗ: п. 11 ст. 61;</td>
+</tr>
+<tr>
+<td>На стенде размещены сведения о числе избирателей в списке, о числе
+включенных в список и исключенных из него в связи с голосованием по
+месту нахождения.</td>
+<td></td>
+<td>ТРИ: п. 1.15</td>
+</tr>
+<tr>
+<td>В помещении для голосования висит УФП, заполнены могут быть только
+номер и адрес УИК.</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 61;</td>
+</tr>
+<tr>
+<td><strong>Общий порядок голосования</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Избиратель предъявил паспорт или заменяющий его документ.</td>
+<td></td>
+<td>ФЗ: п. 4, 5 ст. 64;</td>
+</tr>
+<tr>
+<td>Член комиссии проверил по паспорту личность и место жительства
+избирателя.</td>
+<td></td>
+<td>ФЗ: п. 4, 5 ст. 64;</td>
+</tr>
+<tr>
+<td>Если избиратель пропущен в списке, то до принятия решения о его
+включении проверено отсутствие препятствии к этому: по реестру лиц,
+подлежащих исключению в связи с голосованием по месту нахождения; по
+сведениям о включении в список в местах временного пребывания.</td>
+<td></td>
+<td>ФЗ: п. 16 ст. 17, п. 16 ст. 64</td>
+</tr>
+<tr>
+<td>Член комиссии удостоверился в том, что избиратель: (1) не исключен
+из списка в связи с голосованием по месту нахождения; (2) не
+проголосовал вне помещения для голосования; (3) к избирателю не
+направлена выездная группа для проведения голосования вне
+помещения.</td>
+<td></td>
+<td>ФЗ: п. 16 ст. 64, п. 16 ст. 66;</td>
+</tr>
+<tr>
+<td>Если избиратель, исключённый из списка избирателей в связи <strong>с
+голосованием по месту нахождения</strong>, явился на участок по месту
+жительства, то ему выдается бюллетень только после оформления заявления
+установленной формы с предупреждением об ответственности за повторное
+голосование и проверки через вышестоящую ТИК, что избиратель
+действительно не голосовал.</td>
+<td></td>
+<td>ФЗ: п. 16 ст. 64</td>
+</tr>
+<tr>
+<td>Данные избирателя автоматически находят в списке считывающим
+устройством: избиратель сам прикладывает паспорт либо передаёт его члену
+УИК. Ручной ввод данных допускается, только если распознавание
+затруднено (невозможно) либо избиратель отказался от распознавания
+документа. <strong>Фиксируйте, как часто данные вводят
+вручную.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.1.4</td>
+</tr>
+<tr>
+<td><p><strong>При получении бумажного бюллетеня</strong> избиратель
+расписывается за полученные бюллетени электронной графической подписью
+на экране считывающего устройства и подтверждает её внесение; член УИК
+подтверждает факт выдачи на своём АРМ, после чего доступ к электронному
+бюллетеню у этого избирателя блокируется.</p>
+<p><strong>По желанию избирателя</strong> член УИК изготавливает
+бумажную выписку из списка, в которой избиратель расписывается обычной
+подписью; в списке ставится отметка «Подпись за получение бюллетеня
+выполнена в бумажном варианте списка», выписка хранится в сейфе
+УИК.</p></td>
+<td></td>
+<td>ЭСИ: п. 3.1.9, 3.1.17</td>
+</tr>
+<tr>
+<td>Если избиратель не может самостоятельно расписаться в получении
+бюллетеня или заполнить бюллетень, он устно извещает об этом комиссию,
+указав лицо-помощника (обязательно — избирателя, но при этом не члена
+комиссии, не кандидата, представителя, доверенного лица
+кандидата/партии, не наблюдателя). В графу «Особые отметки» внесены ФИО,
+серия и номер паспорта помощника. В иных случаях присутствие других лиц
+при голосовании не допускается.</td>
+<td></td>
+<td>Федеральный закон от 12.06.2002 № 67-ФЗ, ст. 64, п.п. 8, 10 (в действующей редакции)</td>
+</tr>
+<tr>
+<td>Если помощь оказывается, в список вносятся фамилия, имя, отчество,
+серия и номер паспорта помощника, и он расписывается за полученный
+избирателем бюллетень электронной графической подписью на экране
+считывающего устройства.</td>
+<td></td>
+<td>ЭСИ: п. 3.1.11</td>
+</tr>
+<tr>
+<td>В графе «Особые отметки» указывается дата голосования.</td>
+<td></td>
+<td>ТРИ: п. 1.10</td>
+</tr>
+<tr>
+<td>Если избиратель испортил бюллетень, он вправе получить новый взамен
+испорченного. В графе «Особые отметки» указывается «Выдан бюллетень
+взамен испорченного». На испорченном бюллетене делается отметка,
+заверенная подписью члена комиссии и секретаря, бюллетень погашен
+отрезанием левого нижнего угла.</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 64;</td>
+</tr>
+<tr>
+<td><strong>Голосование на дому</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>В 14:00 воскресенья прием заявлении (обращении) избирателей о
+голосовании на дому окончен.</td>
+<td></td>
+<td>ФЗ: п. 5 ст. 66;</td>
+</tr>
+<tr>
+<td>Перед выездом групп наблюдателям давали ознакомиться с реестром
+заявлении о голосовании на дому и выпиской из него. <strong>Запишите
+число заявлений в выписке.</strong></td>
+<td></td>
+<td>ФЗ: п/п «а» п. 9 ст. 30;</td>
+</tr>
+<tr>
+<td>Выписка их Реестра избирателей распечатана на бумажном носители. Для
+избирателей, голосующих бумажным бюллетенем и с помощью переносного
+терминала – отдельные выписки. Выписки заверяются подписью председателя
+или секретаря и печатью УИК.</td>
+<td></td>
+<td>ЭСИ: п. 3.1.6.16</td>
+</tr>
+<tr>
+<td>Председатель не позднее чем за 30 минут до выезда объявлял об
+этом.</td>
+<td></td>
+<td>ФЗ: п. 6 ст. 66;</td>
+</tr>
+<tr>
+<td>Каждой выезжающей группе выдана заверенная выписка из реестра
+заявлении (обращении) о голосовании вне помещения для голосования. С
+переносным терминалом и переносной урной выезжают разные группы, одна
+группа обеспечивает голосование только одним способом.</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 66; ЭСИ: п. 3.1.16.7</td>
+</tr>
+<tr>
+<td>Не менее чем двум желающим наблюдателям предоставлена возможность
+принять участие в выезде.</td>
+<td></td>
+<td>ФЗ: п. 14 ст. 66;</td>
+</tr>
+<tr>
+<td>В состав выезжающей группы входят два члена УИК (или один член
+комиссии, если в составе группы выезжают два наблюдателя от разных
+политических сил).</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 66;</td>
+</tr>
+<tr>
+<td>В ЭСИ поставлена отметка в карточке избирателя («Вне помещения для
+голосования»).</td>
+<td></td>
+<td>ЭСИ: п. 3.1.16.5</td>
+</tr>
+<tr>
+<td>Каждой выезжающей группе выдано бюллетени по числу избирателей в
+выписке плюс запасные (+2 шт. на 1−59 избирателей, +3 шт. на 60−79
+избирателей, +4 шт. на 80−99 избирателей и т. д.).</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 66;</td>
+</tr>
+<tr>
+<td>Выдача бюллетеней выезжающей группе произведена под расписку в
+ведомости.</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 66;</td>
+</tr>
+<tr>
+<td>Выезжающая группа взяла с собой информационные материалы о
+кандидатурах.</td>
+<td></td>
+<td>ФЗ: п. 9 ст. 66;</td>
+</tr>
+<tr>
+<td>Прибытие членов комиссии к избирателю не было для него
+неожиданностью (т. е. он действительно подавал заявку).</td>
+<td></td>
+<td>ФЗ: п. 2 ст. 66, п. 3 ст. 3;</td>
+</tr>
+<tr>
+<td>Избиратель голосует в соответствии с процедурой, описанной в разделе
+«Общий порядок голосования» (но вместо списка избирателей используется
+заявление).</td>
+<td></td>
+<td>ФЗ: п. 10-11.1 ст. 66;</td>
+</tr>
+<tr>
+<td><strong>В пятницу и субботу</strong> немедленно после возвращения
+группы в помещение для голосования содержимое переносного ящика
+выгружено без пересчета в отдельный сейф-пакет (при необходимости —
+несколько сейф-пакетов). Сейф-пакет запечатан, о чем составлен акт. В
+акте указан номер сейф-пакета. На сейф-пакете расписались члены комиссии
+и наблюдатели. Эти действия выполнены в поле обзора средств
+видеонаблюдения. <strong>Ведите съемку. Получите копию
+акта.</strong></td>
+<td></td>
+<td>ТРИ: п. 3.3, 3.5, 3.6, 3.7, прил. 1</td>
+</tr>
+<tr>
+<td>Данные с переносного терминала загружены на АРМ председателя. В
+случае голосования бумажным бюллетенем – данные на АРМ переносятся из
+заявления избирателя. Для военнослужащих – данные из заявления
+переносятся в список избирателей с указанием номера переносного ящика,
+даты голосования и заверяются подписями членов УМК</td>
+<td></td>
+<td>ФЗ: п. 13 ст. 66; ТРИ: п. 1.11, 2.7; ЭСИ: п. 3.1.16.9.1, 3.1.16.9.2,
+3.1.16.10</td>
+</tr>
+<tr>
+<td><strong>В пятницу и субботу</strong> сейф-пакет с бюллетенями, акт
+об опечатывании и заявления избирателей помещаются в специальный сейф,
+используемый исключительно для этой цели.</td>
+<td></td>
+<td>ТРИ: п. 3.8</td>
+</tr>
+<tr>
+<td>После возвращения каждой группы составлен акт о проведенном
+голосовании вне помещения, в котором указывается число бюллетеней,
+выданных избирателям, число письменных заявлении избирателей, число
+возвращенных бюллетеней, сведения о членах УИК, проводивших голосование,
+о наблюдателях, присутствовавших при голосовании на дому (составляется
+по каждому переносному ящику).</td>
+<td></td>
+<td>ФЗ: п. 17 ст.66;</td>
+</tr>
+<tr>
+<td>Бюллетени выездной группой выдавались только лицам, включенным в
+выписку перед выездом.</td>
+<td></td>
+<td>ФЗ: п. 12, 9 ст. 66;</td>
+</tr>
+<tr>
+<td><strong>ЭЛЕКТРОННОЕ ГОЛОСОВАНИЕ С ИСПОЛЬЗОВАНИЕМ ТЭГ: подготовка и
+открытие участка</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Участок включён в перечень участков, на которых проводится
+электронное голосование. <strong>Запишите номера и количество
+стационарных и переносных терминалов электронного
+голосования.</strong></td>
+<td></td>
+<td>МГИК: п. 1 решения, прил. № 1; п. 1.2 Порядка</td>
+</tr>
+<tr>
+<td>На участке обеспечена возможность проголосовать бюллетенем,
+изготовленным на бумажном носителе; бюллетени в наличии, избиратели о
+такой возможности информируются. <strong>Проверьте лично, спросив
+председателя.</strong></td>
+<td></td>
+<td>ФЗ: п. 15 ст. 64; МГИК: п. 1.8</td>
+</tr>
+<tr>
+<td>Терминалы размещены так, что экран не находится под углом зрения
+других избирателей, членов УИК, наблюдателей и камер
+видеонаблюдения.</td>
+<td></td>
+<td>ФЗ: ст. 7, п. 8 ст. 64, п. 11 ст. 61</td>
+</tr>
+<tr>
+<td>С места наблюдателя одновременно видны: места размещения членов УИК,
+все стационарные терминалы, место выдачи бумажных бюллетеней и место
+хранения переносных терминалов.</td>
+<td></td>
+<td>ФЗ: п. 11 ст. 61, п. 11.2 ст. 64</td>
+</tr>
+<tr>
+<td>Наблюдателям дали ознакомиться со списком избирателей, составленным
+<strong>в электронном виде</strong>, и с реестром заявлений о
+голосовании вне помещения. <strong>Отказ — жалоба.</strong></td>
+<td></td>
+<td>ФЗ: п/п «а» п. 9 ст. 30;</td>
+</tr>
+<tr>
+<td><strong>Кто голосует через ТЭГ и какие бюллетени
+получает</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Избиратель, зарегистрированный по месту жительства в Москве и
+включённый в список избирателей до первого дня голосования, вправе
+проголосовать через ТЭГ на <strong>любом</strong> участке города, где
+проводится электронное голосование. Получает бюллетени по федеральному
+округу и по тому одномандатному округу, где обладает активным
+избирательным правом. Основание — паспорт.</td>
+<td></td>
+<td>МГИК: п. 2.1 (абз. 1), 6.6</td>
+</tr>
+<tr>
+<td>Избиратель с московской регистрацией, включённый в список
+<strong>дополнительно в дни голосования</strong>, голосует через ТЭГ
+только на том участке, где он включён в список.</td>
+<td></td>
+<td>МГИК: п. 2.1 (абз. 2)</td>
+</tr>
+<tr>
+<td>Избиратель, подавший заявление о включении в список по месту
+нахождения в Москве и зарегистрированный по месту пребывания в границах
+одномандатного округа не позднее 19.06.2026, получает федеральный и
+одномандатный бюллетени — только на том участке, где он включён в
+список. Предъявляет паспорт <strong>и свидетельство о регистрации по
+месту пребывания.</strong></td>
+<td></td>
+<td>МГИК: п. 2.2, 6.6</td>
+</tr>
+<tr>
+<td>Тот же избиратель, если он не зарегистрирован по месту пребывания в
+округе либо зарегистрирован после 19.06.2026, получает <strong>только
+федеральный</strong> бюллетень — на любом участке с ТЭГ.</td>
+<td></td>
+<td>МГИК: п. 2.3</td>
+</tr>
+<tr>
+<td>Избиратель, зарегистрированный по месту жительства в другом субъекте
+РФ и подавший заявление по месту нахождения в Москве, получает
+федеральный бюллетень, а также бюллетень выборов главы своего региона,
+если это Республика Мордовия, Республика Тыва, Брянская, Пензенская,
+Тверская или Ульяновская область.</td>
+<td></td>
+<td>МГИК: п. 2.4</td>
+</tr>
+<tr>
+<td>На участках в границах муниципального округа Щукино избиратель
+дополнительно получает бюллетень по многомандатному округу на выборах
+Совета депутатов.</td>
+<td></td>
+<td>МГИК: п. 2.1 (абз. 3), 4.1</td>
+</tr>
+<tr>
+<td>Через переносной ТЭГ голосуют только избиратели, включённые в список
+на этом участке и подавшие заявление (устное обращение) о голосовании
+вне помещения.</td>
+<td></td>
+<td>МГИК: п. 2.5</td>
+</tr>
+<tr>
+<td><strong>Контроль:</strong> выдача «лишнего» бюллетеня (например,
+одномандатного тому, у кого нет права на этот округ) либо отказ в
+бюллетене, на который право есть, — фиксируйте и подавайте жалобу.</td>
+<td></td>
+<td>ФЗ: п. 4 ст. 20</td>
+</tr>
+<tr>
+<td><strong>Бумажный бюллетень: кому, когда и как выдается</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Право на бумажный бюллетень есть у <strong>любого</strong>
+избирателя: при проведении электронного голосования должна быть
+обеспечена возможность голосования бюллетенем на бумажном носителе в
+пределах округа, где избиратель обладает активным избирательным правом.
+Причину объяснять не нужно, отказ незаконен.</td>
+<td></td>
+<td>ФЗ: п. 15 ст. 64; МГИК: п. 1.8</td>
+</tr>
+<tr>
+<td>Военнослужащие и участок для избирателей без регистрации на
+территории РФ (УИК № 9002) голосуют только бумажным бюллетенем.</td>
+<td></td>
+<td>ЭСИ: п. 3.1.1, 3.1.2</td>
+</tr>
+<tr>
+<td>Как получить: сказать об этом члену УИК <strong>до того, как
+приложить паспорт к терминалу.</strong> Способ голосования выбирает сам
+избиратель; направлять его к терминалу комиссия не вправе.</td>
+<td></td>
+<td>ФЗ: п. 15 ст. 64; МГИК: п. 6.11</td>
+</tr>
+<tr>
+<td>Процедура выдачи бумажного бюллетеня на участке с электронным
+списком установлена Положением МГИК (решение от 27.08.2026 № 147/4):
+<strong>бюллетени выдаются избирателям, изъявившим желание проголосовать
+с использованием избирательного бюллетеня</strong>, по предъявлении
+паспорта (а при праве по одномандатному округу по месту нахождения — и
+свидетельства о регистрации по месту пребывания); избиратель
+подтверждает, что не голосовал ранее. <strong>Ссылайтесь на этот пункт
+при отказе.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.1.8, 3.1.3</td>
+</tr>
+<tr>
+<td>При голосовании вне помещения бумажный бюллетень предусмотрен прямо:
+голосование на дому обеспечивается <strong>либо</strong> переносным
+терминалом, <strong>либо</strong> бумажным бюллетенем. <strong>Спросите
+у выездной группы, что она берёт с собой и на каком
+основании.</strong></td>
+<td></td>
+<td>МГИК: п. 2.5</td>
+</tr>
+<tr>
+<td>Бумажные бюллетени должны быть в наличии в течение всего дня.
+<strong>Проверяйте ближе к вечеру: ответ «бумажные закончились» —
+нарушение, жалоба.</strong></td>
+<td></td>
+<td>ФЗ: п. 15 ст. 64</td>
+</tr>
+<tr>
+<td>Голоса, поданные бумажными бюллетенями, подсчитывает сама УИК и
+вносит в свой протокол — в отличие от голосов, поданных через
+терминалы.</td>
+<td></td>
+<td>МГИК: п. 1.8, 7.1</td>
+</tr>
+<tr>
+<td><strong>Голосование через стационарный терминал</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Идентификация избирателя проводится по паспорту с использованием
+считывающего устройства терминала.</td>
+<td></td>
+<td>МГИК: п. 6.9</td>
+</tr>
+<tr>
+<td>В случае, если идентификация осуществляется без считывающего
+устройства, член УИК формирует код подтверждения только по запросу
+избирателя и при предъявлении паспорта.</td>
+<td></td>
+<td>МГИК: п. 6.6, 6.10</td>
+</tr>
+<tr>
+<td>Избиратель голосует лично; члены УИК и посторонние лица к экрану
+терминала не подходят и кнопки не нажимают.</td>
+<td></td>
+<td>ФЗ: п. 4 ст. 64</td>
+</tr>
+<tr>
+<td>Если избирателю оказывается помощь, помощник — другой избиратель (не
+член комиссии, не наблюдатель, не кандидат, не доверенное лицо); его ФИО
+и паспортные данные внесены в список избирателей.</td>
+<td></td>
+<td>ФЗ: п. 10 ст. 64</td>
+</tr>
+<tr>
+<td>Избирателю, обратившемуся до подтверждения перехода к голосованию,
+обеспечена отмена выбранного способа и выдан бумажный бюллетень.
+Отменить электронное голосование можно только после идентификации и
+<strong>до подтверждения на экране перехода к голосованию</strong> —
+обратившись к члену УИК того участка, куда избиратель прибыл.</td>
+<td></td>
+<td>МГИК: п. 6.11; ФЗ: п. 15 ст. 64</td>
+</tr>
+<tr>
+<td>После подтверждения перехода и получения доступа к электронному
+бюллетеню <strong>изменить способ голосования невозможно</strong>:
+передумать посередине процедуры и взять бумажный бюллетень уже
+нельзя.</td>
+<td></td>
+<td>МГИК: п. 6.11, 6.28</td>
+</tr>
+<tr>
+<td>Если избиратель открыл бюллетень и отошёл либо сессия закрылась по
+времени (дается 15 минут), он уже исключён из списка избирателей,
+бумажный бюллетень ему не выдадут, повторное волеизъявление не
+допускается. <strong>Каждый такой случай фиксируйте и требуйте
+составления акта УИК.</strong></td>
+<td></td>
+<td>МГИК: п. 3.4, 6.13, 6.28, 6.30</td>
+</tr>
+<tr>
+<td>Доступ к бюллетеням на ТЭГ предоставляется в течение 15 мин; при
+бездействии 1,5 мин. — предупреждение и ещё 30 сек.., после этого сессия
+может быть автоматически закончена. <strong>Следите, чтобы к активному
+терминалу никто не подходил.</strong></td>
+<td></td>
+<td>МГИК: п. 6.13</td>
+</tr>
+<tr>
+<td>Сведения о ходе голосования отображаются на специальном портале.
+<strong>Фиксируйте явку на 10:00, 12:00, 15:00, 18:00, 20:00 и сверяйте
+со своим подсчётом вошедших.</strong></td>
+<td></td>
+<td>МГИК: п. 6.29</td>
+</tr>
+<tr>
+<td>При сбое (зависании, отключении) терминала составлен акт с указанием
+времени и числа избирателей, не получивших доступ; им выданы бумажные
+бюллетени. <strong>Порядком не урегулировано — подавайте
+жалобу.</strong></td>
+<td></td>
+<td>ФЗ: п. 15 ст. 64, п. 4 ст. 20</td>
+</tr>
+<tr>
+<td>Признаки подконтрольного голосования (организованные группы,
+сопровождающие, требование сфотографировать экран) отсутствуют.
+<strong>Фиксируйте время, число, приметы; сообщайте в
+штаб.</strong></td>
+<td></td>
+<td>ФЗ: ст. 7, п. 13 ст. 64</td>
+</tr>
+<tr>
+<td><strong>Голосование вне помещения с переносным
+терминалом</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Голосование вне помещения обеспечивается только избирателям своего
+участка и только в пределах его территории.</td>
+<td></td>
+<td>МГИК: п. 2.5</td>
+</tr>
+<tr>
+<td>Данные выписки из реестра загружены в переносной терминал (20
+сентября — не позднее 15:00).</td>
+<td></td>
+<td>МГИК: п. 6.18</td>
+</tr>
+<tr>
+<td>Состав выездной группы и участие наблюдателей — как при бумажном
+голосовании; не менее чем двум желающим наблюдателям обеспечена
+возможность выехать.</td>
+<td></td>
+<td>ФЗ: п. 9, 14 ст. 66</td>
+</tr>
+<tr>
+<td>У избирателя удостоверена личность, а при голосовании по
+одномандатному округу по месту нахождения — проверено свидетельство о
+регистрации по месту пребывания.</td>
+<td></td>
+<td>МГИК: п. 6.19</td>
+</tr>
+<tr>
+<td>Избиратель расписывается на заявлении о предоставлении доступа к
+электронному бюллетеню, члены УИК удостоверили факт предоставления
+доступа своими подписями.</td>
+<td></td>
+<td>МГИК: п. 6.20, 6.23</td>
+</tr>
+<tr>
+<td>По возвращении информация из переносного терминала загружена в СПО
+ДЭГ Москвы и ИС ЭСИ до 20:15 (20 сентября — не позднее 19:00).
+<strong>Запишите время выезда, возвращения и загрузки.</strong></td>
+<td></td>
+<td>МГИК: п. 6.26</td>
+</tr>
+<tr>
+<td>Избиратели, включённые в выписку, но не получившие доступ к
+бюллетеню, разблокированы после расформирования выписки.</td>
+<td></td>
+<td>МГИК: п. 6.27, 6.16</td>
+</tr>
+<tr>
+<td><strong>Итоги: чем электронное голосование отличается при
+подсчёте</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Голоса, поданные через ТЭГ, на участке <strong>не
+подсчитываются</strong>: итоги электронного голосования учитываются в
+данных ДЭГ по городу Москве, протокол составляется в Мосгоризбиркоме. В
+протокол УИК входят только бумажные бюллетени.</td>
+<td></td>
+<td>МГИК: п. 7.1</td>
+</tr>
+<tr>
+<td>Избиратели, получившие доступ к электронному бюллетеню, исключены из
+списка избирателей. <strong>Проверьте, как это учтено в строках 1 и 3–5
+протокола.</strong></td>
+<td></td>
+<td>МГИК: п. 3.4, 6.30</td>
+</tr>
+<tr>
+<td>Повторное волеизъявление и возврат к электронному бюллетеню не
+допускаются.</td>
+<td></td>
+<td>МГИК: п. 6.28</td>
+</tr>
+<tr>
+<td><strong>Завершение дня голосования (пятница и суббота)</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Сразу после завершения времени голосования бюллетени из
+стационарного ящика выгружены без пересчета в отдельный сейф-пакет (при
+необходимости — в несколько сейф-пакетов). Сейф-пакет запечатан, о чем
+составлен акт с обязательным указанием числа избирателей и номера
+пакета. Эти действия выполнены в поле обзора средств видеонаблюдения.
+<strong>Ведите съемку. Получите копию акта.</strong></td>
+<td></td>
+<td>ТРИ: п. 3.11, прил. 2</td>
+</tr>
+<tr>
+<td>Сейф-пакет с бюллетенями и акт об опечатывании помещаются в
+специальный сейф, используемый исключительно для этой цели.</td>
+<td></td>
+<td>ТРИ: п. 3.11</td>
+</tr>
+<tr>
+<td>Изготовлена копия списка избирателей на бумажном носителе, книга
+Реестра избирателей, исключенных из списка по месту жительства,
+дополнительные вкладные листы, книга Реестра избирателей, подавших
+неучтенные заявления о включении в список избирателей по месту
+нахождения</td>
+<td></td>
+<td>ЭСИ: п. 3.3.1</td>
+</tr>
+<tr>
+<td>Выписки из списка избирателей, документы уполномоченных органов,
+личные заявления граждан и иные документы, связанные со списком
+избирателей, помещаются в отдельный мешок (коробку), которая
+опечатывается и передается в ТИК</td>
+<td></td>
+<td>ЭСИ: п. 3.3.1</td>
+</tr>
+<tr>
+<td>Все присутствующие лица покинули помещение для голосования,
+помещение опечатано и передано под охрану сотрудникам полиции.</td>
+<td></td>
+<td>ТРИ: п. 3.14, 3.15</td>
+</tr>
+<tr>
+<td><strong>Начало подсчета голосов (воскресенье)</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>УИК приступила к действиям по подсчету голосов сразу после окончания
+голосования.</td>
+<td></td>
+<td>ФЗ: п. 2 ст. 68;</td>
+</tr>
+<tr>
+<td>Наблюдателям видны все действия членов УИК.</td>
+<td></td>
+<td>ФЗ: п. 10, 1 ст. 68;</td>
+</tr>
+<tr>
+<td>Осуществлен подсчет и погашение неиспользованных бюллетеней, их
+количество оглашено, председатель предложил визуально ознакомиться с
+погашенными бюллетенями; оглашена и внесена в строку 6 протокола и УФП
+сумма погашенных неиспользованных и испорченных избирателями
+бюллетеней.</td>
+<td></td>
+<td>ФЗ: п/п «г» п. 9 ст. 30;</td>
+</tr>
+<tr>
+<td>Председатель огласил и внес в строку 2 протокола и УФП число
+бюллетеней, полученных УИК от ТИК.</td>
+<td></td>
+<td>ФЗ: п. 4 ст. 68;</td>
+</tr>
+<tr>
+<td><strong>Работа со списком избирателей̆</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Если на участке список избирателей ведётся в электронном виде (ИС
+«Электронный список избирателей города Москвы», СПО ЭСИ), то на бумаге
+ведётся только часть списка с избирателями-военнослужащими — по ней
+сохраняется обычный порядок.</td>
+<td></td>
+<td>ЭСИ: п. 1.2</td>
+</tr>
+<tr>
+<td>По бумажной части (военнослужащие) члены УИК подсчитали и указали на
+каждой странице суммарные данные отдельно по каждому избирательному
+округу; строка «проголосовавшие досрочно» — 0.</td>
+<td></td>
+<td>ЭСИ: п. 3.2.1</td>
+</tr>
+<tr>
+<td>Председатель на АРМ председателя внёс суммарные данные бумажной
+части и запустил суммирование по списку в целом. <strong>Постранично
+электронный список не подсчитывается: цифры формирует программа,
+пересчитать подписи невозможно. Поэтому дословно записывайте оглашённые
+числа.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.2.2</td>
+</tr>
+<tr>
+<td>Оглашены суммарные данные по списку: число избирателей, включённых в
+список на момент окончания голосования (без исключённых); число
+бюллетеней, выданных в помещении; число бюллетеней, выданных вне
+помещения; досрочно — 0. <strong>Запишите все четыре
+числа.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.2.2</td>
+</tr>
+<tr>
+<td>Оглашённые данные внесены в строки 1, 3, 4, 5 протокола и УФП.
+<strong>Проголосовавшие через терминал в число включённых в список не
+входят — они исключены с отметкой «Получен доступ к электронному
+бюллетеню». Голоса с терминалов в протокол УИК не
+попадают.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.2.3, 2.3.8.1; МГИК: п. 7.1</td>
+</tr>
+<tr>
+<td>Список избирателей подписан электронными подписями председателя и
+секретаря УИК; средствами СПО ЭСИ сформирована электронная копия списка
+со всеми внесёнными отметками (хранится год после опубликования
+результатов).</td>
+<td></td>
+<td>ЭСИ: п. 3.2.4, 3.3.1</td>
+</tr>
+<tr>
+<td>Список на АРМ председателя представлен для обозрения членам УИК,
+наблюдателям и иным лицам, имеющим право присутствовать при подсчёте.
+<strong>Непременно ознакомьтесь. Фото-, видеосъёмка и копирование
+персональных данных запрещены.</strong></td>
+<td></td>
+<td>ЭСИ: п. 3.2.5, 4.3</td>
+</tr>
+<tr>
+<td>Выписки из списка с подписями избирателей сброшюрованы в один том,
+заверены подписью председателя и печатью УИК на месте скрепления; книги
+части списка с военнослужащими брошюруются отдельно, разброшюрование не
+допускается.</td>
+<td></td>
+<td>ЭСИ: п. 3.2.6</td>
+</tr>
+<tr>
+<td>До проверки контрольных соотношений дальнейшая работа со списком не
+ведётся: выписки и бумажная часть списка убраны в сейф или металлический
+шкаф в помещении, где идёт подсчёт.</td>
+<td></td>
+<td>ЭСИ: п. 3.2.7</td>
+</tr>
+<tr>
+<td>Председатель объявил о запрете членам УИК (кроме председателя
+(заместителя председателя) и секретаря) пользоваться письменными
+принадлежностями при подсчете голосов</td>
+<td></td>
+<td>ФЗ: п. 10 ст. 68;</td>
+</tr>
+<tr>
+<td><strong>Непосредственный̆ подсчет голосов</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>В первую очередь обрабатываются переносные ящики, использовавшиеся
+для досрочного голосования отдельных групп избирателей в труднодоступных
+местностях, затем переносные ящики голосования на дому в воскресенье,
+затем сейф- пакеты с бюллетенями избирателей, голосовавших на дому и по
+дополнительной форме в предыдущие дни. <strong>Фотографируете или
+снимите на видео пломбу и момент вскрытия каждого ящика
+(сейф-пакета).</strong></td>
+<td></td>
+<td>ФЗ: п. 12 ст. 68; ТРИ: п. 4.2, 4.3;</td>
+</tr>
+<tr>
+<td>Перед вскрытием каждого переносного ящика (сейф-пакета) проверена и
+продемонстрирована присутствующим не поврежденность печатей УИК, пломб
+на каждом из них.</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 68; ТРИ: п. 4.4;</td>
+</tr>
+<tr>
+<td>Если номер сейф-пакета не соответствует указанному в акте о его
+запечатывании, или индикаторная лента сейф-пакета повреждена, или
+имеются иные повреждения сейф-пакета, то содержащиеся в нем бюллетени
+признаются недействительными (с оформлением в том же порядке, что и при
+превышении числа бюллетеней над числом избирателей).</td>
+<td></td>
+<td>ТРИ: п. 4.4</td>
+</tr>
+<tr>
+<td>При вскрытии каждого переносного ящика (сейф-пакета) оглашается
+количество избирателей, проголосовавших с его использованием.</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 68;</td>
+</tr>
+<tr>
+<td>Число фактически обнаруженных в сейф-пакете бюллетеней вносится в
+акт, который составлялся при его опечатывании.</td>
+<td></td>
+<td>ТРИ: п. 4.5</td>
+</tr>
+<tr>
+<td>Если бюллетеней в <strong>сейф-пакете</strong> оказалось больше, чем
+указано в относящемся к нему акте, то выполняется дополнительная
+проверка по первичным документам (заявлениям избирателей для досрочного
+голосования на дому, списку избирателей для дополнительной формы
+голосования). Если дополнительная проверка не привела к выправлению
+соотношения, то все бюллетени данного вида в данном сейф-пакете
+признаются недействительными и на лицевой стороне каждого проставляется
+(поверх всех квадратов для отметок) запись об этом, подписи 2 членов
+УИК, печать; составляется акт.</td>
+<td></td>
+<td>ТРИ: п. 4.6</td>
+</tr>
+<tr>
+<td>Если бюллетеней <strong>в переносном ящике</strong> оказалось
+больше, чем заявлении избирателей, относящихся к этому ящику, все
+бюллетени данного вида в данном ящике признаны недействительными и на
+лицевой стороне каждого проставлена (поверх всех квадратов для отметок)
+запись об этом, подписи 2 членов УИК, печать; составлен акт.</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 68;</td>
+</tr>
+<tr>
+<td>Председатель суммирует, оглашает и вносит в строку 7 протокола и УФП
+число бюллетеней установленной формы, обнаруженных в переносных ящиках и
+сейф-пакетах (включая признанные недействительными).</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 68;</td>
+</tr>
+<tr>
+<td>Перед вскрытием каждого сейф-пакета с бюллетенями из стационарных
+ящиков за 18-19 сентября проверена и продемонстрирована присутствующим
+неповрежденность сейф-пакетов.</td>
+<td></td>
+<td>ТРИ: п. 4.10</td>
+</tr>
+<tr>
+<td>Если номер сейф-пакета не соответствует указанному в акте о его
+запечатывании или сейф-пакет поврежден, то содержащиеся в нем бюллетени
+признаются недействительными (с оформлением в том же порядке, что и при
+превышении числа бюллетеней над числом избирателей).</td>
+<td></td>
+<td>ТРИ: п. 4.10, 4.4</td>
+</tr>
+<tr>
+<td>Число фактически обнаруженных в сейф-пакете бюллетеней вносится в
+акт, который составлялся при его опечатывании.</td>
+<td></td>
+<td>ТРИ: п. 4.10, 4.5</td>
+</tr>
+<tr>
+<td>Если бюллетеней <strong>в сейф-пакете с бюллетенями из стационарного
+ящика</strong> оказалось больше, чем указано в относящемся к нему акте,
+то выполняется дополнительная проверка по списку избирателей. Если
+дополнительная проверка не привела к выправлению соотношения, то все
+бюллетени данного вида в сейф-пакетах признаются недействительными и на
+лицевой стороне каждого проставляется (поверх всех квадратов для
+отметок) запись об этом, подписи 2 членов УИК с ПРГ, печать;
+составляется акт.</td>
+<td></td>
+<td>ТРИ: п. 4.10, 4.6</td>
+</tr>
+<tr>
+<td>Перед вскрытием стационарных ящиков проверена и продемонстрирована
+присутствующим неповрежденность печатей УИК, пломб на каждом из
+них.</td>
+<td></td>
+<td>ФЗ: п. 13 ст. 68;</td>
+</tr>
+<tr>
+<td>Все бюллетени из стационарных ящиков смешиваются с бюллетенями
+(кроме признанных недействительными) из сейф- пакетов и переносных
+ящиков .</td>
+<td></td>
+<td>ФЗ: п. 14 ст. 68;</td>
+</tr>
+<tr>
+<td>Бюллетени разделяются на пачки по видам (если на участке проводятся
+несколько выборов).</td>
+<td></td>
+<td>ФЗ: п. 14 ст. 68;</td>
+</tr>
+<tr>
+<td>Осуществлена сортировка бюллетеней по кандидатам, с отделением
+недействительных бюллетеней и бюллетеней неустановленной формы.</td>
+<td></td>
+<td>ФЗ: п. 14 ст. 68;</td>
+</tr>
+<tr>
+<td>При сортировке члены УИК оглашали каждую отметку в бюллетене
+(фамилию кандидата), это осуществлялось не одновременно. <strong>Если
+оглашается сразу несколько бюллетеней, требуете от УИК соблюдения
+процедуры.</strong></td>
+<td></td>
+<td>ФЗ: п. 14 ст. 68;</td>
+</tr>
+<tr>
+<td>Осуществлен подсчет бюллетеней, признанных недействительными.</td>
+<td></td>
+<td>ФЗ: п. 17 ст. 68;</td>
+</tr>
+<tr>
+<td>Общее число всех недействительных бюллетеней (в т.ч. признанных
+таковыми из переносных ящиков) оглашено и внесено в строку 9 протокола и
+УФП.</td>
+<td></td>
+<td>ФЗ: п. 17 ст. 68;</td>
+</tr>
+<tr>
+<td>При подсчете бюллетеней за каждого кандидата (путем перекладывания
+бюллетеней) мне видны все отметки в нем. <strong>Если Вам не видны
+отметки в бюллетене, требуйте от УИК соблюдения процедуры</strong></td>
+<td></td>
+<td>ФЗ: п. 18 ст. 68;</td>
+</tr>
+<tr>
+<td>Подсчет бюллетеней производился отдельно по каждому кандидату, не
+велось одновременного подсчета разных пачек. Результат подсчета по
+каждой пачке оглашался и вносился в соответствующую строку (13 и
+последующие) протокола и УФП.</td>
+<td></td>
+<td>ФЗ: п. 18 ст. 68;</td>
+</tr>
+<tr>
+<td>Общее число действительных бюллетеней (сумма голосов отданных за
+кандидатов) вычислено, оглашено и внесено в строку 10 протокола и
+УФП.</td>
+<td></td>
+<td>ФЗ: п. 19 ст. 68;</td>
+</tr>
+<tr>
+<td>Число бюллетеней установленной формы, находившихся в стационарных
+ящиках вычислено (строка 9 + строка 10 – строка 7), оглашено и внесено в
+строку 8 протокола и УФП.</td>
+<td></td>
+<td>ФЗ: п. 20 ст. 68;</td>
+</tr>
+<tr>
+<td>Наблюдателям позволили визуально ознакомиться с подсчитанными
+бюллетенями.</td>
+<td></td>
+<td>ФЗ: п. 21 ст. 68;</td>
+</tr>
+<tr>
+<td><p>Проверены контрольные соотношения по строкам:</p>
+<p><strong>(1)</strong> [1] ≥ [3] + [4] + [5];<br />
+<strong>(2)</strong> [2] = [3] + [4] + [5] + [6] + [11] −[12];<br />
+<strong>(3)</strong> [7] + [8] = [9] + [10];</p>
+<p><strong>(4)</strong> [10] = [13]+[14]+[15]+[16]+последующие</p></td>
+<td></td>
+<td>ФЗ: п. 22 ст. 68;</td>
+</tr>
+<tr>
+<td>Если контрольные соотношения не выполняются, осуществлен
+дополнительный подсчет, затрагивающие все или отдельные строки
+протокола.</td>
+<td></td>
+<td>ФЗ: п. 22 ст. 68;</td>
+</tr>
+<tr>
+<td>Если после дополнительного подсчета контрольные соотношения снова не
+выполняются, составлен акт, расхождения внесены в строку 11 (и 12)
+протокола.</td>
+<td></td>
+<td>ФЗ: п. 22 ст. 68;</td>
+</tr>
+<tr>
+<td>Итоги голосования определены<strong>. Отправьте фото УФП или
+позвоните в штаб.</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Все бюллетени упакованы в отдельные заклеенные пачки (пачки
+действительных по кандидатам, пачка недействительных, пачка погашенных),
+пачки надписаны. <strong>Сделайте фото пачек.</strong></td>
+<td></td>
+<td>ФЗ: п. 23 ст. 68;</td>
+</tr>
+<tr>
+<td>Пачки с бюллетенями и список избирателей упакованы в общий мешок
+(коробку), на котором указан<br />
+номер участка, общее число бюллетеней; мешок (коробка) опечатывается,
+заверяется подписями членов УИК, наблюдателей, представителей СМИ.
+<strong>Поставьте подпись и сфотографируете упаковку.</strong></td>
+<td></td>
+<td>ФЗ: п. 23 ст. 68;</td>
+</tr>
+<tr>
+<td><strong>Итоговое заседание УИК (воскресенье)</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>После окончания подсчета голосов проведено итоговое заседание УИК
+для утверждения протокола. По выборам в ГД РФ отдельные протоколы
+составляются по федеральному списку и одномандатным округам. Также
+отдельные протоколы составляются по другим уровням выборов.
+<strong>Запишите время начала.</strong></td>
+<td></td>
+<td>ФЗ: п. 26 ст. 68, п. 13 ст. 28;</td>
+</tr>
+<tr>
+<td>На заседании рассмотрены поступившие жалобы и заявления.
+<strong>Запишите число рассмотренных жалоб.</strong></td>
+<td></td>
+<td>ФЗ: п. 26 ст. 68;</td>
+</tr>
+<tr>
+<td>Члены УИК подписали первый и второй экземпляры протокола об итогах
+голосования. Все члены УИК самостоятельно подписали протокол, напротив
+ФИО отсутствующих указана причина отсутствия. <strong>Сфотографируете
+протокол и УФП!</strong></td>
+<td></td>
+<td>ФЗ: п. 26−28 ст. 68;</td>
+</tr>
+<tr>
+<td>Данные экземпляры протокола правильно оформлены (см. перечень
+требовании к протоколу ниже).</td>
+<td></td>
+<td>ФЗ: п. 2, 3 ст. 67, п. 26, 27 ст. 68;</td>
+</tr>
+<tr>
+<td><strong>Копия протокола</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Мною получена заверенная копия протокола. <strong>Запишите время
+получения.</strong></td>
+<td></td>
+<td>ФЗ: п. 29 ст. 68;</td>
+</tr>
+<tr>
+<td>При выдаче заверенной копии протокола мне дали расписаться в
+соответствующем реестре за полученную мной копию протокола.
+<strong>Запишите № копии.</strong></td>
+<td></td>
+<td>ФЗ: п. 29 ст. 68;</td>
+</tr>
+<tr>
+<td>Полученная мною копия протокола заверена надлежащим образом (см.
+ниже перечень требовании к копии протокола).</td>
+<td></td>
+<td>ФЗ: п. 12 ст. 30, п. 29 ст. 68;</td>
+</tr>
+<tr>
+<td>Заверенная копия протокола была выдана мне до отправки первого
+экземпляра протокола в ТИК.</td>
+<td></td>
+<td>ФЗ: п. 29, 30 ст. 68;</td>
+</tr>
+<tr>
+<td>В строке «Сведения о количестве поступивших в УИК жалоб» количество
+жалоб отражено верно. <strong>Если нет, запишите истинное число
+жалоб.</strong></td>
+<td></td>
+<td>ФЗ: п/п «е» п. 2 ст. 67;</td>
+</tr>
+<tr>
+<td>Первый экземпляр протокола отправлен в ТИК. <strong>Запишите
+время.</strong></td>
+<td></td>
+<td>ФЗ: п. 30 ст. 68;</td>
+</tr>
+<tr>
+<td>Второй экземпляр протокола предоставлен мне для ознакомления.
+<strong>Сделайте фото.</strong></td>
+<td></td>
+<td>ФЗ: п. 31 ст. 68;</td>
+</tr>
+<tr>
+<td>Заверенная копия второго экземпляра вывешена для всеобщего
+ознакомления. <strong>Сделайте фото</strong></td>
+<td></td>
+<td>ФЗ: п. 31 ст. 68;</td>
+</tr>
+<tr>
+<td>Подсчет голосов, работа со списком избирателей, итоговое заседание,
+выдача копии протокола осуществлялись без перерывов.</td>
+<td></td>
+<td>ФЗ: п. 2 ст. 68;</td>
+</tr>
+<tr>
+<td>В ходе подсчета голосов в помещение для голосования свободно
+допускались лица, имеющие право присутствовать при подсчете.</td>
+<td></td>
+<td>ФЗ: п. 11.2 ст. 64, п. 1, 3, 8 ст. 30;</td>
+</tr>
+<tr>
+<td>Первый экземпляр протокола доставлен в ТИК. В ТИКе данные из
+протокола немедленно внесены в увеличенную форму сводной таблицы (с
+указанием времени их внесения).</td>
+<td></td>
+<td>ФЗ: п. 30 ст. 68, п. 1, 2 ст. 69;</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>α</th>
+<th>β</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p><strong>Проверить в протоколе</strong></p>
+<ol type="1">
+<li><p>Номер экземпляра (1 или 2).</p></li>
+<li><p>Название выборов и дата голосования.</p></li>
+<li><p>Номер избирательного участка.</p></li>
+<li><p>Адрес помещения для голосования.</p></li>
+<li><p>В графах без значений стоят нули.</p></li>
+<li><p>Все строки (включая нули) имеют расшифровку прописью.</p></li>
+<li><p>Заполнена графа «Число жалоб».</p></li>
+<li><p><u>На каждом листе (если протокол на нескольких листах</u>) есть
+все фамилии и инициалы членов комиссии с правом решающего голоса и либо
+сами подписи, либо слово «болен» и т. п. для отсутствующих.</p></li>
+<li><p>Дата подписания протокола<br />
+(не ошибиться после полуночи!).</p></li>
+<li><p>Время подписания протокола.</p></li>
+</ol>
+<p>Печать УИК (должна стоять четко, не перекрывая важные
+цифры).</p></td>
+<td><p><strong>Проверить в КОПИИ протокола</strong></p>
+<p>Копия сделана с правильно оформленного экземпляра № 1:</p>
+<p>Написано «Копия №_» и номер по реестру копий.</p>
+<ol type="1">
+<li><p><strong>Если это ксерокопия, то н</strong>а ней должны быть видны
+«сфотографированные» подписи членов комиссии и печать. Если оригинал
+переписывается вручную, то вместо каждой подписи и печати нужно написать
+словами: <strong>«(подпись)» </strong>и <strong>«(печать)».</strong></p></li>
+<li><p><strong>Если это распечатка (из КОИБ или компьютера), то
+в</strong> местах, где в оригинале расписываются члены комиссии, может
+быть <strong>пусто</strong> - это не ошибка. В такой копии может не быть
+даже фамилий членов комиссии, только сами цифры итогов.</p></li>
+<li><p><strong>В</strong>се цифры в копии полностью совпадали с
+оригиналом.</p></li>
+</ol>
+<p><u>4. Заверительная надпись (на каждом листе, если копия на
+нескольких листах):</u></p>
+<p>- слова «Копия верна» или «Верно»,</p>
+<p>- должность (председатель, зам. председателя, секретарь)</p>
+<p>- подпись и ее расшифровка.</p>
+<p>- дата заверения копии (помимо даты подписания) не ошибиться после
+полуночи!</p>
+<p>- время заверения копии (помимо времени подписания)</p>
+<p>- печать УИК.</p></td>
+</tr>
+<tr>
+<td style="text-align: center;"><p><strong>ОБРАЗЕЦ ЖАЛОБЫ</strong></p>
+<p>В «γ» (УИК №..., ТИК...) от (статус, ФИО)</p>
+<p>В нарушение «β» (указать нарушенную норму закона) (описать действия
+или бездействие УИК или отдельных лиц), хотя закон требует «α».</p>
+<p>В соответствии с п. 4 ст. 20 федерального закона от 12.06.2002 №
+67-ФЗ прошу комиссию рассмотреть данное заявление немедленно, принять
+мотивированное решение по существу вопроса, выдать мне заверенную копию
+решения и приложить обращение и решение к протоколу об итогах
+голосования.</p>
+<p>(подпись, дата, время)</p></td>
+<td rowspan="2" style="text-align: center;"><p><strong>Акт о перемещении
+бюллетеней̆ в сейф-пакет</strong></p>
+<p>Отдельно по каждому переносному ящику, общий̆ для всех стационарных
+урн.</p>
+<p>Один акт на все сейф-пакеты, если бюллетени не поместились в один
+пакет (в акте перечисляются заводские серийные номера всех
+сейф-пакетов).</p>
+<p>Число избирателей определяется по заявлениям при надомном
+голосовании, по отметкам в списке избирателей для других способов
+голосования.</p>
+<p>Указывается число избирателей по бюллетеням каждого вида, если
+некоторые виды бюллетеней выдавались не всем избирателям.</p>
+<p>На копии делается заверительная надпись аналогично копии
+протокола.</p></td>
+</tr>
+<tr>
+<td style="text-align: left;"><p>Жалоба подается в двух экземплярах. На
+втором экземпляре избирательная комиссия должна поставить отметку о
+принятии с подписью, указанием должности в комиссии и ФИО лица,
+принявшего жалобу, а также даты и времени получения.</p>
+<p>«γ»- Жалоба в вышестоящую комиссию подается, если участковая комиссия
+не принимает жалобу, уклоняется от ее рассмотрения или приняла
+незаконное решение.</p></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center;"><p><strong>СТАТУС
+НАБЛЮДАТЕЛЯ (статья 30 ФЗ, пункты 9 и 10)</strong></p>
+<p>9. Наблюдатели вправе:</p>
+<p>а) знакомиться со списками избирателей, в том числе составленными в
+электронном виде, реестром заявлений (обращений) о голосовании вне
+помещения для голосования;</p>
+<p>б) находиться в помещении для голосования соответствующего
+избирательного участка в день голосования, а также в дни досрочного
+голосования в любое время в период с момента начала работы участковой
+комиссии в день голосования, и до получения сообщения о принятии
+вышестоящей комиссией протокола об итогах голосования, а равно при
+повторном подсчете голосов избирателей;</p>
+<p>б.1) наблюдать за выдачей бюллетеней избирателям;</p>
+<p>в) присутствовать при голосовании избирателей, вне помещения для
+голосования;</p>
+<p>г) наблюдать за подсчетом числа граждан, внесенных в списки
+избирателей, бюллетеней, выданных избирателям, погашенных бюллетеней;
+наблюдать за подсчетом голосов избирателей на избирательном участке, на
+расстоянии и в условиях, обеспечивающих им обозримость содержащихся в
+бюллетенях отметок избирателей; знакомиться с любым заполненным или
+незаполненным бюллетенем при подсчете голосов избирателей; наблюдать за
+составлением комиссией протокола об итогах голосования и иных документов
+в период с момента начала работы участковой комиссии в день голосования,
+а также в дни досрочного голосования и до получения сообщения о принятии
+вышестоящей комиссией протокола об итогах голосования, а равно при
+повторном подсчете голосов избирателей;</p>
+<p>д) обращаться к председателю участковой комиссии, а в случае его
+отсутствия к лицу, его замещающему, с предложениями и замечаниями по
+вопросам организации голосования;</p>
+<p>е) знакомиться с протоколами соответствующей комиссии, нижестоящих
+комиссий об итогах голосования, о результатах выборов, и приложенными к
+ним документами, получать от соответствующей комиссии заверенные копии
+указанных протоколов;</p>
+<p>ж) носить нагрудный знак с обозначением своего статуса и указанием
+своих фамилии, имени и отчества, а также фамилии, имени и отчества
+зарегистрированного кандидата или наименования избирательного
+объединения, общественного объединения, субъекта общественного контроля,
+направивших наблюдателя в комиссию. Законом может быть предусмотрено,
+что форма нагрудного знака устанавливается комиссией, организующей
+выборы;</p>
+<p>з) обжаловать в порядке, установленном статьей 75 Федерального закона
+№67-ФЗ, действия (бездействие) комиссии в вышестоящую комиссию,
+избирательную комиссию субъекта Российской Федерации, Центральную
+избирательную комиссию Российской Федерации или в суд;</p>
+<p>и) присутствовать при повторном подсчете голосов избирателей в
+соответствующих комиссиях;</p>
+<p>к) производить в помещении для голосования (с того места, которое
+определено председателем участковой комиссии) фото- и (или) видеосъемку,
+предварительно уведомив об этом председателя, заместителя председателя
+или секретаря участковой комиссии.</p>
+<p>10. Наблюдатель не вправе:</p>
+<p>а) выдавать избирателям бюллетени;</p>
+<p>б) расписываться за избирателя, в том числе по его просьбе, в
+получении бюллетеней;</p>
+<p>в) заполнять за избирателя, в том числе по его просьбе,
+бюллетени;</p>
+<p>г) предпринимать действия, нарушающие тайну голосования;</p>
+<p>д) принимать непосредственное участие в проводимом членами комиссии с
+правом решающего голоса подсчете бюллетеней;</p>
+<p>е) совершать действия, препятствующие работе комиссии;</p>
+<p>ж) проводить агитацию среди избирателей;</p>
+<p>з) участвовать в принятии решений соответствующей комиссией.</p></td>
+</tr>
+</tbody>
+</table>
+  <script>
+(() => {
+  'use strict';
+  const sourceTables = document.querySelectorAll('body > table');
+  const first = sourceTables[0];
+  const rows = [...first.querySelectorAll('tbody tr')];
+  const records = [];
+  let sectionNo = 0;
+  let eventNo = 0;
+  let section = {id:'T1-S00', title:'До начала таблицы'};
+  const clean = value => value.replace(/\s+/g, ' ').trim();
+  const text = node => clean(node ? node.textContent : '');
+  const splitRefs = value => value ? value.split(/;(?=\s|$)/).map(clean).filter(Boolean) : [];
+  const periodFrom = raw => {
+    const values = [];
+    if (/пятниц/i.test(raw)) values.push('пятница');
+    if (/суббот/i.test(raw)) values.push('суббота');
+    if (/воскресен/i.test(raw)) values.push('воскресенье');
+    if (/непосредственно перед 08:00|8 часов утра|08:00/i.test(raw)) values.push('08:00');
+    const times = raw.match(/\b(?:10:00|12:00|14:00|15:00|18:00|19:00|20:00|20:15)\b/g) || [];
+    values.push(...times);
+    return [...new Set(values)];
+  };
+  const placeFrom = raw => {
+    const values = [];
+    if (/участ|помещени[ея] для голосован/i.test(raw)) values.push('участок');
+    if (/дом[ауе]|вне помещения|выездн/i.test(raw)) values.push('вне помещения');
+    if (/ТЭГ|терминал/i.test(raw)) values.push('ТЭГ');
+    if (/ТИК/i.test(raw)) values.push('ТИК');
+    if (/сейф-пакет|сейф/i.test(raw)) values.push('сейф-пакет/сейф');
+    if (/протокол|УФП/i.test(raw)) values.push('протокол/УФП');
+    return [...new Set(values)];
+  };
+  const priorityFrom = raw => /жалоб|незакон|поврежден|лишн|отказ|сбой|нарушен/i.test(raw) ? 'высокий' : /запишите|сфотограф|требуйте|проверьте|ведите съемку/i.test(raw) ? 'средний' : 'обычный';
+  const priorityRank = {высокий:0, средний:1, обычный:2};
+  const federalLaw67Title = 'Федеральный закон от 12.06.2002 № 67-ФЗ «Об основных гарантиях избирательных прав и права на участие в референдуме граждан Российской Федерации»';
+  const federalLaw67Url = 'https://base.garant.ru/184566/';
+  const federalLaw67ArticleUrls = {
+    '1': '1cafb24d049dcd1e7707a22d98e9858f',
+    '2': '741609f9002bd54a24e5c49cb5af953b',
+    '3': '5ac206a89ea76855804609cd950fcaf7',
+    '4': '1b93c134b90c6071b4dc3f495464b753',
+    '5': '5633a92d35b966c2ba2f1e859e7bdd69',
+    '6': '8b7b3c1c76e91f88d33c08b3736aa67a',
+    '7': 'e88847e78ccd9fdb54482c7fa15982bf',
+    '8': '31de5683116b8d79b08fa2d768e33df6',
+    '9': '493aff9450b0b89b29b367693300b74a',
+    '10': '3d3a9e2eb4f30c73ea6671464e2a54b5',
+    '10.1': 'fc1be7af257dca0e2da60f6f1d18f9a1',
+    '11': '9d78f2e21a0e8d6e5a75ac4e4a939832',
+    '11.1': '826c5a47782fe0717a0695a25d5a1621',
+    '12': 'b6e02e45ca70d110df0019b9fe339c70',
+    '13': '4d6cc5b8235f826b2c67847b967f8695',
+    '14': '888134b28b1397ffae87a0ab1e117954',
+    '15': '36bfb7176e3e8bfebe718035887e4efc',
+    '16': '7a58987b486424ad79b62aa427dab1df',
+    '17': 'a7b26eafd8fd23d18ca4410ac5359e0e',
+    '18': 'a573badcfa856325a7f6c5597efaaedf',
+    '19': '95ef042b11da42ac166eeedeb998f688',
+    '20': '9e3305d0d08ff111955ebd93afd10878',
+    '21': 'b5dae26bebf2908c0e8dd3b8a66868fe',
+    '22': '94f5bf092e8d98af576ee351987de4f0',
+    '23': '74d7c78a3a1e33cef2750a2b7b35d2ed',
+    '24': '7b14d2c2dfc862f67bd2c3471bf87b3f',
+    '25': '53925f69af584b25346d0c0b3ee74ea1',
+    '26': '3ac805f6d87af32d44de92b042d51285',
+    '27': '3e01a7fa47957b2f627d012fe630f5c6',
+    '28': '53070549816cbd8f006da724de818c2e',
+    '28.1': '1f5c036b9454eaac9983c881e297cc3e',
+    '29': '7a69fb6632f5876efd3160114758a106',
+    '30': '7d6bbe1829627ce93319dc72963759a2',
+    '31': '802464714d4d10a819efb803557e9689',
+    '32': 'b3975f01ce8b0eb0c9b11526d9b4c7bf',
+    '33': '79232c367b45a2128d6a8d7ae0217075',
+    '34': 'caed1f338455c425853a4f32b00aa739',
+    '35': '5cb260c13bb77991855d9c76f8d1d4c8',
+    '35.1': '77ab8a79aa8be11555fb4b82d330dc51',
+    '36': 'd83dadc1d9eb82a4be83885f2efeee52',
+    '37': '9db18ed28bd6c0256461e303941d7e7a',
+    '38': '31c8140a2e1dc585c5111b6d2281821d',
+    '39': '478b4d0990e492511bea1e634e90a7b7',
+    '40': 'f9b0119a4fce7561a213cdc9af189098',
+    '41': '6f6a564ac5dc1fa713a326239c5c2f5d',
+    '42': '43c951d8803e4d3c0a4d98e76e8fcc55',
+    '43': '972fd564a6e3598bb31ccdc27b33ca68',
+    '44': '0add9c67393c4454d39a78904e0baac0',
+    '45': 'c7f0164139c159e5c4e7786790ae469d',
+    '46': '363aa18e6c32ff15fa5ec3b09cbefbf6',
+    '47': '0eef7b353fcd1e431bd36a533e32c19f',
+    '48': '92409a09f2fd78349ae7c7f2064bf25a',
+    '49': '07bdd21ab547687f72d1294bbd35ef3e',
+    '50': '52578c3309a272ee8ad686a4e87a118f',
+    '51': 'afa6a9ba04392e1cfe1c09aeb8a7e5f4',
+    '52': '5f8ae450aa10a78f0b0005a38b5989df',
+    '53': '9d6506b7354f91b33cd5839dca900db1',
+    '54': 'ff9fa08d419e8a3992b637ce02f95752',
+    '55': '0dacf58504c4847f1a1635db72279562',
+    '56': '2b6ebde936316453fb0f8db9c6ad7e2c',
+    '57': '089b4a5b96814c6974a9dc40194feaf2',
+    '58': '5f5aeb9844a3cec55dca4cf7554741a3',
+    '59': 'cfd6802f4ab1cd4e025322c20eb55836',
+    '60': '21a69d564a3ae054d908867940facd2e',
+    '61': '98c63fbcbeeb1362018330a88cb049e2',
+    '62': '7dc915bc75cffbb81484b76070f99d35',
+    '63': 'e4cb1d749a5d7ca9aa116ad348095073',
+    '63.1': 'b970ba1c6f954d265bb91a11eea43f21',
+    '64': '8e5cab37391b571c12c39a49736d35f9',
+    '64.1': '736ec48d61e0fd732306d775a6fda5ce',
+    '65': 'd4d1c020f5ac1ff694cd399cf1a90fc2',
+    '66': 'ad65a43c549a45d32360a363f5d4fa2c',
+    '67': 'c7672a3a2e519cd7f61a089671f759ae',
+    '68': '6cf34816dc52ae8870d524b8ed6399a5',
+    '69': 'e3b4936b9aad06dabb2a6618c97197da',
+    '70': '2c2bb927757944432208533b3ff87c36',
+    '71': '4fc81bd708668197a291fdc62307ca74',
+    '72': 'ca02e6ed6dbc88322fa399901f87b351',
+    '73': '35d2444eaabb431d4fc58eeb6ffc6119',
+    '74': 'a293b837c00eadeaea9c90c1f7b4f466',
+    '75': '7381fc65826091bca567a1005ba6bc41',
+    '76': 'ef67419dbaa01e4d228acc1d3cf42314',
+    '77': '06f5cbc2c7200d022e7e6140a05065d6',
+    '78': '752e622936b6929dee42bef0dcb0905a',
+    '79': '152c9e5d938eda344f0ddcab4fe40a55',
+    '80': '134df926347d321d8dc82c9551519f33',
+    '81': '646cd7e8cf19279b078cdec8fcd89ce4',
+    '81.1': '134d6ac23ca632e287fdd1859d2ec0be',
+    '82': 'c0750873211da98ff5f0e973a879be11',
+    '83': '9d89ba6e3e633b0dac1a8caf5a5a81d3',
+    '84': 'a11131f5cf78675abbc4ce3b94cba3f5',
+    '85': '4f1044cafcee58fdbc43ae8a2051b019'
+  };
+  const triTitle = 'Постановление ЦИК России от 08.06.2022 № 86/718-8 «Об особенностях голосования, установления итогов голосования в случае принятия решения о проведении голосования на выборах, референдумах в течение нескольких дней подряд»';
+  const triUrl = 'https://rulaws.ru/acts/Postanovlenie-TSIK-Rossii-ot-08.06.2022-N-86_718-8/';
+  const mgikTitle = 'Решение Московской городской избирательной комиссии от 14.08.2026 № 145/3 «Об электронном голосовании на территории города Москвы на выборах, назначенных на 20 сентября 2026 года» и утверждённый им Порядок (приложение № 2)';
+  const mgikUrl = '';
+  const esiTitle = 'Решение Московской городской избирательной комиссии от 27.08.2026 № 147/4 и утверждённое им Положение об особенностях составления, уточнения и использования списков избирателей в электронном виде (приложение № 2)';
+  const esiUrl = '';
+  const referenceTitles = {ТРИ:triTitle, МГИК:mgikTitle, ЭСИ:esiTitle};
+  const referenceUrls = {ФЗ:federalLaw67Url, ТРИ:triUrl, МГИК:mgikUrl, ЭСИ:esiUrl};
+  const splitFzRef = ref => {
+    const parts = ref.split(/,\s*(?=(?:п\s*\/\s*п\.?|п\.?|ст\.?|стать(?:я|и|ёй|ей)?)(?:\s|$))/i).map(clean).filter(Boolean);
+    if (parts.length < 2) return [ref];
+    const prefix = parts[0].match(/^ФЗ\s*:/i)?.[0] || '';
+    return parts.map((part, index) => clean(index === 0 || !prefix ? part : prefix + ' ' + part));
+  };
+  const fzBlockAnchor = (articleNum, paragraphRef) => {
+    const parts = String(paragraphRef).split('.');
+    const main = parts[0].padStart(2, '0');
+    const sub = parts[1] ? parts[1].padStart(2, '0') : '';
+    return 'block_' + articleNum + main + sub;
+  };
+  const refsFor = refs => refs.flatMap(ref => {
+    const isFz = /^ФЗ\s*:/i.test(ref) || /67-ФЗ|федерального закона/i.test(ref);
+    const fzRefs = isFz ? splitFzRef(ref) : [ref];
+    return fzRefs.map(fzRef => {
+      const title = isFz ? federalLaw67Title : fzRef;
+      const sourceKey = Object.keys(referenceTitles).find(key => new RegExp('^' + key + ':', 'u').test(fzRef));
+      const articleMatch = isFz && /(?:ст\.?|стать(?:я|и|ёй|ей)?)\s*(\d+(?:\.\d+)?)/i.exec(fzRef);
+      const articleNum = articleMatch ? articleMatch[1] : null;
+      const articleHash = articleNum && federalLaw67ArticleUrls[articleNum];
+      const isSimplePara = isFz && articleNum && !/[,−\-—]/.test(fzRef) && !/п\s*\/\s*п/i.test(fzRef);
+      const paraMatch = isSimplePara && /п\.?\s+(\d+(?:\.\d+)?)/i.exec(fzRef);
+      const paraNum = paraMatch ? paraMatch[1] : null;
+      const url = isFz ? (articleHash ? 'https://base.garant.ru/184566/' + articleHash + '/' + (paraNum ? '#' + fzBlockAnchor(articleNum, paraNum) : '') : federalLaw67Url) : (sourceKey ? referenceUrls[sourceKey] : '');
+      return {label: fzRef, title: sourceKey ? referenceTitles[sourceKey] : title, url, external: !isFz, direct: isFz};
+    });
+  });
+  const relationsFor = raw => {
+    const links = [];
+    if (/пломб|опечат|сейф-пакет|вскрыт|бюллетен/i.test(raw)) links.push('пломба → сейф-пакет → акт → вскрытие → количество');
+    if (/избирател|списке|ЭСИ|электронн|бюллетен/i.test(raw)) links.push('избиратель → способ голосования → отметка ЭСИ → исключение → протокол');
+    if (/заявлен|реестр|выписк|выездн|групп|надом/i.test(raw)) links.push('заявление на дому → реестр → выписка → группа → бюллетени → акт');
+    if (/протокол|копи|ТИК|отправлен/i.test(raw)) links.push('протокол → копия → реестр → отправка → ТИК');
+    if (/жалоб|решени|приложить обращение/i.test(raw)) links.push('жалоба → принятие → решение → приложение к протоколу');
+    return [...new Set(links)];
+  };
+  rows.forEach((row, rowIndex) => {
+    const cells = [...row.children];
+    const raw = text(cells[0]);
+    const legal = text(cells[2]);
+    const heading = cells[0]?.querySelector('strong');
+    const isSection = !!heading && text(heading) === raw && !legal && cells.slice(1).every(cell => !text(cell));
+    if (isSection) {
+      sectionNo += 1;
+      section = {id:'T1-S' + String(sectionNo).padStart(2, '0'), title:raw};
+      return;
+    }
+    eventNo += 1;
+    const refs = splitRefs(legal);
+    const explicitPeriod = periodFrom(raw);
+    const period = explicitPeriod;
+    const place = placeFrom(raw);
+    const action = raw.match(/(?:^|\.\s)([^.]*?(?:запишите|проверьте|получите|сфотограф|требуйте|фиксируйте|сделайте|ведите съемку|отправьте|предупредите)[^.]*\.?)/i)?.[1] || '';
+    const urgency = priorityFrom(raw) + ' (аналитическая классификация)';
+    const attention = /съемк|фото|копирован.*персональ|запрет/i.test(raw) ? 'Разрешенная фиксация и запрет ПДН разделены: ' + (raw.match(/[^.]*съемк[^.]*\.?/i)?.[0] || 'см. исходный фрагмент') : '';
+    records.push({id:'T1-E' + String(eventNo).padStart(3, '0'), sectionId:section.id, sectionTitle:section.title, kind:'event', sourceOrder:eventNo, period, place, trigger:period, action, check:raw, attention, participants:/наблюдател/i.test(raw) ? ['наблюдатель'] : [], legalRefs:refsFor(refs), urgency, rawText:raw, sourceLines:['первая HTML-таблица, строка ' + (rowIndex + 1)], links:relationsFor(raw), tags:[...new Set([...period,...place,...(raw.match(/\b(?:ТЭГ|ЭСИ|УИК|ТИК|УФП|ПРГ)\b/g) || [])])].filter(Boolean), sourceFields:{rawText:raw, legalRefs:refs}, derivedFields:{period, place, action, attention, priority:urgency, relations:relationsFor(raw)}});
+  });
+  const secondRows = [...sourceTables[1].querySelectorAll('tbody tr')];
+  const occupied = [];
+  const cellsWithPositions = [];
+  secondRows.forEach((row, rowIndex) => {
+    occupied[rowIndex] ||= [];
+    let column = 0;
+    [...row.children].forEach(cell => {
+      while (occupied[rowIndex][column]) column += 1;
+      const rowSpan = Number(cell.getAttribute('rowspan') || 1);
+      const colSpan = Number(cell.getAttribute('colspan') || 1);
+      for (let r = rowIndex; r < rowIndex + rowSpan; r += 1) {
+        occupied[r] ||= [];
+        for (let c = column; c < column + colSpan; c += 1) occupied[r][c] = true;
+      }
+      cellsWithPositions.push({cell, row:rowIndex, column, rowSpan, colSpan});
+      column += colSpan;
+    });
+  });
+  const blockGroups = [
+    cellsWithPositions.filter(item => item.row === 0 && item.column === 0),
+    cellsWithPositions.filter(item => item.row === 0 && item.column === 1),
+    cellsWithPositions.filter(item => item.column === 0 && (item.row === 1 || item.row === 2)),
+    cellsWithPositions.filter(item => item.row === 1 && item.column === 1),
+    cellsWithPositions.filter(item => item.row === 3)
+  ].filter(group => group.length);
+  blockGroups.forEach((group, index) => {
+    const raw = group.map(item => text(item.cell)).filter(Boolean).join('\n\n');
+    const title = raw.split(/\n|(?=Проверить|ОБРАЗЕЦ|Акт о|СТАТУС)/)[0].slice(0, 100);
+    const urgency = 'обычный (аналитическая классификация)';
+    records.push({id:'T2-B' + String(index + 1).padStart(2, '0'), sectionId:'T2', sectionTitle:'Логические блоки второй таблицы', kind:'block', sourceOrder:200 + index, period:[], place:['документ'], trigger:[], action:title || '', check:raw, attention:raw.includes('персональ') ? 'Фото/копирование персональных данных запрещено там, где это указано в исходнике.' : '', participants:['наблюдатель'], legalRefs:refsFor(raw.match(/(?:статья|ст\.|ФЗ)[^\n.]*?(?:\)|ФЗ|$)/gi) || []), urgency, rawText:raw, sourceLines:['вторая HTML-таблица, логическая группа ' + (index + 1)], links:relationsFor(raw), tags:[title].filter(Boolean), sourceFields:{rawText:raw}, derivedFields:{period:[], place:['документ'], action:title || '', attention:'', priority:urgency, relations:relationsFor(raw)}});
+  });
+  const glossarySource = [...document.querySelectorAll('body > p')].slice(1, 10).map(node => text(node)).filter(Boolean).join(' ');
+  const glossaryNames = ['ТРИ','ФЗ','ПРГ','ИКСРФ','ТИК','УИК','УФП','ТЭГ','МГИК','ЭСИ'];
+  const glossary = glossaryNames.map((name, index) => {
+    const next = glossaryNames[index + 1];
+    const match = glossarySource.match(new RegExp(name + ':\\s*([\\s\\S]*?)(?=' + (next ? next + ':' : '$') + ')'));
+    return match ? name + ': ' + clean(match[1]) : '';
+  });
+  const events = records.filter(record => record.kind === 'event');
+  const blocks = records.filter(record => record.kind === 'block');
+  const splitSentences = raw => clean(raw).split(/(?<=[.!?;])\s+|(?=Проверьте\b|Запишите\b|Зафиксируйте\b|Убедитесь\b|Сфотографируйте\b|Требуйте\b|Получите\b|Попросите\b|Предупредите\b|Отправьте\b|Сверьте\b|Контролируйте\b|Пересчитайте\b|Упакуйте\b|Опечатайте\b)/i).map(clean).filter(Boolean);
+  const actionWords = /(провер|убед|зафикс|фиксир|сфотограф|требу|получ|попрос|предупред|отправ|переда|свер|сопостав|осмотр|контрол|наблюд|веди|установ|состав|заполн|пересчит|упаков|опечат|подпис|вскры|смеш|разлож|отмет|запиш)/i;
+  const recordOnly = /\b(запишите\s+(число|время|количество)|не более|не менее|не позднее|не ранее|в течение\s+\d|\d+\s*(час|минут|процент|штук))\b/i;
+  const buildSteps = raw => splitSentences(raw).filter(sentence => actionWords.test(sentence) && !recordOnly.test(sentence)).map((sentence, index) => ({index, text:sentence}));
+  events.forEach(item => { item.steps = buildSteps(item.rawText); item.checks = item.steps; item.normNotes = splitSentences(item.rawText).filter(sentence => !item.steps.some(step => step.text === sentence) && /не более|не менее|не позднее|не ранее|в течение|запишите|укажите|количество|время/i.test(sentence)); });
+  const dayInfo = {пятница:{key:'fri',label:'ПТ'},суббота:{key:'sat',label:'СБ'},воскресенье:{key:'sun',label:'ВС'}};
+   const groupDay = {G02:'пятница',G03:'суббота',G04:'воскресенье',G28:'пятница',G29:'воскресенье',G37:'воскресенье'};
+   const unscheduledIds = new Set(['E030','E035','E036','E037','E038','E039','E040','E042','E043','E045','E057','E063','E068','E077','E080','E081','E082','E086','E088','E089','E091','E092','E094','E095','E123','E126','E127','E130','E132','E137','E150','E151','E167','E168','E041','E044','E056','E085']);
+   const referenceIds = new Set(['E069','E070','E071','E072','E073','E074','E075','E078','E079','E084','E090','E096','E103','E105','E115']);
+   const triggerPatterns = [/ongoing|постоянно|в течение голосования/i,'ongoing-check',/кажд(ый|ого)|на каждом/i,'per-voter',/если.*списк|отсутств.*списк/i,'if-missing-from-list',/не распозн|не узна|идентификац.*не/i,'if-recognition-fails',/помощ|помочь|содейств/i,'if-assistance-needed',/испорчен/i,'spoiled-ballot',/отказ|жалоб/i,'refusal-complaint',/по просьб|по требован/i,'voter-request',/сбой|неисправ/i,'terminal-failure',/контролируем|тайн.*наруш/i,'controlled-voting',/несоответств|пересчит|пересчет.*лиш/i,'if-package-mismatch/overcount',/нарушен/i,'procedure-violation',/соотношен.*контрол|контрольн.*соотнош/i,'if-control-ratios-fail'];
+   const sourceTrigger = raw => { for (let index = 0; index < triggerPatterns.length; index += 2) if (triggerPatterns[index].test(raw)) return {label:triggerPatterns[index + 1],reason:raw.match(/[^.!?;]*(?:ongoing|постоянно|кажд|если|не распозн|помощ|испорчен|отказ|жалоб|просьб|сбой|контролируем|несоответств|нарушен|соотношен)[^.!?;]*[.!?]?/i)?.[0]?.trim() || raw}; return {label:'scheduled-check',reason:''}; };
+   const timeLabels = {'08:00':'08:00','10:00':'10:00','12:00':'12:00','14:00':'14:00','15:00':'15:00','18:00':'18:00','19:00':'19:00','20:00':'20:00','20:15':'20:15'};
+   const momentPatterns = [
+     [/не позднее 8:00/ig,'deadline-08','Не позднее 8:00','deadline'],[/сразу после прихода членов комиссии/ig,'after-arrival','Сразу после прихода членов комиссии','relative'],[/непосредственно перед 08:00/ig,'before-08','Непосредственно перед 08:00','relative'],[/после опечатывания/ig,'after-seal','После опечатывания','relative'],[/до воскресенья/ig,'before-sunday','До воскресенья','deadline'],[/не позднее 08\.09\.2026/ig,'deadline-2026-09-08','Не позднее 08.09.2026','date'],[/не позднее 18:00 17\.09\.2026/ig,'deadline-2026-09-17-18','Не позднее 18:00 17.09.2026','deadline'],[/после подписания/ig,'after-signing','После подписания','relative'],[/до начала голосования/ig,'before-vote','До начала голосования','relative'],[/не позднее 14:00 17 сентября 2026 года/ig,'deadline-2026-09-17-14','Не позднее 14:00 17 сентября 2026 года','deadline'],[/до 14:00 воскресенья/ig,'wrong-sunday-14','Ошибочно: до 14:00 воскресенья','deadline'],[/до принятия решения/ig,'before-decision','До принятия решения','relative'],[/после оформления заявления/ig,'after-application','После оформления заявления','relative'],[/перед выездом/ig,'before-trip','Перед выездом','relative'],[/не позднее чем за 30 минут до выезда/ig,'before-trip-30','Не позднее чем за 30 минут до выезда','deadline'],[/в пятницу и субботу/ig,'fri-sat-window','В пятницу и субботу','window'],[/немедленно после возвращения/ig,'after-return','Немедленно после возвращения','relative'],[/до первого дня голосования/ig,'before-first-vote','До первого дня голосования','deadline'],[/не позднее 19\.06\.2026/ig,'deadline-2026-06-19','Не позднее 19.06.2026','date'],[/до того, как приложить паспорт к терминалу/ig,'before-passport-terminal','До того, как приложить паспорт к терминалу','relative'],[/до подтверждения перехода/ig,'before-transition','До подтверждения перехода','relative'],[/после идентификации/ig,'after-identification','После идентификации','relative'],[/через 15 минут/ig,'after-15','Через 15 минут','relative'],[/после этого/ig,'after-that','После этого','relative'],[/в течение 15 минут/ig,'during-15','В течение 15 минут','window'],[/при бездействии 1,5 мин/ig,'idle-1-5','При бездействии 1,5 мин','deadline'],[/еще 30 сек/ig,'plus-30-sec','Еще 30 сек','relative'],[/20 сентября/ig,'date-2026-09-20','20 сентября','date'],[/не позднее 15:00/ig,'deadline-15','Не позднее 15:00','deadline'],[/до 20:15/ig,'before-20-15','До 20:15','deadline'],[/не позднее 19:00/ig,'deadline-19','Не позднее 19:00','deadline'],[/после расформирования выписки/ig,'after-extract-dissolution','После расформирования выписки','relative'],[/сразу после завершения времени голосования/ig,'after-voting-time','Сразу после завершения времени голосования','relative'],[/сразу после окончания голосования/ig,'after-voting','Сразу после окончания голосования','relative'],[/до проверки контрольных соотношений/ig,'before-control-ratios','До проверки контрольных соотношений','deadline'],[/после окончания подсчета голосов/ig,'after-count','После окончания подсчета голосов','relative'],[/немедленно внесены/ig,'immediately-entered','Немедленно внесены','relative']
+   ];
+    const eventTypeLabels = {opening:'Открытие участка',bulletin:'Бюллетень','home-voting':'Голосование на дому',teg:'ТЭГ',counting:'Подсчет',protocol:'Протокол/УФП',complaint:'Жалоба/нарушение',check:'Проверка/фиксация'};
+      const topicLabels = {bulletin:'Бюллетень',counting:'Подсчёт',protocol:'Протокол/УФП',safepack:'сейф-пакет/сейф',station:'участок'};
+      const topicSubtopics = {bulletin:[['bulletin-paper','Бумажный бюллетень'],['bulletin-electronic','Электронный бюллетень'],['bulletin-cancellation','Гашение/погашение бюллетеней']],counting:[['counting-mobile','Подсчёт выездных ящиков'],['counting-stationary','Подсчёт стационарных ящиков'],['counting-safepack','Подсчёт сейф-пакетов'],['counting-sorting','Сортировка и распределение'],['counting-totals','Установление итогов голосования']],protocol:[['protocol-composition','Составление протокола УИК'],['protocol-ufp','Увеличенная форма протокола (УФП)'],['protocol-signing','Подписание протокола'],['protocol-transfer','Передача протокола в ТИК']],safepack:[['safepack-prep','Подготовка/заполнение сейф-пакета'],['safepack-verification','Проверка сейф-пакета на УИК'],['safepack-handling','Вскрытие/извлечение из сейф-пакета']],station:[['station-prep','Подготовка помещения участка'],['station-opening','Открытие участка'],['station-closing','Закрытие участка']]};
+      const topicSubLabels = Object.fromEntries(Object.values(topicSubtopics).flat());
+      const topicSubFor = (root, groupId, raw) => {
+        if (root === 'bulletin') return /^(G14|G15|G20|G21|G22|G23|G24|G25|G26|G27|G30)$/.test(groupId) ? 'bulletin-electronic' : /^(G10|G28|G31)$/.test(groupId) || /погаш|гашен|испорчен/i.test(raw) ? 'bulletin-cancellation' : 'bulletin-paper';
+        if (root === 'counting') return groupId === 'G32' ? 'counting-mobile' : groupId === 'G33' ? 'counting-safepack' : groupId === 'G34' ? 'counting-sorting' : groupId === 'G35' || groupId === 'G36' || groupId === 'G37' || groupId === 'G30' ? 'counting-totals' : 'counting-stationary';
+        if (root === 'protocol') return /УФП/i.test(raw) ? 'protocol-ufp' : groupId === 'G37' || /подписан/i.test(raw) ? 'protocol-signing' : /переда|ТИК/i.test(raw) || /^(G38|G39)$/.test(groupId) ? 'protocol-transfer' : 'protocol-composition';
+        if (root === 'safepack') return groupId === 'G32' || /вскрыт|извлеч/i.test(raw) ? 'safepack-handling' : groupId === 'G33' || /проверк/i.test(raw) ? 'safepack-verification' : 'safepack-prep';
+        if (root === 'station') return /^(G02|G03|G04)$/.test(groupId) || /открылся|открыти[ея]/i.test(raw) ? 'station-opening' : /^(G28|G31)$/.test(groupId) || /закрыти|завершен.*дн/i.test(raw) ? 'station-closing' : 'station-prep';
+        return '';
+      };
+    const topicPatterns = {bulletin:/бюллетен|контрольн(?:ые|ых) соотношен/i,counting:/подсч[её]т|вскрыт|смешив|сортиров|недействительн|итог(?:и|ов) голосован/i,protocol:/протокол|УФП|контрольн(?:ые|ых) соотношен/i,safepack:/сейф\s*[- ]?\s*пакет/i,station:/участ(?:ок|ка|ке|ку|ком)|помещен.*голосован|пломбирован|оборудован|готовност.*помещен/i};
+   const eventTypePatterns = {opening:/открыти|опечатыван|начал[аи] работу участков/i,bulletin:/бюллетен/i,'home-voting':/голосовани[ея] на дому|вне помещения|надомн|выездн/i,teg:/\bТЭГ\b|терминал электронного голосования|терминал/i,counting:/подсчет|смешив|сортиров|недействительн/i,protocol:/протокол|УФП|итогов.*голосован/i,complaint:/жалоб|нарушен|отказ|бездейств|ошибочн|сбой/i,check:/проверьте|проверить|зафикс|запишите|сфотограф|наблюд|контрол|убедитесь/i};
+   const momentDayGroup = key => {
+     if (['date-2026-06-19','date-2026-09-08','date-2026-09-17-14','date-2026-09-17-18'].includes(key)) return 'pre';
+     if (['date-09-20','date-09-20-before-15','date-09-20-before-19'].includes(key)) return 'sun';
+     if (key.endsWith('-fri')) return 'fri';
+     if (key.endsWith('-sat')) return 'sat';
+     if (key.endsWith('-sun')) return 'sun';
+     return null;
+   };
+   const enrichItem = (item, groupId) => {
+    const raw = item.rawText;
+     const days = Object.keys(dayInfo).filter(day => new RegExp(day.slice(0, -2), 'i').test(raw));
+     item.dayKey = days[0] ? dayInfo[days[0]].key : null;
+     item.dayLabel = days[0] ? dayInfo[days[0]].label : null;
+      const moments = []; let momentOrder = 0; const pushMoment = (key,label,kind,sourceText) => moments.push({key,label,kind,sourceText,dayGroup:momentDayGroup(key),order:momentOrder++});
+     momentPatterns.forEach(([pattern,key,label,kind]) => { pattern.lastIndex = 0; const match = pattern.exec(raw); if (match) pushMoment(key,label,kind,match[0]); });
+     const timeMatches = raw.match(/\b(?:08:00|8:00|10:00|12:00|14:00|15:00|18:00|19:00|20:00|20:15)\b/g) || []; if (/8 часов утра/i.test(raw)) timeMatches.push('8 часов утра');
+     timeMatches.forEach((value, index) => { const normalized = value === '8:00' || value === '8 часов утра' ? '08:00' : value; const isTurnout = normalized === '15:00' && /явк/i.test(raw); const context = isTurnout ? '-turnout' : normalized === '15:00' && /не позднее|срок/i.test(raw) ? '-deadline' : /17\.09\.2026|17 сентября 2026/i.test(raw) ? '-2026-09-17' : /воскресен/i.test(raw) ? '-sun' : ''; const sourceText = value; pushMoment(normalized + context + (timeMatches.length > 1 && !context ? '-' + index : ''),timeLabels[normalized] + (isTurnout ? ' · явка' : context === '-deadline' ? ' · дедлайн' : context === '-2026-09-17' ? ' · 17.09.2026' : context === '-sun' ? ' · воскресенье' : ''), 'clock', sourceText); });
+     const sourceId = item.id.slice(3);
+     const trigger = sourceTrigger(raw);
+     item.scheduleClass = referenceIds.has(sourceId) ? 'reference' : unscheduledIds.has(sourceId) ? 'unscheduled' : 'scheduled';
+     item.isUnscheduled = item.scheduleClass === 'unscheduled';
+     item.triggerLabel = item.scheduleClass === 'reference' ? 'reference' : trigger.label;
+      item.scheduleReason = item.scheduleClass === 'scheduled' ? '' : trigger.reason || raw;
+       const topicText = raw + ' ' + (item.sectionTitle || '') + ' ' + (item.action || '') + ' ' + (item.check || '');
+       item.topics = Object.entries(topicPatterns).filter(([, pattern]) => pattern.test(topicText)).map(([root]) => ({root, sub:topicSubFor(root, groupId, topicText)}));
+     item.groupContextDayKey = groupDay[groupId] ? dayInfo[groupDay[groupId]].key : null;
+      item.moments = moments.filter((moment,index,list) => list.findIndex(other => other.key === moment.key) === index).sort((a,b) => a.order - b.order);
+     item.dayKey = item.scheduleClass === 'scheduled' ? item.dayKey : null;
+     item.dayLabel = item.dayKey ? dayInfo[days[0]].label : null;
+      item.eventTypes = Object.entries(eventTypePatterns).filter(([,pattern]) => pattern.test(raw + ' ' + (item.sectionTitle || '') + ' ' + (groupId || ''))).map(([key]) => key); item.eventTypeLabels = item.eventTypes.map(key => eventTypeLabels[key]);
+      item.timeKey = item.moments[0]?.key || null; item.timeLabel = item.moments[0]?.label || null; item.timeOrder = item.moments[0]?.order ?? null; item.momentType = item.moments[0]?.kind || '';
+     return item;
+  };
+  const expected = {groups:39, events:169, blocks:5, glossary:10, sections:19};
+  const groupSpecs = [
+    ['G01',1,4,'Прибытие наблюдателя на участок'],['G02',5,11,'Открытие участка в пятницу'],['G03',12,17,'Открытие участка в субботу'],['G04',18,24,'Открытие участка в воскресенье'],['G05',25,26,'Помещение и доступность участка'],['G06',27,31,'Проверка списка и отметок ЭСИ'],['G07',32,35,'Реестр заявлений и видимость процедур'],['G08',36,41,'Идентификация и допуск избирателя'],['G09',42,45,'Выдача бумажного бюллетеня и помощь'],['G10',46,46,'Испорченный бюллетень'],['G11',47,54,'Подготовка выезда на дом'],['G12',55,59,'Голосование избирателя на дому'],['G13',60,64,'Возвращение бумажной выездной группы'],['G14',65,69,'Подготовка участка с ТЭГ'],['G15',70,76,'Право на бюллетени через ТЭГ'],['G16',77,77,'Контроль неправильной выдачи бюллетеня'],['G17',78,81,'Обычная выдача бумажного бюллетеня'],['G18',82,82,'Выбор бумажного способа при голосовании вне помещения'],['G19',83,84,'Наличие и учет бумажных бюллетеней'],['G20',85,88,'Обычная процедура стационарного ТЭГ'],['G21',89,91,'Необратимость доступа к электронному бюллетеню'],['G22',92,92,'Мониторинг явки через портал'],['G23',93,93,'Сбой стационарного терминала'],['G24',94,95,'Признаки контролируемого голосования и нарушения тайны'],['G25',96,100,'Выезд с переносным ТЭГ: допуск и доступ к бюллетеню'],['G26',101,102,'Возвращение переносного ТЭГ и завершение обработки'],['G27',103,105,'Учет электронных голосов при подведении итогов'],['G28',106,110,'Завершение дня в пятницу и субботу'],['G29',111,114,'Начало подсчета в воскресенье'],['G30',115,120,'Подведение итогов по электронному списку'],['G31',121,124,'Закрытие и хранение списка'],['G32',125,132,'Вскрытие переносных ящиков и сейф-пакетов'],['G33',133,137,'Проверка сейф-пакетов стационарных ящиков'],['G34',138,143,'Смешивание, сортировка и недействительные бюллетени'],['G35',144,150,'Подсчет действительных бюллетеней и контрольные соотношения'],['G36',151,154,'Упаковка бюллетеней после подсчета'],['G37',155,158,'Итоговое заседание УИК'],['G38',159,163,'Получение заверенной копии протокола'],['G39',164,169,'Отправка протокола и последующий доступ к копиям']
+  ];
+   groupSpecs[20][2] = 92; groupSpecs[21][1] = 93; groupSpecs[21][2] = 93; groupSpecs[22][1] = 94; groupSpecs[22][2] = 94; groupSpecs[23][1] = 95; groupSpecs[23][2] = 95;
+   events.forEach(item => enrichItem(item, groupSpecs.find(([number,from,to]) => item.sourceOrder >= from && item.sourceOrder <= to)?.[0] || ''));
+    const explicitDayGroups = {G02:['fri'],G03:['sat'],G04:['sun'],G28:['fri','sat'],G29:['sun'],G37:['sun']};
+    const momentDisplay = moment => {
+      const exact = {
+        'date-2026-06-19':['До выборов','—','19.06'],
+        'date-2026-09-08':['До выборов','—','08.09'],
+        'date-2026-09-17-14':['До выборов','14:00','17.09'],
+        'date-2026-09-17-18':['До выборов','18:00','17.09'],
+        'clock-08:00-fri':['ПТ','08:00','18.09'],
+        'clock-10:00-fri':['ПТ','10:00','18.09'],
+        'clock-12:00-fri':['ПТ','12:00','18.09'],
+        'clock-15:00-turnout-fri':['ПТ','15:00 · явка','18.09'],
+        'clock-18:00-fri':['ПТ','18:00','18.09'],
+        'clock-20:00-fri':['ПТ','20:00','18.09'],
+         'clock-08:00-sat':['СБ','08:00','19.09'],
+         'clock-10:00-sat':['СБ','10:00','19.09'],
+         'clock-12:00-sat':['СБ','12:00','19.09'],
+         'clock-15:00-turnout-sat':['СБ','15:00 · явка','19.09'],
+         'clock-18:00-sat':['СБ','18:00','19.09'],
+         'clock-20:00-sat':['СБ','20:00','19.09'],
+        'date-09-20':['ВС','—','20.09'],
+        'clock-08:00-sun':['ВС','08:00','20.09'],
+        'clock-14:00-sun':['ВС','14:00','20.09'],
+        'date-09-20-before-15':['ВС','до 15:00','20.09'],
+        'date-09-20-before-19':['ВС','до 19:00','20.09'],
+        'clock-deadline-20-15-sun':['ВС','до 20:15','20.09']
+      }[moment.key];
+      if (exact) return {dayLabel:exact[0], timeLabel:exact[1], dateLabel:exact[2]};
+      const day = moment.key.endsWith('-fri') ? ['ПТ','18.09'] : moment.key.endsWith('-sat') ? ['СБ','19.09'] : moment.key.endsWith('-sun') ? ['ВС','20.09'] : null;
+      const time = moment.label.match(/\b\d{1,2}:\d{2}\b/)?.[0];
+      const normalizedTime = time ? time.padStart(5, '0') : '—';
+      const beforeElection = moment.sort < Date.UTC(2026, 8, 18);
+      return {dayLabel:day?.[0] || (beforeElection ? 'До выборов' : '—'), timeLabel:moment.kind === 'deadline' && time ? 'до ' + normalizedTime : normalizedTime, dateLabel:day?.[1] || (beforeElection ? new Date(moment.sort).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit'}) : '—')};
+    };
+    const concreteMoments = item => {
+     const raw = item.rawText;
+      const moments = [];
+       const dayEpoch = {fri:Date.UTC(2026, 8, 18), sat:Date.UTC(2026, 8, 19), sun:Date.UTC(2026, 8, 20)};
+       const dayLabels = {fri:'ПТ', sat:'СБ', sun:'ВС'};
+       const textDay = /суббот|19 сентября|в субботу/i.test(raw) ? 'sat' : /воскресен|20 сентября|в воскресенье/i.test(raw) ? 'sun' : /пятниц|18 сентября|в пятницу/i.test(raw) ? 'fri' : null;
+        const clockDays = /Фиксируйте явку/i.test(raw) ? ['fri', 'sat'] : item.dayKeys?.length ? [...item.dayKeys] : textDay ? [textDay] : ['fri'];
+       const clockSort = (value, day) => dayEpoch[day] + Number(value.slice(0, 2)) * 60 * 60 * 1000 + Number(value.slice(3)) * 60 * 1000;
+       const clockLabel = (value, day, suffix = '') => timeLabels[value] + suffix + ' · ' + dayLabels[day];
+       const add = (key, label, sourceText, kind = 'concrete', sort = 0) => { if (!moments.some(moment => moment.key === key)) moments.push({key, label, kind, sourceText, dayGroup:momentDayGroup(key), sort, order:moments.length}); };
+       const addClock = (value, sourceText, suffix = '') => { const days = /(?:до|не позднее)\s*\d{1,2}:\d{2}/i.test(sourceText) ? ['sun'] : clockDays; days.forEach(day => add('clock-' + value + suffix + '-' + day, clockLabel(value, day, suffix === '-turnout' ? ' · явка' : ''), sourceText, 'clock', clockSort(value, day))); };
+      const isTerminalFailure = /сбой|неисправ/i.test(raw);
+      if (!isTerminalFailure && /\b(?:08:00|8:00)\b|8 часов утра/i.test(raw)) addClock('08:00', raw.match(/\b(?:08:00|8:00)\b|8 часов утра/i)[0]);
+      if (/08\.09\.2026/.test(raw)) add('date-2026-09-08', '08.09.2026', '08.09.2026', 'date', Date.UTC(2026, 8, 8));
+       if (/18:00 17\.09\.2026/.test(raw)) add('date-2026-09-17-18', '18:00 · 17.09.2026', '18:00 17.09.2026', 'deadline', Date.UTC(2026, 8, 17, 18));
+      if (/14:00 17 сентября 2026 года/.test(raw)) add('date-2026-09-17-14', '14:00 · 17.09.2026', '14:00 17 сентября 2026 года', 'deadline', Date.UTC(2026, 8, 17, 14));
+       if (/14:00 воскресенья/.test(raw) && !/14:00 17 сентября/.test(raw)) add('clock-14:00-sun', '14:00 · воскресенье', '14:00 воскресенья', 'clock', clockSort('14:00', 'sun'));
+      if (!isTerminalFailure) for (const value of ['10:00','12:00','15:00','18:00','20:00']) {
+       if (new RegExp('\\b' + value.replace(':','\\:') + '\\b').test(raw) && !(value === '18:00' && /18:00 17\.09\.2026/.test(raw)) && !(value === '15:00' && /20 сентября[^(]*15:00/.test(raw))) addClock(value, value, value === '15:00' && /явк/i.test(raw) ? '-turnout' : '');
+     }
+     if (/20 сентября/.test(raw)) {
+        add('date-09-20', '20 сентября', '20 сентября', 'date', Date.UTC(2026, 8, 20));
+         if (/(?:до|не позднее) 15:00/.test(raw)) add('date-09-20-before-15', '20 сентября · до 15:00', raw.match(/(?:до|не позднее) 15:00/)[0], 'deadline', Date.UTC(2026, 8, 20, 15));
+         if (/(?:до|не позднее) 19:00/.test(raw)) add('date-09-20-before-19', '20 сентября · до 19:00', raw.match(/(?:до|не позднее) 19:00/)[0], 'deadline', Date.UTC(2026, 8, 20, 19));
+      }
+        if (/(?:до|не позднее) 20:15/.test(raw)) add('clock-deadline-20-15-sun', 'до 20:15', raw.match(/(?:до|не позднее) 20:15/)[0], 'deadline', clockSort('20:15', 'sun'));
+        else if (/(?:до|не позднее) 19:00/.test(raw)) add('clock-deadline-19-sun', 'до 19:00', raw.match(/(?:до|не позднее) 19:00/)[0], 'deadline', clockSort('19:00', 'sun'));
+       if (/19\.06\.2026/.test(raw)) add('date-2026-06-19', '19.06.2026', '19.06.2026', 'date', Date.UTC(2026, 5, 19));
+     return moments;
+   };
+   events.forEach(item => {
+     const groupId = groupSpecs.find(([number,from,to]) => item.sourceOrder >= from && item.sourceOrder <= to)?.[0] || '';
+     const sourceId = item.id.slice(3);
+       const raw = item.rawText;
+        const explicitDays = /(?:до воскресенья|до 14:00 воскресенья)/i.test(raw) ? [] : /в пятницу и субботу|18[-–]19 сентября/i.test(raw) ? ['fri', 'sat'] : Object.keys(dayInfo).filter(day => new RegExp(day === 'пятница' ? 'пятниц\\w*' : day === 'суббота' ? 'суббот\\w*' : 'воскресен\\w*', 'i').test(raw)).map(day => dayInfo[day].key);
+        const calendarDays = /18[-–]19 сентября/i.test(raw) ? ['fri', 'sat'] : /18 сентября|18\\.09\\.2026/i.test(raw) ? ['fri'] : /19 сентября|19\\.09\\.2026/i.test(raw) ? ['sat'] : /20 сентября|20\\.09\\.2026/i.test(raw) ? ['sun'] : [];
+        const allVotingDays = /ежедневно|в течение всех дней голосования|кажд(?:ый|ого) из дней|в период голосования|в дни голосования|при проведении голосования/i.test(raw);
+        const groupDays = explicitDayGroups[groupId] || [];
+        const postVoteGroup = /^G(?:2[9]|3[0-9])$/.test(groupId);
+        const hasConcreteCalendarDate = /\d{1,2}\.\d{1,2}/.test(raw) || /\d{1,2}\s+(?:января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)/i.test(raw) || sourceId === 'E029';
+        const isPreElection = /(?:19\.06\.2026|08\.09\.2026|17\.09\.2026|19 июня 2026|8 сентября 2026|17 сентября 2026)/i.test(raw);
+        const proceduralDays = !referenceIds.has(sourceId) && !isPreElection && !calendarDays.length && !explicitDays.length && !groupDays.length ? (postVoteGroup ? ['sun'] : ['fri', 'sat', 'sun']) : [];
+        item.dayKeys = [...new Set([...(groupDays.length ? groupDays : allVotingDays ? ['fri', 'sat', 'sun'] : proceduralDays), ...explicitDays, ...calendarDays])];
+      if (['E097','E101'].includes(sourceId) && /20 сентября/.test(item.rawText)) item.dayKeys = ['sun'];
+       item.anytime = isPreElection || (!hasConcreteCalendarDate && !item.dayKeys.length);
+       item.dayKey = item.dayKeys[0] || '';
+      item.dayLabel = item.dayKey ? Object.values(dayInfo).find(day => day.key === item.dayKey)?.label || null : null;
+      item.groupContextDayKey = null;
+       item.moments = concreteMoments(item).sort((a, b) => a.sort - b.sort || a.order - b.order);
+       item.moments.forEach(moment => { Object.assign(moment, momentDisplay(moment)); moment.sourceIds = [item.id]; moment.sourceEvidence = moment.sourceText; });
+      item.timeKey = item.moments[0]?.key || null;
+     item.timeLabel = item.moments[0]?.label || null;
+     item.timeOrder = item.moments[0]?.order ?? null;
+     item.momentType = item.moments[0]?.kind || '';
+   });
+  const merge = values => [...new Set(values.flat().filter(Boolean))];
+  const groups = groupSpecs.map(([number, from, to, title], index) => {
+    const items = events.slice(from - 1, to);
+    const groupTypes = Object.entries(eventTypePatterns).filter(([,pattern]) => pattern.test(title)).map(([key]) => key);
+    items.forEach(item => { item.eventTypes = [...new Set([...item.eventTypes, ...groupTypes])]; item.eventTypeLabels = item.eventTypes.map(key => eventTypeLabels[key]); });
+    const firstItem = items[0];
+    const rawText = items.map(item => item.rawText).join('\n\n');
+    const period = merge(items.map(item => item.period));
+    const place = merge(items.map(item => item.place));
+    const tags = merge(items.map(item => item.tags));
+    const legalRefs = items.flatMap(item => item.legalRefs).filter((ref, refIndex, refs) => refs.findIndex(other => other.label === ref.label) === refIndex);
+    const links = merge(items.map(item => item.links));
+    const priority = items.some(item => item.urgency.startsWith('высокий')) ? 'высокий' : items.some(item => item.urgency.startsWith('средний')) ? 'средний' : 'обычный';
+    const action = merge(items.map(item => item.action)).join('; ');
+    const check = items.map(item => item.check).join(' | ');
+    const attention = merge(items.map(item => item.attention)).join(' | ');
+     const groupId = 'T1-G' + number.slice(1);
+      items.forEach(item => { item.groupTitle = title; });
+      return {id:groupId, groupId, title, sectionId:firstItem.sectionId, sectionTitle:firstItem.sectionTitle, kind:'event', sourceOrder:index + 1, sourceEventIds:items.map(item => item.id), items, groupContextDayKey:groupDay['G' + number.slice(1)] ? dayInfo[groupDay['G' + number.slice(1)]].key : null, rawText, period, place, trigger:period, action, check, attention, participants:merge(items.map(item => item.participants)), legalRefs, urgency:priority + ' (аналитическая классификация)', links, relations:links, tags, sourceFields:{rawText, legalRefs:items.flatMap(item => item.sourceFields.legalRefs || [])}, derivedFields:{grouping:'аналитическая классификация для навигации', period, place, action, check, attention, priority, relations:links}};
+  });
+  const glossaryRecords = glossary.map((item, index) => ({id:'G-' + String(index + 1).padStart(2, '0'), sectionId:'GLOSSARY', sectionTitle:'Справочник', kind:'glossary', sourceOrder:300 + index, period:[], place:[], trigger:[], action:'', check:item, attention:'', participants:[], legalRefs:[], urgency:'обычный (аналитическая классификация)', rawText:item, sourceLines:['словарь в начале документа'], links:[], tags:['словарь'], sourceFields:{rawText:item}, derivedFields:{period:[], place:[], action:'', attention:'', priority:'обычный (аналитическая классификация)', relations:[]}}));
+  const all = [...groups, ...blocks, ...glossaryRecords];
+  const sourceIds = groups.flatMap(group => group.sourceEventIds);
+  const expectedIds = Array.from({length:169}, (_, index) => 'T1-E' + String(index + 1).padStart(3, '0'));
+   const scheduleCounts = {scheduled:events.filter(item => item.scheduleClass === 'scheduled').length, unscheduled:events.filter(item => item.scheduleClass === 'unscheduled').length, reference:events.filter(item => item.scheduleClass === 'reference').length};
+   const invariant = sourceIds.length === expected.events && new Set(sourceIds).size === expected.events && expectedIds.every(id => sourceIds.includes(id)) && groups.every(group => group.items.length > 0) && scheduleCounts.scheduled === 116 && scheduleCounts.unscheduled === 38 && scheduleCounts.reference === 15;
+   const topicInvariant = events.every(item => Array.isArray(item.topics) && item.topics.every(topic => topic.root && topic.sub && topicSubLabels[topic.sub]));
+   if (!invariant || !topicInvariant || groups.length !== expected.groups || blocks.length !== expected.blocks || new Set(events.map(record => record.sectionId)).size !== expected.sections || glossaryRecords.length !== expected.glossary) throw new Error('Контрольная ошибка модели: покрытие T1-E001..T1-E169, темы или счетчики нарушены');
+  const unique = values => [...new Set(values.flat().filter(Boolean))].sort((a,b) => a.localeCompare(b,'ru'));
+   const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+     const normalizeSearch = value => String(value ?? '').toLocaleLowerCase('ru').replace(/ё/g,'е').replace(/[‐‑‒–—―]/g,'-').replace(/[.,!?;:()[\]{}"«»„“”/\\]+/g,' ').replace(/\s+/g,' ').trim().replace(/тэг/g,'тег');
+    const searchTerms = value => {
+      const terms = (String(value ?? '').match(/"[^"]+"|\S+/g) || []).map(term => normalizeSearch(term.replace(/^"|"$/g,''))).filter(Boolean);
+      return terms.reduce((result, term) => { if (result.at(-1) === 'сейф' && term === 'пакет') result[result.length - 1] = 'сейф-пакет'; else result.push(term); return result; }, []);
+    };
+    const searchAliases = term => {
+      const aliases = ({переносной:['переносной','переносного','переносным'],терминал:['терминал','тэг','тег'],тег:['тег','тэг'],'переносной терминал':['переносной терминал','переносного терминала'],'наблюдатель':['наблюдатель','наблюдателя'],'контролируемое':['контролируемое','контролируемого','контролируемым','контролируем']}[term] || [term]).slice();
+      if (/[- ]/.test(term)) aliases.push(term.replace(/[- ]+/g,' '), term.replace(/[- ]+/g,''));
+      if (term === 'сейфпакет') aliases.push('сейф-пакет', 'сейф пакет');
+      return [...new Set(aliases)];
+    };
+   const searchText = value => {
+     if (value === null || value === undefined) return '';
+     if (Array.isArray(value)) return value.map(searchText).join(' ');
+     if (typeof value === 'object') return Object.entries(value).map(([key,item]) => key + ' ' + searchText(item)).join(' ');
+     return String(value);
+   };
+     const itemQueryIndex = item => normalizeSearch(searchText({title:item.title, summary:item.summary, rawText:item.rawText, source:item.source, sourceFields:item.sourceFields, action:item.action, check:item.check, attention:item.attention, type:item.eventTypes, typeLabels:item.eventTypeLabels, dayKey:item.dayKey, dayLabel:item.dayLabel, dayKeys:item.dayKeys, moments:item.moments, legalRefs:item.legalRefs, period:item.period, scheduleClass:item.scheduleClass, scheduleReason:item.scheduleReason, id:item.id}));
+     const groupQueryIndex = record => normalizeSearch(searchText({title:record.title, summary:record.summary, rawText:record.rawText, source:record.source, sourceFields:record.sourceFields, action:record.action, check:record.check, attention:record.attention, type:record.kind, sectionTitle:record.sectionTitle, legalRefs:record.legalRefs, period:record.period, id:record.id}));
+    const queryMatchesIndex = (index, query) => searchTerms(query).every(term => searchAliases(term).some(alias => {
+      if (/[- ]/.test(alias)) return new RegExp(alias.split(/[- ]+/).map(part => part.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('[- ]*')).test(index);
+      return index.includes(alias);
+    }));
+    const queryMatches = (record, query) => queryMatchesIndex(itemQueryIndex(record), query);
+    const groupQueryMatches = (record, query) => queryMatchesIndex(groupQueryIndex(record), query);
+  const highlight = (value, query) => {
+    if (!query.trim()) return esc(value);
+    const parts = searchTerms(query).flatMap(term => searchAliases(term)).map(part => part.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/-/g,'[-‐‑‒–—]'));
+    const regex = new RegExp('(' + parts.join('|') + ')','gi');
+    return esc(value).replace(regex, '<mark class="highlight">$1</mark>');
+  };
+  const options = (id, values) => { const select = document.getElementById(id); values.forEach(value => { const option = document.createElement('option'); option.value = value; option.textContent = value; select.append(option); }); };
+  options('sectionFilter', unique(events.map(record => record.sectionTitle)));
+  options('periodFilter', unique(all.map(record => record.period)));
+   options('lawFilter', unique(all.flatMap(record => record.legalRefs.map(ref => ref.label.split(':')[0]))));
+   document.getElementById('tagFilter')?.closest('label')?.remove();
+  const advanced = document.createElement('details'); advanced.className = 'advanced'; advanced.innerHTML = '<summary>Дополнительные фильтры</summary>'; advanced.append(document.querySelector('.filters')); document.querySelector('.toolbar').insertBefore(advanced, document.querySelector('.toolbar-row'));
+    const hint = document.createElement('details'); hint.className = 'search-hint'; hint.innerHTML = '<summary>Что ищет строка</summary><span>Карточки, исходные пункты, проверки, реакции, время, нормы и ID.</span>'; document.querySelector('.search').after(hint);
+      const flow = document.createElement('div'); flow.className = 'flow-nav'; flow.innerHTML = '<div class="flow-section"><div class="flow-label">1 · Выберите режим</div><div class="day-row" role="group" aria-label="Фильтр по дню"><button class="day-btn" data-day="" aria-pressed="true">Все события</button><button class="day-btn" data-day="fri" aria-pressed="false">ПТ</button><button class="day-btn" data-day="sat" aria-pressed="false">СБ</button><button class="day-btn" data-day="sun" aria-pressed="false">ВС</button><button class="day-btn" id="unscheduledBtn" data-unscheduled="false" aria-pressed="false">Вне расписания</button></div></div><details class="timeline-panel" id="momentPanel"><summary><span>ЛИНИЯ МОМЕНТОВ · <span id="momentSummary">Все моменты</span></span><span id="momentSummaryCount"></span></summary><div class="flow-label">2 · Выберите момент</div><div class="line-status" id="momentStatus" role="status" aria-live="polite">Все моменты</div><div class="timeline" id="timeline" aria-label="Фильтр по моменту"></div><button type="button" class="line-more" id="momentToggle">Показать все моменты</button></details><details class="timeline-panel" id="typePanel"><summary><span>ТИП СОБЫТИЯ · <span id="typeSummary">Все типы</span></span><span id="typeSummaryCount"></span></summary><div class="flow-label">3 · Выберите тип события</div><div class="line-status" id="typeStatus" role="status" aria-live="polite">Все типы</div><div class="line-actions" id="eventTypes" role="group" aria-label="Фильтр по типу события"></div><button type="button" class="line-more" id="typeToggle">Показать все типы</button></details><div class="flow-layout"><section class="flow-picker"><div class="flow-label" id="pickerLabel">4 · События в выбранном срезе</div><div id="eventPicker" class="picker" role="radiogroup" aria-labelledby="pickerLabel"></div></section><section class="flow-detail"><div class="flow-label">5 · Реакция</div><div id="eventDetail" class="flow-empty">Выберите событие</div></section></div>'; document.querySelector('.toolbar').insertBefore(flow, advanced);
+       const dayRow = flow.querySelector('.day-row'); const preDayButton = document.createElement('button'); preDayButton.className = 'day-btn'; preDayButton.dataset.day = 'pre'; preDayButton.setAttribute('aria-pressed', 'false'); preDayButton.textContent = 'До выборов'; dayRow.insertBefore(preDayButton, dayRow.querySelector('[data-day="fri"]'));
+        let selectedDayKey = ''; let selectedTimeKey = ''; let selectedEventType = ''; let selectedTopic = ''; let selectedItemId = ''; let selectedUnscheduled = false;
+          const topicMatches = item => !selectedTopic || item.topics.some(topic => selectedTopic.includes(':') ? topic.root + ':' + topic.sub === selectedTopic : topic.root === selectedTopic);
+        const itemMatches = (item, includeTime = true, includeType = true) => (!selectedUnscheduled || item.anytime || item.scheduleClass === 'unscheduled') && (selectedDayKey === 'pre' ? item.moments.some(moment => moment.sort < Date.UTC(2026, 8, 18)) : (!selectedDayKey || item.anytime || (item.dayKeys || [item.dayKey]).includes(selectedDayKey))) && (!includeTime || !selectedTimeKey || item.moments.some(moment => moment.key === selectedTimeKey)) && (!includeType || !selectedEventType || item.eventTypes.includes(selectedEventType) || (!includeTime && selectedTimeKey && item.moments.some(moment => moment.key === selectedTimeKey))) && topicMatches(item);
+   const candidateItems = () => events.filter(item => itemMatches(item));
+   const queryFields = record => queryIndex(record);
+  const selected = id => document.getElementById(id).value;
+     const filtered = (includeTime = true, includeType = true) => {
+      const query = document.getElementById('query').value;
+       const kind = selected('kindFilter'); const sectionValue = selected('sectionFilter'); const period = selected('periodFilter'); const law = selected('lawFilter'); const priority = selected('priorityFilter');
+        return all.filter(record => {
+           const itemQueryMatch = record.items?.some(item => queryMatches(item, query));
+           const queryMatch = !query.trim() || (record.items ? itemQueryMatch : groupQueryMatches(record, query));
+          const fieldMatch = (!kind || record.kind === kind) && (!sectionValue || record.sectionTitle === sectionValue) && (!period || record.period.includes(period)) && (!law || record.legalRefs.some(ref => ref.label.startsWith(law))) && (!priority || record.urgency.startsWith(priority));
+              const scheduleMatch = record.items ? ((!selectedDayKey && (!includeTime || !selectedTimeKey) && !selectedUnscheduled && (!includeType || !selectedEventType) && !selectedTopic) || record.items.some(item => itemMatches(item, includeTime, includeType))) : (!selectedDayKey && (!includeTime || !selectedTimeKey) && !selectedUnscheduled && (!includeType || !selectedEventType) && !selectedTopic);
+          return queryMatch && fieldMatch && scheduleMatch;
+        }).sort((a,b) => { const sort = selected('sort'); if (sort === 'priority') return (priorityRank[a.urgency.split(' ')[0]] ?? 99) - (priorityRank[b.urgency.split(' ')[0]] ?? 99); if (sort === 'date') return a.period.join(' ').localeCompare(b.period.join(' '),'ru'); return a.sourceOrder - b.sourceOrder; });
+   };
+  const list = value => Array.isArray(value) ? value.filter(Boolean).map(item => '<span class="tag">' + esc(item) + '</span>').join(' ') : esc(value || '');
+   const stateKey = (groupId, eventId, stepIndex) => 'vote-roadmap:' + groupId + ':' + eventId + ':' + stepIndex;
+   const isChecked = (groupId, eventId, stepIndex) => localStorage.getItem(stateKey(groupId, eventId, stepIndex)) === '1';
+    const renderItem = (item, query, groupId, showId = true) => { const meta = list(item.period) + list(item.place) + list(item.eventTypeLabels); const action = item.action ? '<p class="item-action">' + highlight(item.action, query) + '</p>' : ''; const checks = item.steps.map((step, index) => '<div class="item-step"><input type="checkbox" id="check-' + esc(groupId + '-' + item.id + '-' + index) + '" data-group="' + esc(groupId) + '" data-event="' + esc(item.id) + '" data-source-id="' + esc(item.id) + '" data-step="' + index + '" aria-label="Проверка исходного пункта ' + esc(item.id) + '"' + (isChecked(groupId, item.id, index) ? ' checked' : '') + '><label for="check-' + esc(groupId + '-' + item.id + '-' + index) + '">' + highlight(step.text, query) + '</label></div>').join(''); const norm = item.normNotes.length ? '<p class="norm-note">' + highlight(item.normNotes.join(' '), query) + '</p>' : ''; const legal = renderLegalBlock(item.legalRefs, item.id); const id = showId ? '<div class="item-id">' + esc(item.id) + '</div>' : ''; return '<div class="item-block" data-source-id="' + esc(item.id) + '" aria-label="Исходный пункт ' + esc(item.id) + '"><div class="item-head">' + id + '<div class="item-content">' + action + (meta ? '<div class="item-meta">' + meta + '</div>' : '') + checks + norm + legal + '</div></div></div>'; };
+             const matchingItems = (record, includeTime = true, includeType = true) => record.items ? record.items.filter(item => itemMatches(item, includeTime, includeType)) : [];
+        const getPickerGroups = (includeTime = true, includeType = true) => {
+          const query = document.getElementById('query').value;
+          const filteredIds = new Set(filtered(includeTime, includeType).filter(record => record.items).map(record => record.id));
+          return groups.map(record => {
+            const items = matchingItems(record, includeTime, includeType);
+           const groupMatch = query.trim() && !record.items && groupQueryMatches(record, query);
+            const matches = query.trim() ? items.filter(item => queryMatches(item, query)) : [];
+            return {record, items, matches, enabled: filteredIds.has(record.id) && (items.length > 0 || groupMatch)};
+          });
+        };
+     const dedupeByGroupId = pickerGroups => [...new Map(pickerGroups.map(group => [group.record.id, group])).values()];
+     const exportItems = () => { const query = document.getElementById('query').value; const kind = selected('kindFilter'); const sectionValue = selected('sectionFilter'); const period = selected('periodFilter'); const law = selected('lawFilter'); const priority = selected('priorityFilter'); if (kind && kind !== 'event') return []; return events.filter(item => queryMatches(item, query) && (!sectionValue || item.sectionTitle === sectionValue) && (!period || item.period.includes(period)) && (!law || item.legalRefs.some(ref => ref.label.startsWith(law))) && (!priority || item.urgency.startsWith(priority)) && itemMatches(item)).sort((a,b) => a.sourceOrder - b.sourceOrder); };
+      const render = () => { const visible = filtered(); const sourceCount = exportItems().length; document.getElementById('resultCount').textContent = 'В выборке: ' + sourceCount + ' из 169 исходных пунктов'; document.getElementById('exportBtn').textContent = 'TSV · ' + sourceCount + ' из 169 исходных пунктов'; document.getElementById('empty').hidden = visible.length > 0; if (!visible.length) document.getElementById('empty').innerHTML = '<strong>Ничего не найдено.</strong><br>Искали по исходным пунктам, проверкам, реакциям, времени, нормам и ID.<br><button class="button" type="button" id="emptyReset">Сбросить поиск</button>'; document.getElementById('emptyReset')?.addEventListener('click', () => document.getElementById('clearBtn').click()); document.querySelectorAll('.item-step input').forEach(input => input.addEventListener('change', () => localStorage.setItem(stateKey(input.dataset.group, input.dataset.event, input.dataset.step), input.checked ? '1' : '0'))); };
+       const uniqueRefs = refs => [...new Map(refs.map(ref => [ref.label, ref])).values()];
+       const normalizeLegalText = value => normalizeSearch(value).replace(/\b(?:п\.?|п\/п|часть|ч\.?)\s*[«»"а-яё0-9.-]+/gi, '').replace(/\s+/g, ' ').trim();
+       const legalArticleNumbers = refs => [...new Set(refs.flatMap(ref => [...String(ref.label || '').matchAll(/(?:ст\.?|статья)\s*([0-9]+(?:\.[0-9]+)?)/gi)].map(match => match[1])))];
+         const renderLegalBlock = (refs, sourceId) => { const isSourceId = typeof sourceId === 'string' && /^T1-E\d{3}$/.test(sourceId); if (!isSourceId && !Array.isArray(sourceId)) return ''; const grouped = new Map(); (refs || []).forEach(ref => { const key = ref.url ? ref.url.replace(/\/$/, '').toLocaleLowerCase('ru') : normalizeLegalText(ref.label); if (!grouped.has(key)) grouped.set(key, ref); }); const rows = [...grouped.values()].map(ref => { const sourceName = ref.url ? (/^https?:\/\/[^/]+/i.exec(ref.url)?.[0] || ref.url) : ''; return ref.url ? '<a href="' + esc(ref.url) + '" target="_blank" rel="noopener" title="' + esc(ref.label) + ' — ' + esc(sourceName) + '">' + esc(ref.label) + '</a>' : '<span>' + esc(ref.label) + ' <span class="law-note">(прямая ссылка не указана в исходном документе)</span></span>'; }).join('<br>'); return rows ? '<div class="item-legal law" data-source-id="' + esc(typeof sourceId === 'string' ? sourceId : '') + '"><div class="field-label">Правовое основание этого пункта</div><p>' + rows + '</p></div>' : ''; };
+        const semanticSummary = item => { const raw = clean(item.rawText || ''); const notes = (item.normNotes || []).filter(note => note && clean(note) !== raw && clean(note).length < raw.length); if (notes.length) return notes.join(' '); const fragment = raw.split(/(?:[.;:—](?=\s|$)|\s+(?=(?:\d+[.)]|[а-яё]\))\s))/i)[0].trim(); return fragment || raw; };
+        const renderSemanticItem = (item, query, groupId) => '<div class="item-block" data-source-id="' + esc(item.id) + '" aria-label="Справочный пункт ' + esc(item.id) + '"><div class="item-head"><div class="item-id">' + esc(item.id) + '</div><div class="item-content"><p class="item-action">' + highlight(semanticSummary(item), query) + '</p>' + renderLegalBlock(item.legalRefs, item.id) + '</div></div></div>';
+        const renderSourceDetails = (record, query) => { const sourceItems = record.items || [record]; const rows = sourceItems.map(item => '<li><span class="item-id">' + esc(item.id) + '</span><div class="source-text">' + highlight(item.rawText, query) + '</div></li>').join(''); return '<details class="group-source"><summary>' + (record.items ? 'Источник и точные формулировки' : record.scheduleClass === 'reference' ? 'Точная формулировка нормы' : 'Источник и точная формулировка') + '</summary><ol>' + rows + '</ol></details>'; };
+       const renderGroupDetail = (record, query, focusItems) => { const sourceItems = record.items || [record]; const focused = new Set(focusItems.map(item => item.id)); const actionableItems = sourceItems.filter(item => item.scheduleClass !== 'reference' && item.steps.length); const checks = actionableItems.length ? '<div class="field"><div class="field-label">Что проверить</div><div class="item-list">' + actionableItems.map(item => '<div class="' + (focused.has(item.id) ? 'highlighted-item' : '') + '">' + renderItem(item, query, record.groupId || record.id, false) + '</div>').join('') + '</div></div>' : ''; const reactionValues = sourceItems.filter(item => item.scheduleClass !== 'reference').flatMap(item => [item.action, item.attention, ...(item.relations || [])]).filter(Boolean); const reactions = [...new Set(reactionValues)]; const reaction = reactions.length ? '<div class="field"><div class="field-label">Как реагировать</div>' + (reactions.length > 1 ? '<ul class="reaction-list">' + reactions.map(value => '<li>' + highlight(value, query) + '</li>').join('') + '</ul>' : '<p>' + highlight(reactions[0], query) + '</p>') + '</div>' : ''; const references = sourceItems.filter(item => item.scheduleClass === 'reference').map(item => '<div class="field"><div class="field-label">Смысл</div><p>' + highlight(semanticSummary(item), query) + '</p></div>').join(''); const typeLabels = [...new Set(sourceItems.flatMap(item => item.eventTypeLabels || []))]; const status = [...new Set(sourceItems.map(item => item.scheduleClass === 'reference' ? 'Справочная норма' : item.scheduleClass === 'unscheduled' ? 'По условию/обращению' : 'По расписанию'))]; const context = '<div class="mono">' + esc(record.groupId || record.id) + (record.items ? ' · ' + record.items.length + ' исходных пунктов' : '') + '</div>'; const statusBlock = '<div class="item-meta">' + list(typeLabels) + list(status) + (record.items ? list(record.period) + list(record.place) : '') + '</div>'; return '<article class="action-card"><h3>' + highlight(record.title || record.sectionTitle, query) + '</h3>' + context + statusBlock + checks + reaction + references + renderSourceDetails(record, query) + renderLegalBlock(record.legalRefs, sourceItems) + '</article>'; };
+    const legacyRenderFlow = () => {
+      const pickerGroups = dedupeByGroupId(getPickerGroups());
+      const timelineGroups = dedupeByGroupId(getPickerGroups(false));
+       const query = document.getElementById('query').value;
+       const items = timelineGroups.flatMap(group => group.items).filter(item => !query.trim() || queryMatches(item, query));
+       const momentItems = items.filter(item => item.moments.length);
+        const momentSourceItems = selectedUnscheduled ? events.filter(item => !query.trim() || queryMatches(item, query)) : momentItems;
+        const moments = [...new Map(momentSourceItems.flatMap(item => item.moments).filter(moment => selectedUnscheduled || !selectedDayKey || moment.dayGroup === selectedDayKey).map(moment => [moment.key,moment])).values()].sort((a,b) => a.sort - b.sort || a.order - b.order || a.key.localeCompare(b.key));
+        const noDayMoments = Boolean(selectedDayKey && !selectedUnscheduled && !moments.length);
+       const momentCounts = new Map(moments.map(moment => [moment.key, momentItems.filter(item => item.moments.some(candidate => candidate.key === moment.key)).length]));
+       const typeCounts = Object.keys(eventTypeLabels).map(key => ({key,label:eventTypeLabels[key],count:items.filter(item => item.eventTypes.includes(key)).length})).filter(item => item.count);
+      const selectedMoment = moments.find(moment => moment.key === selectedTimeKey);
+         document.getElementById('momentStatus').textContent = selectedUnscheduled ? 'Нет фиксированного момента' : selectedMoment ? 'Выбран момент: ' + selectedMoment.label : 'Все моменты'; document.getElementById('momentSummary').textContent = selectedUnscheduled ? 'Нет фиксированного момента' : selectedMoment ? selectedMoment.label : 'Все моменты'; document.getElementById('momentSummaryCount').textContent = '';
+         if (noDayMoments) { document.getElementById('momentStatus').textContent = 'Нет моментов для этого дня'; document.getElementById('momentSummary').textContent = 'Нет моментов для этого дня'; }
+       document.getElementById('typeStatus').textContent = selectedEventType ? 'Выбран тип: ' + eventTypeLabels[selectedEventType] : 'Выбран тип: все типы'; document.getElementById('typeSummary').textContent = selectedEventType ? eventTypeLabels[selectedEventType] : 'Все типы'; document.getElementById('typeSummaryCount').textContent = '';
+      document.getElementById('timeline').hidden = false;
+        document.getElementById('timeline').hidden = false;
+        const typeFilterGroups = getPickerGroups(true, false); const typeItems = typeFilterGroups.flatMap(group => group.items); const availableTypes = new Set(typeItems.flatMap(item => item.eventTypes)); const availableMoments = new Set(items.flatMap(item => item.moments.map(moment => moment.key))); const timeline = document.getElementById('timeline'); const momentDefinitions = timeline._momentDefinitions || new Map(); moments.forEach(moment => momentDefinitions.set(moment.key, moment)); timeline._momentDefinitions = momentDefinitions; const momentTrack = timeline.querySelector('.moment-track') || timeline.appendChild(Object.assign(document.createElement('div'), {className:'moment-track'})); const momentButtons = timeline._momentButtons || new Map(); timeline._momentButtons = momentButtons; if (!momentButtons.size) { const allMomentButton = document.createElement('button'); allMomentButton.type = 'button'; allMomentButton.className = 'moment-btn'; allMomentButton.dataset.moment = ''; allMomentButton.innerHTML = '<span>Все моменты</span><small></small>'; momentTrack.append(allMomentButton); momentButtons.set('', allMomentButton); momentDefinitions.forEach(moment => { const button = document.createElement('button'); button.type = 'button'; button.className = 'moment-btn'; button.dataset.moment = moment.key; button.innerHTML = '<span></span><small></small>'; momentTrack.append(button); momentButtons.set(moment.key, button); }); } momentButtons.forEach((button, key) => { const moment = momentDefinitions.get(key); button.hidden = false; button.disabled = key !== '' && !availableMoments.has(key); button.setAttribute('aria-disabled', button.disabled ? 'true' : 'false'); button.setAttribute('aria-pressed', String(selectedTimeKey === key)); button.querySelector('span').textContent = moment ? moment.label : 'Все моменты'; button.querySelector('small').textContent = ''; button.setAttribute('aria-label', moment ? 'Момент: ' + moment.label : 'Все моменты'); }); const typeLine = document.getElementById('eventTypes'); const typeButtons = typeLine._typeButtons || new Map([...typeLine.querySelectorAll('.type-btn')].map(button => [button.dataset.eventType, button])); typeLine._typeButtons = typeButtons; if (!typeButtons.size) { const allTypeButton = document.createElement('button'); allTypeButton.type = 'button'; allTypeButton.className = 'type-btn'; allTypeButton.dataset.eventType = ''; allTypeButton.innerHTML = '<span>Все типы</span><span class="type-count"></span>'; typeLine.append(allTypeButton); typeButtons.set('', allTypeButton); Object.entries(eventTypeLabels).forEach(([key, label]) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'type-btn'; button.dataset.eventType = key; button.innerHTML = '<span></span><span class="type-count"></span>'; typeLine.append(button); typeButtons.set(key, button); }); } typeButtons.forEach((button, key) => { const label = key ? eventTypeLabels[key] : 'Все типы'; button.hidden = false; button.disabled = Boolean(key) && !availableTypes.has(key); button.setAttribute('aria-disabled', button.disabled ? 'true' : 'false'); button.setAttribute('aria-pressed', String(selectedEventType === key)); button.querySelector('span').textContent = label; button.querySelector('.type-count').textContent = ''; button.setAttribute('aria-label', key ? 'Тип: ' + label : 'Все типы'); });
+         availableMoments.clear(); moments.forEach(moment => availableMoments.add(moment.key));
+         const selectedTypeItems = pickerGroups.flatMap(group => group.items); if (selectedEventType && !selectedTypeItems.some(item => item.eventTypes.includes(selectedEventType))) { selectedEventType = ''; render(); return renderFlow(); } if (selectedTimeKey && !availableMoments.has(selectedTimeKey)) selectedTimeKey = ''; momentButtons.get('').querySelector('small').textContent = ''; typeButtons.get('').querySelector('.type-count').textContent = ''; typeButtons.get('').hidden = false; momentButtons.forEach((button, key) => { button.hidden = key !== '' && !availableMoments.has(key); }); typeButtons.forEach((button, key) => { if (key && selectedEventType) { const enabled = key === selectedEventType || selectedTypeItems.some(item => item.eventTypes.includes(key)); button.disabled = !enabled; button.setAttribute('aria-disabled', enabled ? 'false' : 'true'); } });
+         momentButtons.forEach(button => { if (button.hidden) button.remove(); else momentTrack.append(button); });
+         const hasPreElectionItems = events.some(item => item.moments.some(moment => moment.sort < Date.UTC(2026, 8, 18))); preDayButton.disabled = !hasPreElectionItems; preDayButton.setAttribute('aria-disabled', preDayButton.disabled ? 'true' : 'false'); if (selectedDayKey === 'pre') momentButtons.forEach((button, key) => { button.hidden = key !== '' && !moments.some(moment => moment.key === key); });
+        const picker = document.getElementById('eventPicker');
+       const hasConstraint = Boolean(query.trim() || selectedDayKey || selectedTimeKey || selectedUnscheduled || selectedEventType || selectedTopic);
+        picker.innerHTML = pickerGroups.map(({record,enabled}) => { const selected = selectedItemId === record.id; return '<button type="button" role="radio" class="picker-btn" data-group="' + esc(record.id) + '" aria-checked="' + selected + '" aria-pressed="' + selected + '" aria-disabled="' + (!enabled) + '"' + (enabled ? '' : ' disabled') + '><span aria-hidden="true">' + (selected ? '◉' : '○') + '</span><span><strong>' + esc(record.title || record.sectionTitle) + '</strong><br><span class="mono">' + esc(record.id) + ' · ' + (record.sourceEventIds?.length || 0) + ' исходных пунктов</span></span></button>'; }).join(''); picker.querySelectorAll('.picker-btn:disabled').forEach(button => button.remove());
+          let selectedGroup = pickerGroups.find(group => group.record.id === selectedItemId); if (selectedGroup && !selectedGroup.enabled) { selectedItemId = ''; selectedGroup = null; } if (selectedGroup && selectedGroup.items.length && (selectedDayKey || selectedTimeKey || selectedEventType || selectedTopic || document.getElementById('query').value.trim())) selectedGroup.record = {...selectedGroup.record, items:selectedGroup.items, sourceEventIds:selectedGroup.items.map(item => item.id)};
+        document.getElementById('eventDetail').innerHTML = selectedGroup ? (selectedGroup.enabled ? renderGroupDetail(selectedGroup.record, query, selectedGroup.matches) : '<div class="flow-empty">Нет пунктов для текущего сочетания фильтров</div>') : '<div class="flow-empty">Выберите событие</div>';
+          if (!flow.dataset.filterHandlers) { flow.dataset.filterHandlers = 'true'; flow.addEventListener('click', event => { const momentButton = event.target.closest('.moment-btn'); const typeButton = event.target.closest('.type-btn'); if (momentButton && !momentButton.disabled) { selectedTimeKey = momentButton.dataset.moment; render(); renderFlow(); } if (typeButton && !typeButton.disabled) { selectedEventType = typeButton.dataset.eventType ? selectedEventType === typeButton.dataset.eventType ? '' : typeButton.dataset.eventType : ''; render(); renderFlow(); } }); }
+       const revealDetail = () => { const detail = document.getElementById('eventDetail'); if (!detail) return; const top = detail.getBoundingClientRect().top + window.scrollY; window.scrollTo({top:Math.max(0, top), left:0, behavior:'smooth'}); document.scrollingElement.scrollLeft = 0; document.body.scrollLeft = 0; };
+       document.querySelectorAll('.picker-btn:not(:disabled)').forEach(button => button.addEventListener('click', () => { selectedItemId = button.dataset.group; renderFlow(); revealDetail(); }));
+     document.querySelectorAll('#eventDetail input[type=checkbox]').forEach(input => input.addEventListener('change', () => localStorage.setItem(stateKey(input.dataset.group, input.dataset.event, input.dataset.step), input.checked ? '1' : '0')));
+    };
+     const renderFlow = () => {
+       const flowPicker = flow.querySelector('.flow-picker'); const flowDetail = flow.querySelector('.flow-detail'); if (flowPicker && flowDetail && flowDetail.parentElement !== flowPicker) flowPicker.append(flowDetail); const pickerLabel = flow.querySelector('#pickerLabel'); if (pickerLabel && !pickerLabel.querySelector('#sliceCount')) pickerLabel.insertAdjacentHTML('beforeend', ' <span class="slice-count">(<span id="sliceCount">0</span>)</span>');
+       if (!document.getElementById('topicPanel')) {
+         const typePanel = document.getElementById('typePanel');
+         typePanel.insertAdjacentHTML('afterend', '<details class="timeline-panel" id="topicPanel"><summary><span>ТЕМА ВЫБОРКИ · <span id="topicSummary">Все темы</span></span><span id="topicSummaryCount"></span></summary><div class="flow-label">4 · Выберите тему</div><div class="line-status" id="topicStatus" role="status" aria-live="polite">Тема: все</div><div class="line-actions" id="eventTopics" role="group" aria-label="Фильтр по теме"></div></details>');
+       }
+       const query = document.getElementById('query').value;
+       const sliceCount = exportItems().length; const sliceCountNode = document.getElementById('sliceCount'); if (sliceCountNode) sliceCountNode.textContent = sliceCount;
+       const pickerGroups = dedupeByGroupId(getPickerGroups());
+       const timelineGroups = dedupeByGroupId(getPickerGroups(false));
+       const items = timelineGroups.flatMap(group => group.items).filter(item => !query.trim() || queryMatches(item, query));
+       const momentItems = items.filter(item => item.moments.length);
+       const moments = [...new Map(momentItems.flatMap(item => item.moments).filter(moment => !selectedDayKey || moment.dayGroup === selectedDayKey).map(moment => [moment.key, moment])).values()].sort((a, b) => a.sort - b.sort || a.order - b.order || a.key.localeCompare(b.key));
+       const timeline = document.getElementById('timeline');
+       const momentDefinitions = timeline._momentDefinitions || new Map();
+       moments.forEach(moment => momentDefinitions.set(moment.key, moment));
+       timeline._momentDefinitions = momentDefinitions;
+       const momentTrack = timeline.querySelector('.moment-track') || timeline.appendChild(Object.assign(document.createElement('div'), {className:'moment-track'}));
+       const momentButtons = timeline._momentButtons || new Map();
+       timeline._momentButtons = momentButtons;
+       if (!momentButtons.size) {
+         const all = document.createElement('button'); all.type = 'button'; all.className = 'moment-btn'; all.dataset.moment = ''; all.innerHTML = '<span>Все моменты</span><small></small>'; momentTrack.append(all); momentButtons.set('', all);
+       }
+       moments.forEach(moment => { if (!momentButtons.has(moment.key)) { const button = document.createElement('button'); button.type = 'button'; button.className = 'moment-btn'; button.dataset.moment = moment.key; button.innerHTML = '<span></span><small></small>'; momentTrack.append(button); momentButtons.set(moment.key, button); } });
+       momentButtons.forEach((button, key) => { const moment = momentDefinitions.get(key); button.hidden = key !== '' && !moments.some(item => item.key === key); button.disabled = key !== '' && !items.some(item => item.moments.some(candidate => candidate.key === key)); button.setAttribute('aria-disabled', String(button.disabled)); button.setAttribute('aria-pressed', String(selectedTimeKey === key)); button.querySelector('span').textContent = moment ? moment.label : 'Все моменты'; button.querySelector('small').textContent = ''; });
+       const typeLine = document.getElementById('eventTypes');
+       const typeButtons = typeLine._typeButtons || new Map();
+       typeLine._typeButtons = typeButtons;
+       if (!typeButtons.size) { const all = document.createElement('button'); all.type = 'button'; all.className = 'type-btn'; all.dataset.eventType = ''; all.innerHTML = '<span>Все типы</span><span class="type-count"></span>'; typeLine.append(all); typeButtons.set('', all); Object.entries(eventTypeLabels).forEach(([key, label]) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'type-btn'; button.dataset.eventType = key; button.innerHTML = '<span>' + label + '</span><span class="type-count"></span>'; typeLine.append(button); typeButtons.set(key, button); }); }
+       const typeItems = dedupeByGroupId(getPickerGroups(true, false)).flatMap(group => group.items);
+       const availableTypes = new Set(typeItems.flatMap(item => item.eventTypes));
+       typeButtons.forEach((button, key) => { button.hidden = Boolean(key) && !availableTypes.has(key); button.disabled = Boolean(key) && !availableTypes.has(key); button.setAttribute('aria-disabled', String(button.disabled)); button.setAttribute('aria-pressed', String(selectedEventType === key)); button.querySelector('span').textContent = key ? eventTypeLabels[key] : 'Все типы'; });
+       const topicLine = document.getElementById('eventTopics');
+       const topicButtons = topicLine._topicButtons || new Map();
+       topicLine._topicButtons = topicButtons;
+        if (!topicButtons.size) {
+          const all = document.createElement('button'); all.type = 'button'; all.className = 'type-btn topic-btn'; all.dataset.topic = ''; all.innerHTML = '<span>Все темы</span><span class="type-count"></span>'; topicLine.append(all); topicButtons.set('', all);
+          Object.entries(topicLabels).forEach(([root, label]) => {
+            const tree = document.createElement('div'); tree.className = 'topic-tree';
+            const row = document.createElement('div'); row.className = 'topic-root';
+             const rootButton = document.createElement('button'); rootButton.type = 'button'; rootButton.className = 'type-btn topic-btn topic-root-btn'; rootButton.dataset.topic = root; rootButton.setAttribute('aria-expanded', 'false'); rootButton.innerHTML = '<span>' + label + '</span><span class="topic-expand-indicator" aria-hidden="true">▶</span><span class="type-count"></span>';
+             row.append(rootButton); tree.append(row);
+            const children = document.createElement('div'); children.className = 'topic-children'; children.hidden = true; children.dataset.root = root;
+            topicSubtopics[root].forEach(([sub, subLabel]) => { const child = document.createElement('button'); child.type = 'button'; child.className = 'type-btn topic-btn topic-child'; child.dataset.topic = root + ':' + sub; child.innerHTML = '<span>' + subLabel + '</span><span class="type-count"></span>'; children.append(child); });
+            tree.append(children); topicLine.append(tree);
+          });
+        }
+        const oldTopic = selectedTopic; selectedTopic = '';
+        const topicAvailability = new Map(Object.keys(topicLabels).map(key => [key, events.some(item => itemMatches(item) && item.topics.some(topic => topic.root === key))]));
+        const subAvailability = new Map(Object.entries(topicSubtopics).flatMap(([root, subs]) => subs.map(([sub]) => [root + ':' + sub, events.some(item => itemMatches(item) && item.topics.some(topic => topic.root === root && topic.sub === sub))])));
+        selectedTopic = oldTopic;
+        topicButtons.get('').setAttribute('aria-pressed', String(!selectedTopic));
+         topicLine.querySelectorAll('.topic-root-btn').forEach(button => { const key = button.dataset.topic; const children = topicLine.querySelector('.topic-children[data-root="' + key + '"]'); const expanded = !children.hidden; button.hidden = !topicAvailability.get(key); button.disabled = !topicAvailability.get(key); button.setAttribute('aria-disabled', String(button.disabled)); button.setAttribute('aria-pressed', String(selectedTopic === key)); button.setAttribute('aria-expanded', String(expanded)); button.setAttribute('aria-label', (expanded ? 'Свернуть' : 'Раскрыть') + ' подтемы: ' + topicLabels[key]); button.querySelector('span').textContent = topicLabels[key]; button.querySelector('.topic-expand-indicator').textContent = expanded ? '▼' : '▶'; button.querySelector('.type-count').textContent = topicAvailability.get(key) ? events.filter(item => itemMatches(item) && item.topics.some(topic => topic.root === key)).length : ''; });
+        topicLine.querySelectorAll('.topic-child').forEach(button => { const key = button.dataset.topic; button.hidden = !subAvailability.get(key); button.disabled = !subAvailability.get(key); button.setAttribute('aria-disabled', String(button.disabled)); button.setAttribute('aria-pressed', String(selectedTopic === key)); button.querySelector('.type-count').textContent = subAvailability.get(key) ? events.filter(item => itemMatches(item) && item.topics.some(topic => topic.root + ':' + topic.sub === key)).length : ''; });
+       const selectedMoment = moments.find(moment => moment.key === selectedTimeKey);
+       document.getElementById('momentStatus').textContent = selectedMoment ? 'Выбран момент: ' + selectedMoment.label : 'Все моменты';
+       document.getElementById('momentSummary').textContent = selectedMoment ? selectedMoment.label : 'Все моменты';
+       document.getElementById('typeStatus').textContent = selectedEventType ? 'Выбран тип: ' + eventTypeLabels[selectedEventType] : 'Тип: все';
+       document.getElementById('typeSummary').textContent = selectedEventType ? eventTypeLabels[selectedEventType] : 'Все типы';
+        const selectedParts = selectedTopic.split(':'); document.getElementById('topicStatus').textContent = selectedTopic ? 'Тема: ' + topicLabels[selectedParts[0]] + (selectedParts[1] ? ' → ' + topicSubLabels[selectedParts[1]] : '') : 'Тема: все';
+        document.getElementById('topicSummary').textContent = selectedTopic ? topicLabels[selectedParts[0]] + (selectedParts[1] ? ' → ' + topicSubLabels[selectedParts[1]] : '') : 'Все темы';
+       pickerGroups.forEach(group => { group.enabled = group.enabled && group.items.length > 0; });
+       const picker = document.getElementById('eventPicker');
+       picker.innerHTML = pickerGroups.filter(group => group.enabled).map(({record}) => { const selected = selectedItemId === record.id; return '<button type="button" role="radio" class="picker-btn" data-group="' + esc(record.id) + '" aria-checked="' + selected + '" aria-pressed="' + selected + '"><span aria-hidden="true">' + (selected ? '◉' : '○') + '</span><span><strong>' + esc(record.title || record.sectionTitle) + '</strong><br><span class="mono">' + esc(record.id) + ' · ' + (record.sourceEventIds?.length || 0) + ' исходных пунктов</span></span></button>'; }).join('');
+       let selectedGroup = pickerGroups.find(group => group.record.id === selectedItemId);
+       if (selectedGroup && selectedGroup.items.length && (selectedDayKey || selectedTimeKey || selectedEventType || selectedTopic || query.trim())) selectedGroup.record = {...selectedGroup.record, items:selectedGroup.items, sourceEventIds:selectedGroup.items.map(item => item.id)};
+       document.getElementById('eventDetail').innerHTML = selectedGroup ? renderGroupDetail(selectedGroup.record, query, selectedGroup.matches) : '<div class="flow-empty">Выберите событие</div>';
+         if (!flow.dataset.filterHandlers) { flow.dataset.filterHandlers = 'true'; flow.addEventListener('click', event => { const momentButton = event.target.closest('.moment-btn'); const typeButton = event.target.closest('.type-btn:not(.topic-btn)'); const topicButton = event.target.closest('.topic-btn'); if (topicButton && !topicButton.disabled) { const key = topicButton.dataset.topic; if (!key) { selectedTopic = ''; topicLine.querySelectorAll('.topic-children').forEach(children => { children.hidden = true; }); render(); renderFlow(); return; } if (topicButton.classList.contains('topic-root-btn')) { const children = topicLine.querySelector('.topic-children[data-root="' + key + '"]'); const expanded = !children.hidden; const childSelected = selectedTopic.startsWith(key + ':'); if (!expanded) { children.hidden = false; } else if (childSelected) { selectedTopic = key; } else if (selectedTopic === key) { selectedTopic = ''; children.hidden = true; } else { children.hidden = true; } render(); renderFlow(); return; } selectedTopic = selectedTopic === key ? '' : key; render(); renderFlow(); return; } if (momentButton && !momentButton.disabled) selectedTimeKey = momentButton.dataset.moment; if (typeButton && !typeButton.disabled) selectedEventType = typeButton.dataset.eventType ? selectedEventType === typeButton.dataset.eventType ? '' : typeButton.dataset.eventType : ''; if (momentButton || typeButton) { render(); renderFlow(); } }); }
+       document.querySelectorAll('.picker-btn').forEach(button => button.addEventListener('click', () => { selectedItemId = button.dataset.group; renderFlow(); }));
+     };
+     document.querySelector('.notice').innerHTML = '<strong>Контрольный бейдж:</strong> 116 по расписанию / 38 вне расписания / 15 справочных.';
+   document.getElementById('glossary').innerHTML = glossary.map(item => '<p>' + esc(item) + '</p>').join('');
+  const legalGroups = [{label:'ФЗ', title:federalLaw67Title, url:federalLaw67Url},{label:'ТРИ', title:triTitle, url:triUrl},{label:'МГИК', title:mgikTitle, url:mgikUrl},{label:'ЭСИ', title:esiTitle, url:esiUrl}];
+  document.getElementById('legalPanel').innerHTML = legalGroups.map(source => source.url ? '<p><a href="' + esc(source.url) + '" target="_blank" rel="noopener">' + esc(source.label + ': ' + source.title) + '</a><br><small>проверенная прямая ссылка на источник</small></p>' : '<p>' + esc(source.label + ': ' + source.title) + '<br><small class="law-note">точный URL не найден: использовано текстовое описание правового источника</small></p>').join('');
+   ['query','kindFilter','sectionFilter','periodFilter','lawFilter','priorityFilter','sort'].forEach(id => document.getElementById(id).addEventListener('input', () => { render(); renderFlow(); }));
+           document.getElementById('clearBtn').addEventListener('click', () => { ['query','kindFilter','sectionFilter','periodFilter','lawFilter','priorityFilter'].forEach(id => { document.getElementById(id).value = ''; }); selectedDayKey = ''; selectedTimeKey = ''; selectedEventType = ''; selectedTopic = ''; selectedUnscheduled = false; document.querySelectorAll('.day-btn').forEach((item,index) => item.setAttribute('aria-pressed', index === 0 ? 'true' : 'false')); render(); renderFlow(); });
+  const drawer = document.getElementById('drawer'); const helpButton = document.getElementById('helpBtn'); const closeHelp = document.getElementById('closeHelp'); drawer.setAttribute('role','dialog'); drawer.setAttribute('aria-modal','true'); drawer.setAttribute('aria-labelledby','helpTitle'); document.querySelector('#drawer h2').id = 'helpTitle'; let drawerReturnFocus = null; const closeDrawer = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); if (drawerReturnFocus) drawerReturnFocus.focus(); }; helpButton.addEventListener('click', () => { drawerReturnFocus = document.activeElement; drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); closeHelp.focus(); }); closeHelp.addEventListener('click', closeDrawer); drawer.addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
+  document.getElementById('exportBtn').addEventListener('click', () => { const groupByItem = new Map(groups.flatMap(group => group.items.map(item => [item.id, group]))); const value = item => Array.isArray(item) ? item.filter(Boolean).join('; ') : item || ''; const rows = exportItems().map(item => { const group = groupByItem.get(item.id); return [item.id, item.sectionTitle, group?.groupId || '', item.dayLabel || '', item.moments.map(moment => moment.label).join('; '), item.rawText, item.action || item.normNotes.join('; '), item.attention || item.scheduleReason || '', item.legalRefs.map(ref => ref.label).join('; '), item.scheduleClass, item.sourceLines.join('; ')]; }); const header = ['ID пункта','Раздел','Карточка/группа','День/контекст','Момент/время','Событие или что проверяем','Что проверить','На что обратить внимание / как реагировать','Правовая норма','Класс расписания','Исходные строки']; const escape = value => String(value ?? '').replace(/[\t\r\n]+/g, ' '); const tsv = '\uFEFF' + [header, ...rows].map(row => row.map(escape).join('\t')).join('\n'); const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([tsv], {type:'text/tab-separated-values;charset=utf-8'})); link.download = 'vote-roadmap-2026-source-items.tsv'; link.click(); setTimeout(() => URL.revokeObjectURL(link.href), 1000); });
+   const hash = location.hash;
+    const legacyId = hash.match(/^#card-([A-Za-z0-9_-]+)$/)?.[1];
+    const groupId = hash.match(/^#group-([A-Za-z0-9_-]+)$/)?.[1];
+    const normalizedLegacyEventId = legacyId?.match(/^(?:T1-)?(E\d+)$/)?.[1];
+    const normalizedLegacyId = normalizedLegacyEventId ? 'T1-' + normalizedLegacyEventId : '';
+    const deepLinkGroup = groups.find(group => group.id === groupId || group.sourceEventIds.includes(normalizedLegacyId));
+   if (deepLinkGroup) selectedItemId = deepLinkGroup.id;
+    const decorateReferenceItems = () => { const selectedGroup = groups.find(group => group.id === selectedItemId); if (!selectedGroup) return; const refs = selectedGroup.items.filter(item => item.scheduleClass === 'reference'); const semanticFields = [...document.querySelectorAll('#eventDetail .field')].filter(field => field.querySelector('.field-label')?.textContent === 'Смысл'); semanticFields.forEach((field, index) => { if (!refs[index] || field.querySelector('.item-legal')) return; field.classList.add('item-block'); field.dataset.sourceId = refs[index].id; field.setAttribute('aria-label', 'Справочный пункт ' + refs[index].id); const content = field.querySelector('p'); if (content) content.classList.add('item-action'); const legal = renderLegalBlock(refs[index].legalRefs, refs[index].id); if (legal) field.insertAdjacentHTML('beforeend', legal); }); document.querySelectorAll('#eventDetail .action-card > .item-legal, #eventDetail .field.law:not(.item-legal)').forEach(field => field.remove()); };
+     document.addEventListener('click', event => { if (!event.target.closest('.detail-close')) return; selectedItemId = ''; renderFlow(); });
+     const placeDetail = () => { const button = document.querySelector('.picker-btn[aria-checked="true"]'); const detail = document.querySelector('.flow-picker>.flow-detail'); if (button && detail && button.nextElementSibling !== detail) button.after(detail); };
+     const flowObserver = new MutationObserver(placeDetail); flowObserver.observe(flow, {childList:true, subtree:true});
+     const detailObserver = new MutationObserver(() => { decorateReferenceItems(); const card = document.querySelector('#eventDetail .action-card'); if (card && !card.querySelector('.detail-close')) { const close = document.createElement('button'); close.type = 'button'; close.className = 'button detail-close'; close.textContent = 'Закрыть детали'; close.style.marginBottom = '12px'; card.prepend(close); } }); detailObserver.observe(document.getElementById('eventDetail'), {childList:true, subtree:true});
+     render(); renderFlow();
+     const decorateMomentButtons = () => { const timeline = document.getElementById('timeline'); if (!timeline) return; timeline.querySelectorAll('.moment-btn').forEach(button => { const key = button.dataset.moment; const moment = timeline._momentDefinitions?.get(key); const display = moment ? momentDisplay(moment) : {dayLabel:'—',timeLabel:'Все моменты',dateLabel:'—'}; if (!button.querySelector('.moment-day')) button.innerHTML = '<span class="moment-day"></span><span class="moment-time"></span><small class="moment-date"></small>'; button.querySelector('.moment-day').textContent = display.dayLabel; button.querySelector('.moment-time').textContent = display.timeLabel; button.querySelector('.moment-date').textContent = display.dateLabel; }); };
+     decorateMomentButtons();
+     document.addEventListener('click', () => setTimeout(decorateMomentButtons, 0));
+     document.addEventListener('input', () => setTimeout(decorateMomentButtons, 0));
+   document.querySelectorAll('.day-btn').forEach(button => button.addEventListener('click', () => { if (button.id === 'unscheduledBtn') { selectedUnscheduled = !selectedUnscheduled; selectedDayKey = ''; selectedTimeKey = ''; button.setAttribute('aria-pressed', selectedUnscheduled ? 'true' : 'false'); document.querySelectorAll('.day-btn[data-day]').forEach(item => item.setAttribute('aria-pressed', item.dataset.day === '' && !selectedUnscheduled ? 'true' : 'false')); } else { selectedUnscheduled = false; selectedDayKey = button.dataset.day; selectedTimeKey = ''; document.getElementById('unscheduledBtn').setAttribute('aria-pressed','false'); document.querySelectorAll('.day-btn[data-day]').forEach(item => item.setAttribute('aria-pressed', item === button ? 'true' : 'false')); } render(); renderFlow(); }));
+    const focusGroup = group => { const canonicalHash = '#group-' + group.id; if (location.hash !== canonicalHash) history.replaceState(null, '', canonicalHash); setTimeout(() => { const detail = document.getElementById('eventDetail'); if (!detail) return; const top = detail.getBoundingClientRect().top + window.scrollY; window.scrollTo({top:Math.max(0, top), left:0, behavior:'smooth'}); document.scrollingElement.scrollLeft = 0; document.body.scrollLeft = 0; }, 100); };
+   if (deepLinkGroup) focusGroup(deepLinkGroup);
+  window.voteRoadmap = {records, events, groups, blocks, glossary:glossaryRecords, expected, topicLabels, invariant:{sourceIds:sourceIds.length, uniqueSourceIds:new Set(sourceIds).size, valid:invariant}};
+})();
+</script>
+<script>
+(() => {
+  const timeline = document.getElementById('timeline');
+  if (!timeline || !window.voteRoadmap) return;
+  const sortByKey = new Map(window.voteRoadmap.events.flatMap(item => item.moments || []).map(moment => [moment.key, moment.sort]));
+  const normalizeMoments = () => {
+    const track = timeline.querySelector('.moment-track');
+    if (!track) return;
+    timeline._momentButtons?.forEach((button, key) => { if (key && !button.hidden && !button.disabled && !button.isConnected) track.append(button); });
+    [...track.querySelectorAll('.moment-btn')].forEach(button => {
+      const key = button.dataset.moment;
+      if (!key) { button.dataset.sort = '0'; return; }
+      const sort = sortByKey.get(key);
+      if (sort === undefined || button.hidden || button.disabled) button.remove();
+      else button.dataset.sort = String(sort);
+    });
+    const buttons = [...track.querySelectorAll('.moment-btn[data-moment]')];
+    const sorted = [...buttons].sort((a, b) => Number(a.dataset.sort) - Number(b.dataset.sort) || a.dataset.moment.localeCompare(b.dataset.moment));
+    if (buttons.some((button, index) => button !== sorted[index])) sorted.forEach(button => track.append(button));
+  };
+  new MutationObserver(normalizeMoments).observe(timeline, {childList:true, subtree:true, attributes:true, attributeFilter:['hidden','disabled']});
+  normalizeMoments();
+})();
+</script>
+<script>
+  document.getElementById('momentToggle')?.remove();
+  document.getElementById('typeToggle')?.remove();
+</script>
+</body>
+</html>
