@@ -13,6 +13,8 @@ for (const file of pages) {
       await page.goto(`file://${path.join(__dirname, '..', file)}`);
       await expect(page.locator('#app')).toBeVisible();
       await expect(page.locator('#page-title')).toBeVisible();
+       await expect(page.locator('a[href="forms.html"]')).toBeVisible();
+       await expect(page.locator('a[href="forms.html"]')).toHaveAttribute('href', 'forms.html');
       for (const selector of ['#query', '#clearBtn', '#helpBtn', '#exportBtn', '#eventPicker', '#eventDetail']) await expect(page.locator(selector)).toBeVisible();
       await expect(page.locator('.picker-btn')).toHaveCount(39);
       await expect(page.locator('#resultCount')).toContainText('169');

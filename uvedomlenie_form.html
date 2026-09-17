@@ -75,6 +75,8 @@
     @page { size: A4; margin: 18mm 16mm; }
     body { background: #fff; }
     .wrap > .card, .wrap > button, .hint, h1 { display: none !important; }
+    .btn-row { display:none !important; }
+    .nav { display:none !important; }
     #doc { display: block !important; }
     #doc * { visibility: visible; }
   }
@@ -110,32 +112,32 @@
 </head>
 <body>
 <div class="wrap">
-  <p style="margin:0 0 12px"><a href="index.html" style="color:var(--accent);font-size:14px;text-decoration:none">← Дорожная карта 2026</a></p>
+  <p class="nav" style="margin:0 0 12px"><a href="index.html" style="color:var(--accent);font-size:14px;text-decoration:none">← Дорожная карта 2026</a> · <a href="forms.html" style="color:var(--accent);font-size:14px;text-decoration:none">Формы и памятка</a></p>
   <h1>Уведомление о съёмке наблюдателя</h1>
 
   <div class="card">
     <div class="row">
-      <div><label>Участковая избирательная комиссия №</label><input id="uik"></div>
-      <div><label>Избирательный участок №</label><input id="uchastok"></div>
+      <div><label for="uik">Участковая избирательная комиссия №</label><input id="uik"></div>
+      <div><label for="uchastok">Избирательный участок №</label><input id="uchastok"></div>
     </div>
-    <label>Адрес помещения для голосования</label>
+    <label for="address">Адрес помещения для голосования</label>
     <textarea id="address"></textarea>
 
-    <label>Фамилия, имя, отчество наблюдателя</label>
+    <label for="fio">Фамилия, имя, отчество наблюдателя</label>
     <input id="fio">
 
-    <label>Назначен (наименование субъекта выдвижения)</label>
+    <label for="naznachen">Назначен (наименование субъекта выдвижения)</label>
     <input id="naznachen">
 
     <div class="row">
-      <div><label>Дата назначения</label><input id="datNazn"></div>
-      <div><label>Номер направления</label><input id="nomNapr"></div>
+      <div><label for="datNazn">Дата назначения</label><input id="datNazn" type="date" min="2026-09-01" max="2026-09-30"></div>
+      <div><label for="nomNapr">Номер направления</label><input id="nomNapr"></div>
     </div>
 
-    <label>Контактный телефон</label>
+    <label for="phone">Контактный телефон</label>
     <input id="phone">
 
-    <label>Аппаратура для съёмки (по одной в строке)</label>
+    <label for="tech">Аппаратура для съёмки (до 3 строк, по одной в строке)</label>
     <textarea id="tech" class="tech-area" placeholder="1.&#10;2.&#10;3."></textarea>
   </div>
 
@@ -183,9 +185,9 @@
 
       <p class="doc-bold">Съёмка будет производиться с использованием следующей аппаратуры:</p>
 
-      <div class="doc-field doc-bold">1. <span class="val" id="p_tech1" style="min-width:80%"></span></div>
-      <div class="doc-field doc-bold">2. <span class="val" id="p_tech2" style="min-width:80%"></span></div>
-      <div class="doc-field doc-bold">3. <span class="val" id="p_tech3" style="min-width:80%"></span></div>
+      <div class="doc-field doc-bold"><span class="val" id="p_tech1" style="min-width:80%"></span></div>
+      <div class="doc-field doc-bold"><span class="val" id="p_tech2" style="min-width:80%"></span></div>
+      <div class="doc-field doc-bold"><span class="val" id="p_tech3" style="min-width:80%"></span></div>
 
       <p>Настоящее уведомление составлено в двух экземплярах. Один экземпляр передаётся в участковую избирательную комиссию, второй остаётся у наблюдателя с отметкой о принятии.</p>
 
@@ -232,33 +234,46 @@
     setVal("address", "г. Москва, ул. Примерная, д. 1, МБОУ СОШ № 10");
     setVal("fio", "Иванов Иван Иванович");
     setVal("naznachen", "Политическая партия «КПРФ»");
-    setVal("datNazn", "15.09.2026");
+     setVal("datNazn", "2026-09-15");
     setVal("nomNapr", "42");
     setVal("phone", "+7 (999) 123-45-67");
-    setVal("tech", "1. Смартфон Samsung Galaxy S23\n2. Экшн-камера GoPro Hero 11\n3. Диктофон Zoom H1n");
+    setVal("tech", "Смартфон Samsung Galaxy S23\nЭкшн-камера GoPro Hero 11\nДиктофон Zoom H1n");
   }
 
   function clearForm() {
     const ids = ["uik","uchastok","address","fio","naznachen","datNazn","nomNapr","phone","tech"];
     ids.forEach(id => setVal(id, ""));
+    document.querySelectorAll("[id^='p_']").forEach(element => { element.textContent = ""; });
   }
 
   function generatePDF() {
     const g = id => (document.getElementById(id).value || "").trim();
     const set = (pid, val) => { document.getElementById(pid).textContent = val; };
 
-    const tech = g("tech").split("\n").map(s => s.trim()).filter(Boolean);
-    set("p_uik", g("uik"));
+    const tech = g("tech").split("\n").map(s => s.trim().replace(/^\d+\.\s*/, "")).filter(Boolean);
+    if (tech.length > 3) {
+      window.alert("Укажите не более 3 строк аппаратуры.");
+      return;
+    }
+     set("p_uik", g("uik"));
     set("p_uchastok", g("uchastok"));
     set("p_address", g("address"));
     set("p_fio", g("fio"));
     set("p_naznachen", g("naznachen"));
-    set("p_datNazn", g("datNazn"));
+    const datNaznValue = g("datNazn");
+    const datNaznDate = datNaznValue ? new Date(`${datNaznValue}T00:00:00`) : null;
+    const validDatNazn = !datNaznValue || (/^\d{4}-\d{2}-\d{2}$/.test(datNaznValue) && datNaznDate && !Number.isNaN(datNaznDate.getTime()) && datNaznDate.getFullYear() === 2026 && datNaznDate.getMonth() === 8 && datNaznDate.getDate() >= 1 && datNaznDate.getDate() <= 30);
+    if (!validDatNazn) {
+      window.alert("Укажите дату в сентябре 2026 года.");
+      document.getElementById("datNazn").focus();
+      return;
+    }
+    set("p_datNazn", datNaznValue ? `${datNaznValue.slice(-2)}.09.2026` : "");
     set("p_nomNapr", g("nomNapr"));
     set("p_phone", g("phone"));
-    set("p_tech1", tech[0] || "");
-    set("p_tech2", tech[1] || "");
-    set("p_tech3", tech[2] || "");
+    set("p_tech1", tech[0] ? `1. ${tech[0]}` : "");
+    set("p_tech2", tech[1] ? `2. ${tech[1]}` : "");
+    set("p_tech3", tech[2] ? `3. ${tech[2]}` : "");
     set("p_fio2", g("fio"));
 
     window.print();
