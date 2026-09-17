@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Уведомление о съёмке наблюдателя</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --line: #c9ced6;
+    --accent: #1a56db;
+    --text: #1f2937;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 20px; margin: 8px 0 16px; text-align: center; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  label { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin: 12px 0 4px; }
+  input, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+  }
+  textarea { resize: vertical; min-height: 44px; }
+  textarea.tech-area { min-height: 110px; font-size: 16px; }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-row { display: flex; gap: 16px; margin-bottom: 16px; }
+  .btn-row button { margin-bottom: 0; }
+  .row > div { flex: 1 1 200px; }
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }
+  .secondary {
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .hint { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; }
+
+  /* ---------- Printed document ---------- */
+  #doc { display: none; }
+
+  @media print {
+    @page { size: A4; margin: 18mm 16mm; }
+    body { background: #fff; }
+    .wrap > .card, .wrap > button, .hint, h1 { display: none !important; }
+    #doc { display: block !important; }
+    #doc * { visibility: visible; }
+  }
+
+  .doc-body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12.5pt;
+    color: #000;
+    line-height: 1.35;
+  }
+  .doc-center { text-align: center; }
+  .doc-bold { font-weight: 700; }
+  .doc-title { font-weight: 700; text-align: center; margin-bottom: 6mm; }
+  .doc-field { margin-top: 3mm; }
+  .doc-field .lbl { font-weight: 700; }
+  .val {
+    border-bottom: 1px solid #000;
+    min-height: 1.2em;
+    display: inline-block;
+    padding: 0 4px;
+    min-width: 40%;
+  }
+  .doc-indent { padding-left: 6mm; }
+  .doc-quote { margin: 3mm 0 3mm 8mm; }
+  .doc-quote div { margin: 1mm 0; }
+  .doc-sign { display: flex; justify-content: space-between; margin-top: 8mm; gap: 10mm; }
+  .doc-sign > div { flex: 1; }
+  .doc-underline { border-top: 1px solid #000; margin-top: 10mm; }
+  .doc-box { margin-top: 8mm; }
+  .doc-small { font-size: 11pt; }
+  .doc-apos { font-style: italic; color: #444; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Уведомление о съёмке наблюдателя</h1>
+
+  <div class="card">
+    <div class="row">
+      <div><label>Участковая избирательная комиссия №</label><input id="uik"></div>
+      <div><label>Избирательный участок №</label><input id="uchastok"></div>
+    </div>
+    <label>Адрес помещения для голосования</label>
+    <textarea id="address"></textarea>
+
+    <label>Фамилия, имя, отчество наблюдателя</label>
+    <input id="fio">
+
+    <label>Назначен (наименование субъекта выдвижения)</label>
+    <input id="naznachen">
+
+    <div class="row">
+      <div><label>Дата назначения</label><input id="datNazn"></div>
+      <div><label>Номер направления</label><input id="nomNapr"></div>
+    </div>
+
+    <label>Контактный телефон</label>
+    <input id="phone">
+
+    <label>Аппаратура для съёмки (по одной в строке)</label>
+    <textarea id="tech" class="tech-area" placeholder="1.&#10;2.&#10;3."></textarea>
+  </div>
+
+  <div class="btn-row">
+    <button type="button" class="secondary" onclick="fillExample()">Заполнить примером</button>
+    <button type="button" class="secondary" onclick="clearForm()">Очистить</button>
+  </div>
+  <button onclick="generatePDF()">Скачать PDF</button>
+  <p class="hint">Откроется окно печати — выберите «Сохранить как PDF».</p>
+
+  <div id="doc">
+    <div class="doc-body">
+      <div class="doc-title">УВЕДОМЛЕНИЕ</div>
+
+      <div class="doc-indent">
+        В участковую избирательную комиссию № <span class="val" id="p_uik"></span>
+      </div>
+      <div class="doc-indent">
+        избирательный участок № <span class="val" id="p_uchastok"></span>
+      </div>
+      <div class="doc-indent doc-apos">
+        (адрес помещения для голосования: <span class="val" id="p_address" style="min-width:60%"></span>)
+      </div>
+
+      <div class="doc-field">От наблюдателя:</div>
+
+      <div class="doc-field"><span class="lbl">Фамилия, имя, отчество:</span> <span class="val" id="p_fio" style="min-width:70%"></span></div>
+
+      <div class="doc-field"><span class="lbl">Назначен:</span> <span class="val" id="p_naznachen" style="min-width:70%"></span></div>
+      <div class="doc-small doc-apos">(наименование субъекта выдвижения — политическая партия / кандидат)</div>
+
+      <div class="doc-field"><span class="lbl">Дата назначения:</span> <span class="val" id="p_datNazn"></span></div>
+      <div class="doc-field"><span class="lbl">Номер направления:</span> <span class="val" id="p_nomNapr"></span></div>
+      <div class="doc-field"><span class="lbl">Контактный телефон:</span> <span class="val" id="p_phone" style="min-width:50%"></span></div>
+
+      <p>В соответствии с подпунктом «к» пункта 9 статьи 30 Федерального закона от 12.06.2002 № 67-ФЗ «Об основных гарантиях избирательных прав и права на участие в референдуме граждан Российской Федерации», пунктом 5 статьи 3 указанного Федерального закона (принцип открытости и гласности), а также в соответствии с Положением об особенностях голосования в течение нескольких дней голосования на выборах, назначенных на 18–20 сентября 2026 года,</p>
+
+      <p>уведомляю участковую избирательную комиссию о том, что мною в период голосования (18, 19, 20 сентября 2026 года), при подсчёте голосов, а также при работе со списками избирателей и иными документами комиссии <span class="doc-bold">будет производиться аудио-, фото- и видеосъёмка</span> в помещении для голосования, а также при проведении голосования вне помещения (надомное голосование), с соблюдением норм действующего законодательства Российской Федерации, в том числе:</p>
+
+      <div class="doc-quote">
+        <div>— не допускается съёмка паспортных данных избирателей, содержащихся в списках избирателей;</div>
+        <div>— не допускается съёмка содержания заполненного избирателем бюллетеня (тайна голосования, ст. 7 ФЗ-67);</div>
+        <div>— съёмка ведётся способом, не нарушающим общественный порядок и не препятствующим работе комиссии.</div>
+      </div>
+
+      <p class="doc-bold">Съёмка будет производиться с использованием следующей аппаратуры:</p>
+
+      <div class="doc-field doc-bold">1. <span class="val" id="p_tech1" style="min-width:80%"></span></div>
+      <div class="doc-field doc-bold">2. <span class="val" id="p_tech2" style="min-width:80%"></span></div>
+      <div class="doc-field doc-bold">3. <span class="val" id="p_tech3" style="min-width:80%"></span></div>
+
+      <p>Настоящее уведомление составлено в двух экземплярах. Один экземпляр передаётся в участковую избирательную комиссию, второй остаётся у наблюдателя с отметкой о принятии.</p>
+
+      <div class="doc-sign">
+        <div>
+          <div class="doc-apos">(дата)</div>
+          <div class="doc-underline"></div>
+        </div>
+        <div>
+          <div class="doc-apos">(подпись наблюдателя)</div>
+          <div class="doc-underline"></div>
+        </div>
+      </div>
+
+      <div class="doc-field">Расшифровка подписи: <span class="val" id="p_fio2" style="min-width:50%"></span></div>
+
+      <div class="doc-box doc-center doc-bold">ОТМЕТКА О ПРИНЯТИИ УИК</div>
+      <div class="doc-center doc-bold">ПРИНЯТО</div>
+      <div class="doc-center">«____» ____________________ 2026 г. Время: ____ : ____</div>
+      <div class="doc-center doc-apos">М.П.</div>
+
+      <div class="doc-sign">
+        <div>
+          <div class="doc-apos">(должность)</div>
+          <div class="doc-underline"></div>
+        </div>
+        <div>
+          <div class="doc-apos">(подпись)</div>
+          <div class="doc-underline"></div>
+        </div>
+      </div>
+
+      <div class="doc-field">Расшифровка: <span class="val" style="min-width:50%"></span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setVal(id, val) { document.getElementById(id).value = val; }
+
+  function fillExample() {
+    setVal("uik", "1234");
+    setVal("uchastok", "567");
+    setVal("address", "г. Москва, ул. Примерная, д. 1, МБОУ СОШ № 10");
+    setVal("fio", "Иванов Иван Иванович");
+    setVal("naznachen", "Политическая партия «КПРФ»");
+    setVal("datNazn", "15.09.2026");
+    setVal("nomNapr", "42");
+    setVal("phone", "+7 (999) 123-45-67");
+    setVal("tech", "1. Смартфон Samsung Galaxy S23\n2. Экшн-камера GoPro Hero 11\n3. Диктофон Zoom H1n");
+  }
+
+  function clearForm() {
+    const ids = ["uik","uchastok","address","fio","naznachen","datNazn","nomNapr","phone","tech"];
+    ids.forEach(id => setVal(id, ""));
+  }
+
+  function generatePDF() {
+    const g = id => (document.getElementById(id).value || "").trim();
+    const set = (pid, val) => { document.getElementById(pid).textContent = val; };
+
+    const tech = g("tech").split("\n").map(s => s.trim()).filter(Boolean);
+    set("p_uik", g("uik"));
+    set("p_uchastok", g("uchastok"));
+    set("p_address", g("address"));
+    set("p_fio", g("fio"));
+    set("p_naznachen", g("naznachen"));
+    set("p_datNazn", g("datNazn"));
+    set("p_nomNapr", g("nomNapr"));
+    set("p_phone", g("phone"));
+    set("p_tech1", tech[0] || "");
+    set("p_tech2", tech[1] || "");
+    set("p_tech3", tech[2] || "");
+    set("p_fio2", g("fio"));
+
+    window.print();
+  }
+</script>
+</body>
+</html>
