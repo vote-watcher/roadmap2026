@@ -15,6 +15,8 @@ for (const file of pages) {
       await expect(page.locator('#page-title')).toBeVisible();
        await expect(page.locator('a[href="forms.html"]')).toBeVisible();
        await expect(page.locator('a[href="forms.html"]')).toHaveAttribute('href', 'forms.html');
+       await expect(page.getByRole('link', { name: 'Памятка наблюдателя' })).toHaveAttribute('href', 'forms/pamyatka-nablyudatelya.html');
+       await expect(page.locator('body')).not.toContainText('Уведомление о съёмке');
       for (const selector of ['#query', '#clearBtn', '#helpBtn', '#exportBtn', '#eventPicker', '#eventDetail']) await expect(page.locator(selector)).toBeVisible();
       await expect(page.locator('.picker-btn')).toHaveCount(39);
       await expect(page.locator('#resultCount')).toContainText('169');

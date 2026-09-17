@@ -18,6 +18,8 @@ const url = file => `file://${path.join(root, file)}`;
 test('forms catalog contains every document and follows every HTML link', async ({ page }) => {
   await page.goto(url('forms.html'));
   const hrefs = await page.locator('main a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+  await expect(page.locator('h2')).not.toContainText('Справочные документы');
+  await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
   for (const href of hrefs) {
     if (href.endsWith('.html')) {
       await page.goto(url(decodeURIComponent(href)));
@@ -27,7 +29,7 @@ test('forms catalog contains every document and follows every HTML link', async 
     }
   }
   expect(fs.existsSync(path.join(root, 'forms/pamyatka-nablyudatelya.html'))).toBe(true);
-  expect(fs.existsSync(path.join(root, 'forms/pamyatka-nablyudatelya.pdf'))).toBe(false);
+  expect(fs.existsSync(path.join(root, 'docs', 'ТЕЛЕФОНЫ ШТАБА.pdf'))).toBe(false);
 });
 
 test('all form pages follow their local HTML links through file URLs', async ({ page }) => {
