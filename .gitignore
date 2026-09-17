@@ -1,0 +1,8 @@
+node_modules/
+test-results/
+playwright-report/
+.playwright-cli/
+private/
+/2026-09-17 *.jpg
+/docs/*.jpg
+/docs/ПАМЯТКА НАБЛЮДАТЕЛЯ УИК.pdf
