@@ -6,8 +6,10 @@ const root = path.join(__dirname, '..');
 const photoForms = [
   'forms/complaint-count.html',
   'forms/complaint-access.html',
+  'forms/complaint-refusal.html',
   'forms/complaint-paper-ballot.html',
   'forms/complaint-movement.html',
+  'forms/complaint-transport.html',
   'forms/safepack-copy.html',
 ];
 const documents = ['uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html'];
@@ -116,6 +118,8 @@ test('photo forms preserve fixed phrases and date constraints', async ({ page })
     'forms/complaint-access.html': ['В Территориальную избирательную комиссию города Москвы', 'председатель, заместитель председателя, секретарь УИК', 'Прошу принять меры в рамках установленных законом полномочий, в том числе обеспечить мой допуск в помещение для голосования.'],
     'forms/complaint-paper-ballot.html': ['В нарушение пункта 15 статьи 64', 'решением Московской городской избирательной комиссии от 27.08.2026 № 147/4', 'решением Московской городской избирательной комиссии от 14.08.2026 № 145/3', 'Прошу принять меры по недопущению в дальнейшем подобных действий, привлечь к ответственности виновное лицо.'],
     'forms/complaint-movement.html': ['требование ограничить мои перемещения', 'пункт 9 статьи 30, пункт 11 статьи 61', 'Прошу незамедлительно устранить указанные нарушения.'],
+    'forms/complaint-refusal.html': ['подп. «к» пункта 6 статьи 27', 'был заявлен отказ рассмотреть жалобу', 'принять мотивированное решение по существу вопроса'],
+    'forms/complaint-transport.html': ['организованного подвоза более 100 избирателей', 'принцип свободного и добровольного участия', 'организовавших подвох', 'выдать мне заверенную копию решения'],
     'forms/safepack-copy.html': ['пунктом 3.5', 'из переносного ящика для голосования', 'Прошу выдать копию непосредственно после запечатывания сейф-пакета и составления акта либо в течение времени, отведённого на подготовку копии, но до конца дня голосования.'],
   };
   for (const [file, phrases] of Object.entries(cases)) {
@@ -130,6 +134,29 @@ test('photo forms preserve fixed phrases and date constraints', async ({ page })
       expect(text).not.toContain('Дата сейф-пакета');
       expect(text).not.toContain('2026-09-18');
     }
+  }
+});
+
+test('new complaint forms print required fields and clear their values', async ({ page }) => {
+  const cases = {
+    'forms/complaint-refusal.html': {
+      fields: ['applicant', 'uik', 'eventDate', 'eventTime', 'memberName', 'date'],
+      printed: { applicant: 'Сидорова Анна Сергеевна', uik: '1234', eventDate: '18', eventTime: '12:10', memberName: 'Иванов И. И.', date: '18' },
+    },
+    'forms/complaint-transport.html': {
+      fields: ['observer', 'date'],
+      printed: { observer: 'Орлова Мария Игоревна', date: '18' },
+    },
+  };
+
+  for (const [file, expected] of Object.entries(cases)) {
+    await page.goto(url(file));
+    for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveAttribute('required', '');
+    await page.getByRole('button', { name: 'Заполнить примером' }).click();
+    for (const [id, value] of Object.entries(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText(value);
+    await page.getByRole('button', { name: 'Очистить' }).click();
+    for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveValue('');
+    for (const id of Object.keys(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText('');
   }
 });
 
