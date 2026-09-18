@@ -116,26 +116,10 @@
   <h1>Уведомление о съёмке наблюдателя</h1>
 
   <div class="card">
-    <div class="row">
-      <div><label for="uik">Участковая избирательная комиссия №</label><input id="uik"></div>
-      <div><label for="uchastok">Избирательный участок №</label><input id="uchastok"></div>
-    </div>
-    <label for="address">Адрес помещения для голосования</label>
-    <textarea id="address"></textarea>
+    <label for="uik">Участковая избирательная комиссия №</label><input id="uik">
 
     <label for="fio">Фамилия, имя, отчество наблюдателя</label>
     <input id="fio">
-
-    <label for="naznachen">Назначен (наименование субъекта выдвижения)</label>
-    <input id="naznachen">
-
-    <div class="row">
-      <div><label for="datNazn">Дата назначения</label><input id="datNazn" type="date" min="2026-09-01" max="2026-09-30"></div>
-      <div><label for="nomNapr">Номер направления</label><input id="nomNapr"></div>
-    </div>
-
-    <label for="phone">Контактный телефон</label>
-    <input id="phone">
 
     <label for="tech">Аппаратура для съёмки (до 3 строк, по одной в строке)</label>
     <textarea id="tech" class="tech-area" placeholder="1.&#10;2.&#10;3."></textarea>
@@ -150,40 +134,11 @@
 
   <div id="doc">
     <div class="doc-body">
-      <div class="doc-title">УВЕДОМЛЕНИЕ</div>
-
-      <div class="doc-indent">
-        В участковую избирательную комиссию № <span class="val" id="p_uik"></span>
-      </div>
-      <div class="doc-indent">
-        избирательный участок № <span class="val" id="p_uchastok"></span>
-      </div>
-      <div class="doc-indent doc-apos">
-        (адрес помещения для голосования: <span class="val" id="p_address" style="min-width:60%"></span>)
-      </div>
-
-      <div class="doc-field">От наблюдателя:</div>
-
-      <div class="doc-field"><span class="lbl">Фамилия, имя, отчество:</span> <span class="val" id="p_fio" style="min-width:70%"></span></div>
-
-      <div class="doc-field"><span class="lbl">Назначен:</span> <span class="val" id="p_naznachen" style="min-width:70%"></span></div>
-      <div class="doc-small doc-apos">(наименование субъекта выдвижения — политическая партия / кандидат)</div>
-
-      <div class="doc-field"><span class="lbl">Дата назначения:</span> <span class="val" id="p_datNazn"></span></div>
-      <div class="doc-field"><span class="lbl">Номер направления:</span> <span class="val" id="p_nomNapr"></span></div>
-      <div class="doc-field"><span class="lbl">Контактный телефон:</span> <span class="val" id="p_phone" style="min-width:50%"></span></div>
-
-      <p>В соответствии с подпунктом «к» пункта 9 статьи 30 Федерального закона от 12.06.2002 № 67-ФЗ «Об основных гарантиях избирательных прав и права на участие в референдуме граждан Российской Федерации», пунктом 5 статьи 3 указанного Федерального закона (принцип открытости и гласности), а также в соответствии с Положением об особенностях голосования в течение нескольких дней голосования на выборах, назначенных на 18–20 сентября 2026 года,</p>
-
-      <p>уведомляю участковую избирательную комиссию о том, что мною в период голосования (18, 19, 20 сентября 2026 года), при подсчёте голосов, а также при работе со списками избирателей и иными документами комиссии <span class="doc-bold">будет производиться аудио-, фото- и видеосъёмка</span> в помещении для голосования, а также при проведении голосования вне помещения (надомное голосование), с соблюдением норм действующего законодательства Российской Федерации, в том числе:</p>
-
-      <div class="doc-quote">
-        <div>— не допускается съёмка паспортных данных избирателей, содержащихся в списках избирателей;</div>
-        <div>— не допускается съёмка содержания заполненного избирателем бюллетеня (тайна голосования, ст. 7 ФЗ-67);</div>
-        <div>— съёмка ведётся способом, не нарушающим общественный порядок и не препятствующим работе комиссии.</div>
-      </div>
-
-      <p class="doc-bold">Съёмка будет производиться с использованием следующей аппаратуры:</p>
+      <div class="doc-title">Уведомление</div>
+      <div class="doc-indent">В участковую избирательную комиссию № <span class="val" id="p_uik"></span></div>
+      <div class="doc-field">От наблюдателя</div>
+      <div class="doc-field"><span class="val" id="p_fio" style="min-width:70%"></span></div>
+      <div class="doc-field">Информирую участковую избирательную комиссию о том, что мною при необходимости будет производиться аудио-, фото- и видеосъемка в помещении для голосования с соблюдением норм действующего законодательства Российской Федерации на основании пп. «к» п. 9 ст. 30 ФЗ от 12.06.2002 № 67-ФЗ «Об основных гарантиях избирательных прав и права на участие в референдуме граждан Российской Федерации» с использованием следующей аппаратуры:</div>
 
       <div class="doc-field doc-bold"><span class="val" id="p_tech1" style="min-width:80%"></span></div>
       <div class="doc-field doc-bold"><span class="val" id="p_tech2" style="min-width:80%"></span></div>
@@ -202,8 +157,6 @@
         </div>
       </div>
 
-      <div class="doc-field">Расшифровка подписи: <span class="val" id="p_fio2" style="min-width:50%"></span></div>
-
       <div class="doc-box doc-center doc-bold">ОТМЕТКА О ПРИНЯТИИ УИК</div>
       <div class="doc-center doc-bold">ПРИНЯТО</div>
       <div class="doc-center">«____» ____________________ 2026 г. Время: ____ : ____</div>
@@ -220,7 +173,6 @@
         </div>
       </div>
 
-      <div class="doc-field">Расшифровка: <span class="val" style="min-width:50%"></span></div>
     </div>
   </div>
 </div>
@@ -230,18 +182,12 @@
 
   function fillExample() {
     setVal("uik", "1234");
-    setVal("uchastok", "567");
-    setVal("address", "г. Москва, ул. Примерная, д. 1, МБОУ СОШ № 10");
     setVal("fio", "Иванов Иван Иванович");
-    setVal("naznachen", "Политическая партия «КПРФ»");
-     setVal("datNazn", "2026-09-15");
-    setVal("nomNapr", "42");
-    setVal("phone", "+7 (999) 123-45-67");
     setVal("tech", "Смартфон Samsung Galaxy S23\nЭкшн-камера GoPro Hero 11\nДиктофон Zoom H1n");
   }
 
   function clearForm() {
-    const ids = ["uik","uchastok","address","fio","naznachen","datNazn","nomNapr","phone","tech"];
+    const ids = ["uik","fio","tech"];
     ids.forEach(id => setVal(id, ""));
     document.querySelectorAll("[id^='p_']").forEach(element => { element.textContent = ""; });
   }
@@ -256,25 +202,10 @@
       return;
     }
      set("p_uik", g("uik"));
-    set("p_uchastok", g("uchastok"));
-    set("p_address", g("address"));
     set("p_fio", g("fio"));
-    set("p_naznachen", g("naznachen"));
-    const datNaznValue = g("datNazn");
-    const datNaznDate = datNaznValue ? new Date(`${datNaznValue}T00:00:00`) : null;
-    const validDatNazn = !datNaznValue || (/^\d{4}-\d{2}-\d{2}$/.test(datNaznValue) && datNaznDate && !Number.isNaN(datNaznDate.getTime()) && datNaznDate.getFullYear() === 2026 && datNaznDate.getMonth() === 8 && datNaznDate.getDate() >= 1 && datNaznDate.getDate() <= 30);
-    if (!validDatNazn) {
-      window.alert("Укажите дату в сентябре 2026 года.");
-      document.getElementById("datNazn").focus();
-      return;
-    }
-    set("p_datNazn", datNaznValue ? `${datNaznValue.slice(-2)}.09.2026` : "");
-    set("p_nomNapr", g("nomNapr"));
-    set("p_phone", g("phone"));
     set("p_tech1", tech[0] ? `1. ${tech[0]}` : "");
     set("p_tech2", tech[1] ? `2. ${tech[1]}` : "");
     set("p_tech3", tech[2] ? `3. ${tech[2]}` : "");
-    set("p_fio2", g("fio"));
 
     window.print();
   }

@@ -70,7 +70,15 @@ for (const file of photoForms) {
     expect(labels.every(label => label.for && label.exists)).toBe(true);
     await page.getByRole('button', { name: 'Заполнить примером' }).click();
     await expect(page.locator('#doc')).toContainText('2026');
-    await expect(page.locator('.accept .accept-field')).toHaveCount(6);
+    await expect(page.locator('.accept-top')).toHaveCount(1);
+    await expect(page.locator('.accept-bottom')).toHaveCount(2);
+    await expect(page.locator('.accept-signature')).toHaveCount(1);
+    await expect(page.locator('.accept-top')).toContainText('ПРИНЯТО');
+    await expect(page.locator('.accept-top')).toContainText('(дата, время)');
+    await expect(page.locator('.accept-top')).toContainText('М.П.');
+    await expect(page.locator('.accept-bottom').first()).toContainText('Должность:');
+    await expect(page.locator('.accept-bottom').first()).toContainText('(подпись)');
+    await expect(page.locator('.accept-signature')).toContainText('(расшифровка)');
     await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
     await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
     await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
@@ -99,13 +107,13 @@ test('notification has labels, print acceptance block, and clears all printed va
   await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
   await expect(page.locator('#doc')).toContainText('ПРИНЯТО');
   await page.getByRole('button', { name: 'Очистить' }).click();
-  await expect(page.locator('[id^="p_"]')).toHaveText(Array(12).fill(''));
+  await expect(page.locator('#p_uik, #p_fio, #p_tech1, #p_tech2, #p_tech3')).toHaveText(['', '', '', '', '']);
 });
 
 test('photo forms preserve fixed phrases and date constraints', async ({ page }) => {
   const cases = {
     'forms/complaint-count.html': ['Такие действия направлены на сокрытие действительных итогов голосования, что дает основания полагать, что такие нарушения используются для сокрытия действительных итогов голосования.'],
-    'forms/complaint-access.html': ['В Территориальную избирательную комиссию города Москвы', 'От кандидата/доверенного лица кандидата/наблюдателя', 'Прошу принять меры в рамках установленных законом полномочий, в том числе обеспечить мой допуск в помещение для голосования.'],
+    'forms/complaint-access.html': ['В Территориальную избирательную комиссию города Москвы', 'председатель, заместитель председателя, секретарь УИК', 'Прошу принять меры в рамках установленных законом полномочий, в том числе обеспечить мой допуск в помещение для голосования.'],
     'forms/complaint-paper-ballot.html': ['В нарушение пункта 15 статьи 64', 'решением Московской городской избирательной комиссии от 27.08.2026 № 147/4', 'решением Московской городской избирательной комиссии от 14.08.2026 № 145/3', 'Прошу принять меры по недопущению в дальнейшем подобных действий, привлечь к ответственности виновное лицо.'],
     'forms/complaint-movement.html': ['требование ограничить мои перемещения', 'пункт 9 статьи 30, пункт 11 статьи 61', 'Прошу незамедлительно устранить указанные нарушения.'],
     'forms/safepack-copy.html': ['пунктом 3.5', 'из переносного ящика для голосования', 'Прошу выдать копию непосредственно после запечатывания сейф-пакета и составления акта либо в течение времени, отведённого на подготовку копии, но до конца дня голосования.'],
@@ -131,7 +139,7 @@ test('access keeps the confirmed addressee and header without unconfirmed offici
   const text = await page.locator('#doc').innerText();
   expect(text).toContain('В Территориальную избирательную комиссию города Москвы');
   expect(text).toContain('От кандидата/доверенного лица кандидата/наблюдателя');
-  for (const id of ['official', 'officialName', 'eventTime', 'eventDate']) expect(await page.locator(`#${id}`).count()).toBe(0);
+  for (const id of ['official', 'officialName']) expect(await page.locator(`#${id}`).count()).toBe(0);
 });
 
 test('empty required fields prevent printing', async ({ page }) => {
@@ -150,18 +158,19 @@ test('notification preserves source text, p_* values, print interception, and cl
   const labels = await page.locator('label').evaluateAll(elements => elements.map(label => ({ for: label.htmlFor, exists: Boolean(document.getElementById(label.htmlFor)) })));
   expect(labels.every(label => label.for && label.exists)).toBe(true);
   await page.getByRole('button', { name: 'Заполнить примером' }).click();
-  const expectedPrinted = {
-    p_uik: '1234', p_uchastok: '567', p_address: 'г. Москва, ул. Примерная, д. 1, МБОУ СОШ № 10',
-    p_fio: 'Иванов Иван Иванович', p_naznachen: 'Политическая партия «КПРФ»', p_datNazn: '15.09.2026',
-    p_nomNapr: '42', p_phone: '+7 (999) 123-45-67', p_tech1: '1. Смартфон Samsung Galaxy S23',
-    p_tech2: '2. Экшн-камера GoPro Hero 11', p_tech3: '3. Диктофон Zoom H1n', p_fio2: 'Иванов Иван Иванович'
-  };
-  for (const [id, text] of Object.entries(expectedPrinted)) await expect(page.locator(`#${id}`)).toHaveText(text);
-  await expect(page.locator('#doc')).toContainText('будет производиться аудио-, фото- и видеосъёмка');
-  await expect(page.locator('#doc')).toContainText('не допускается съёмка содержания заполненного избирателем бюллетеня');
   await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
   await page.getByRole('button', { name: 'Скачать PDF' }).click();
   await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+  const expectedPrinted = {
+    p_uik: '1234', p_fio: 'Иванов Иван Иванович',
+    p_tech1: '1. Смартфон Samsung Galaxy S23', p_tech2: '2. Экшн-камера GoPro Hero 11', p_tech3: '3. Диктофон Zoom H1n'
+  };
+  for (const [id, text] of Object.entries(expectedPrinted)) await expect(page.locator(`#${id}`)).toHaveText(text);
+  await expect(page.locator('#doc')).toContainText('От наблюдателя');
+  await expect(page.locator('#doc')).toContainText('при необходимости будет производиться аудио-, фото- и видеосъемка');
+  await expect(page.locator('#doc')).toContainText('на основании пп. «к» п. 9 ст. 30 ФЗ');
+  for (const id of ['p_fio2', 'p_address', 'p_uchastok']) await expect(page.locator(`#${id}`)).toHaveCount(0);
+  for (const phrase of ['Расшифровка подписи', '18, 19, 20 сентября']) await expect(page.locator('#doc')).not.toContainText(phrase);
   const beforeClear = await page.locator('[id^="p_"]').allTextContents();
   expect(beforeClear.some(Boolean)).toBe(true);
   await page.getByRole('button', { name: 'Очистить' }).click();

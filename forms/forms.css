@@ -5,3 +5,4 @@
 #doc{display:none}#doc.guide{display:block}
 .button{display:inline-flex;align-items:center;justify-content:center}
 .accept{margin-top:10mm;border-top:1px solid #000;padding-top:5mm}.accept>b{display:block;text-align:center;margin-bottom:3mm}.accept-field{display:flex;gap:4px;margin-top:2mm}.accept-field span{display:inline-block;flex:1;min-height:1.25em;border-bottom:1px solid #000}
+.accept-top,.accept-bottom{display:flex;align-items:end;gap:8mm;margin-top:5mm}.accept-top b{margin-right:0}.accept-top .accept-line{width:35mm}.accept-top small{display:block;font-size:9pt}.accept-top>span:last-child{margin-left:auto}.accept-bottom>span:first-child{white-space:nowrap}.accept-bottom .accept-line{flex:1;border-bottom:1px solid #000;min-height:1.25em}.accept-signature{justify-content:flex-end}.accept-signature .accept-line{flex:0 1 55%}
