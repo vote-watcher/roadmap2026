@@ -116,10 +116,10 @@
   <h1>Уведомление о съёмке наблюдателя</h1>
 
   <div class="card">
-    <label for="uik">Участковая избирательная комиссия №</label><input id="uik">
+    <label for="uik">Участковая избирательная комиссия №</label><input id="uik" data-profile-field="uik">
 
     <label for="fio">Фамилия, имя, отчество наблюдателя</label>
-    <input id="fio">
+    <input id="fio" data-profile-field="fullName">
 
     <label for="tech">Аппаратура для съёмки (до 3 строк, по одной в строке)</label>
     <textarea id="tech" class="tech-area" placeholder="1.&#10;2.&#10;3."></textarea>
@@ -177,6 +177,7 @@
   </div>
 </div>
 
+<script src="forms/profile.js"></script>
 <script>
   function setVal(id, val) { document.getElementById(id).value = val; }
 

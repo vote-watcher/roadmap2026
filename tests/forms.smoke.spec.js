@@ -43,6 +43,86 @@ test('navigation does not use the retired catalog name', async ({ page }) => {
   }
 });
 
+test('profile saves, restores, applies only to profile fields, and can be removed', async ({ page }) => {
+  await page.goto(url('forms.html'));
+  await page.locator('#profile-full-name').fill('Тестовый Пользователь');
+  await page.locator('#profile-uik').fill('4321');
+  await page.getByRole('button', { name: 'Сохранить данные' }).click();
+  await expect(page.getByRole('status')).toContainText('30 дней');
+  await expect.poll(() => page.evaluate(() => document.cookie)).toContain('vote_profile_v1');
+  await page.reload();
+  await expect(page.locator('#profile-full-name')).toHaveValue('Тестовый Пользователь');
+  await expect(page.locator('#profile-uik')).toHaveValue('4321');
+
+  await page.goto(url('forms/complaint-count.html'));
+  await expect(page.locator('#applicant')).toHaveAttribute('data-profile-field', 'fullName');
+  await expect(page.locator('#uik')).toHaveAttribute('data-profile-field', 'uik');
+  await expect(page.locator('#applicant')).toHaveValue('Тестовый Пользователь');
+  await expect(page.locator('#uik')).toHaveValue('4321');
+  await page.goto(url('forms/complaint-movement.html'));
+  await expect(page.locator('#observer')).toHaveValue('Тестовый Пользователь');
+  await expect(page.locator('#uik')).toHaveValue('4321');
+  await page.goto(url('uvedomlenie_form.html'));
+  await expect(page.locator('#fio')).toHaveAttribute('data-profile-field', 'fullName');
+  await expect(page.locator('#uik')).toHaveAttribute('data-profile-field', 'uik');
+  await expect(page.locator('#fio')).toHaveValue('Тестовый Пользователь');
+  await expect(page.locator('#uik')).toHaveValue('4321');
+
+  await page.goto(url('forms/complaint-paper-ballot.html'));
+  await expect(page.locator('#memberName')).toHaveValue('');
+  await expect(page.locator('#voterName')).toHaveValue('');
+  await page.locator('#memberName').fill('Введено вручную');
+  await page.reload();
+  await expect(page.locator('#memberName')).toHaveValue('');
+
+  await page.goto(url('forms.html'));
+  await page.getByRole('button', { name: 'Удалить сохранённые данные' }).click();
+  await expect(page.getByRole('status')).toContainText('удалены');
+  await expect.poll(() => page.evaluate(() => document.cookie)).not.toContain('vote_profile_v1');
+});
+
+test('profile apply does not overwrite manually entered profile fields', async ({ page }) => {
+  await page.goto(url('forms.html'));
+  await page.locator('#profile-full-name').fill('Сохранённое имя');
+  await page.locator('#profile-uik').fill('4321');
+  await page.getByRole('button', { name: 'Сохранить данные' }).click();
+  await page.goto(url('forms/safepack-copy.html'));
+  await page.locator('#applicant').fill('Введённое имя');
+  await page.locator('#uik').fill('9876');
+  await page.evaluate(() => window.VoteProfile.apply());
+  await expect(page.locator('#applicant')).toHaveValue('Введённое имя');
+  await expect(page.locator('#uik')).toHaveValue('9876');
+});
+
+test('invalid profile cookie is ignored without a page error', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(url('forms.html'));
+  await page.evaluate(() => { document.cookie = 'vote_profile_v1=%7Bbroken; Path=/'; });
+  await page.reload();
+  expect(errors).toEqual([]);
+  await expect(page.locator('#profile-full-name')).toHaveValue('');
+  await expect(page.locator('#profile-uik')).toHaveValue('');
+});
+
+test('ordinary forms set only an empty application date to today', async ({ page }) => {
+  await page.goto(url('forms/complaint-count.html'));
+  const today = await page.evaluate(() => { const date = new Date(); return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; });
+  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#eventDate')).toHaveValue('');
+
+  await page.goto(url('forms/complaint-refusal.html'));
+  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#eventDate')).toHaveValue('');
+  await page.locator('#date').fill('2026-09-12');
+  await page.reload();
+  await expect(page.locator('#date')).toHaveValue(today);
+
+  await page.goto(url('forms/safepack-copy.html'));
+  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#actDate')).toHaveValue('');
+});
+
 test('all form pages follow their local HTML links through file URLs', async ({ page }) => {
   for (const file of htmlDocuments) {
     await page.goto(url(file));

@@ -1,3 +1,4 @@
+document.write('<script src="profile.js"></script>');
 (function(){
   const fields=[...document.querySelectorAll('[data-print]')];
   const inputs=[...document.querySelectorAll('input,textarea,select')];
@@ -13,5 +14,6 @@
   window.generatePDF=function(){if(!validate())return;sync();window.print()};
   inputs.forEach(el=>el.addEventListener('input',sync));
   inputs.forEach(el=>el.addEventListener('change',sync));
+  if(window.VoteProfile)window.VoteProfile.apply();
   sync();
 })();
