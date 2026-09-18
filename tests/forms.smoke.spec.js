@@ -170,11 +170,22 @@ test('notification refuses more than three equipment lines', async ({ page }) =>
   expect(await page.evaluate(() => window.__printed)).not.toBe(true);
 });
 
-test('observer memo has complete headings and key phrases', async ({ page }) => {
+test('screen hides form documents and shows observer memo', async ({ page }) => {
+  await page.goto(url(photoForms[0]));
+  await expect(page.locator('#doc')).toBeHidden();
   await page.goto(url('forms/pamyatka-nablyudatelya.html'));
+  await expect(page.locator('form, input, textarea, select')).toHaveCount(0);
+  await expect(page.locator('#doc')).toBeVisible();
   const phrases = ['ПАМЯТКА НАБЛЮДАТЕЛЯ НА УЧАСТКОВОЙ ИЗБИРАТЕЛЬНОЙ КОМИССИИ (УИК)', 'До начала работы', 'Вы вправе', 'списком избирателей', 'переносную урну', 'подсчете голосов', 'заверенную копию', 'обжаловать действия комиссии', 'Чего делать нельзя', 'Открытие', 'В течение дня', 'Надомное голосование', 'пятницы и субботы', 'Подсчет голосов', 'Протокол', 'Если видите нарушение', 'жалобу в двух экземплярах', 'Главный принцип', 'вероятностью 99% приведет к удалению'];
   for (const phrase of phrases) await expect(page.locator('#doc')).toContainText(phrase);
   await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
   await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
   await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+});
+
+test('catalog links to the static observer memo', async ({ page }) => {
+  await page.goto(url('forms.html'));
+  await page.locator('a[href="forms/pamyatka-nablyudatelya.html"]').click();
+  await expect(page).toHaveURL(url('forms/pamyatka-nablyudatelya.html'));
+  await expect(page.locator('#doc')).toBeVisible();
 });
