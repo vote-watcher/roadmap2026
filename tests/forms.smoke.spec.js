@@ -17,6 +17,8 @@ const url = file => `file://${path.join(root, file)}`;
 
 test('forms catalog contains every document and follows every HTML link', async ({ page }) => {
   await page.goto(url('forms.html'));
+  await expect(page).toHaveTitle('Формы');
+  await expect(page.locator('h1')).toHaveText('Формы');
   const hrefs = await page.locator('main a').evaluateAll(links => links.map(link => link.getAttribute('href')));
   await expect(page.locator('h2')).not.toContainText('Справочные документы');
   await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
@@ -30,6 +32,13 @@ test('forms catalog contains every document and follows every HTML link', async 
   }
   expect(fs.existsSync(path.join(root, 'forms/pamyatka-nablyudatelya.html'))).toBe(true);
   expect(fs.existsSync(path.join(root, 'docs', 'ТЕЛЕФОНЫ ШТАБА.pdf'))).toBe(false);
+});
+
+test('navigation does not use the retired catalog name', async ({ page }) => {
+  for (const file of htmlDocuments) {
+    await page.goto(url(file));
+    await expect(page.locator('body')).not.toContainText('Формы и памятка');
+  }
 });
 
 test('all form pages follow their local HTML links through file URLs', async ({ page }) => {

@@ -67,3 +67,31 @@ for (const file of pages) {
     });
   });
 }
+
+test('picker navigation keeps current labels, contrast, and alignment', async ({ page }) => {
+  await page.goto(`file://${path.join(__dirname, '..', 'vote_roadmap_2026_picker.html')}`);
+  const links = [
+    page.getByRole('link', { name: 'Формы', exact: true }),
+    page.getByRole('link', { name: 'Памятка наблюдателя', exact: true }),
+  ];
+  const white = await page.evaluate(() => {
+    const probe = document.createElement('span');
+    probe.style.color = 'white';
+    document.body.append(probe);
+    const color = getComputedStyle(probe).color;
+    probe.remove();
+    return color;
+  });
+  for (const link of links) {
+    const styles = await link.evaluate(element => {
+      const computed = getComputedStyle(element);
+      return { color: computed.color, display: computed.display, alignItems: computed.alignItems };
+    });
+    expect(styles.color).toBe(white);
+    expect(styles.display === 'inline-flex' || styles.alignItems === 'center').toBe(true);
+  }
+  await expect(page.locator('body')).not.toContainText('Формы и памятка');
+
+  await page.goto(`file://${path.join(__dirname, '..', 'vote_roadmap_2026_cards.html')}`);
+  await expect(page.locator('body')).not.toContainText('Формы и памятка');
+});
