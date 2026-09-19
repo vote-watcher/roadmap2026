@@ -2,8 +2,9 @@ document.write('<script src="profile.js"></script>');
 (function(){
   const fields=[...document.querySelectorAll('[data-print]')];
   const inputs=[...document.querySelectorAll('input,textarea,select')];
-  const optionalEventIds=['eventDate','eventTime','transportEventDate','transportEventTime'];
+  const optionalEventIds=['eventDate','eventTime','transportEventDate','transportEventTime','boxType','actDate','serial'];
   optionalEventIds.forEach(id=>document.getElementById(id)?.removeAttribute('required'));
+  if(document.getElementById('boxType'))document.body.dataset.printRequired='date';
   const value=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
   const isSeptember2026=value=>{const match=/^2026-09-(\d{2})$/.exec(value);return Boolean(match&&Number(match[1])>=1&&Number(match[1])<=30)};
   const formatDate=value=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return '';const [year,month,day]=value.split('-');return `${day}.${month}.${year}`};

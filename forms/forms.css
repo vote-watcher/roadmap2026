@@ -3,6 +3,7 @@
 @media(max-width:620px){.wrap{padding:12px}.doc-sign{gap:7mm}}
 @media print{@page{size:A4;margin:16mm 15mm}body{background:#fff}.wrap>h1,.wrap>.back,.wrap>.card,.wrap>.actions,.wrap>.hint,.source{display:none!important}#doc{display:block!important}.doc-body{width:100%}.page-break{break-before:page}}
 #doc{display:none}#doc.guide{display:block}
+#doc p:has([data-print="boxType"]:empty){display:none}
 .button{display:inline-flex;align-items:center;justify-content:center}
 .profile-card .hint{margin:4px 0 10px}
 .accept{margin-top:10mm;border-top:1px solid #000;padding-top:5mm}.accept>b{display:block;text-align:center;margin-bottom:3mm}.accept-field{display:flex;gap:4px;margin-top:2mm}.accept-field span{display:inline-block;flex:1;min-height:1.25em;border-bottom:1px solid #000}
