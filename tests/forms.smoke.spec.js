@@ -108,7 +108,7 @@ test('invalid profile cookie is ignored without a page error', async ({ page }) 
 test('ordinary forms default document date to election day and keep event date empty', async ({ page }) => {
   await page.goto(url('forms/complaint-count.html'));
   await expect(page.locator('#date')).toHaveValue('2026-09-20');
-  await expect(page.locator('#eventDate')).toHaveValue('');
+  await expect(page.locator('#eventDate')).toHaveValue('2026-09-20');
 
   await page.goto(url('forms/complaint-refusal.html'));
   await expect(page.locator('#date')).toHaveValue('2026-09-20');
@@ -221,7 +221,8 @@ test('new complaint forms print required fields and clear their values', async (
       printed: { applicant: 'Сидорова Анна Сергеевна', uik: '1234', eventDate: '18.09.2026', eventTime: '12:10', memberName: 'Иванов И. И.', date: '18.09.2026' },
     },
     'forms/complaint-transport.html': {
-      fields: ['observer', 'date', 'transportUik', 'transportEventDate', 'transportEventTime'],
+      fields: ['observer', 'date', 'transportUik'],
+      optionalFields: ['transportEventDate', 'transportEventTime'],
       printed: { observer: 'Орлова Мария Игоревна', date: '18.09.2026' },
     },
   };
@@ -272,6 +273,30 @@ test('refusal prints with only applicant, polling station, and document date', a
   await expect(page.locator('[data-print="eventDate"]')).toHaveText('');
   await expect(page.locator('[data-print="eventTime"]')).toHaveText('');
   await expect(page.locator('[data-print="memberName"]')).toHaveText('');
+});
+
+test('complaint forms print with empty event details', async ({ page }) => {
+  const cases = {
+    'forms/complaint-access.html': ['applicant', 'uik', 'date'],
+    'forms/complaint-count.html': ['uik', 'applicant', 'violation', 'date'],
+    'forms/complaint-movement.html': ['uik', 'observer', 'memberName', 'date'],
+    'forms/complaint-paper-ballot.html': ['applicant', 'uik', 'memberName', 'voterName', 'date'],
+    'forms/complaint-transport.html': ['observer', 'date', 'transportUik'],
+  };
+
+  for (const [file, requiredFields] of Object.entries(cases)) {
+    await page.goto(url(file));
+    await page.getByRole('button', { name: 'Заполнить примером' }).click();
+    for (const id of ['eventDate', 'eventTime', 'transportEventDate', 'transportEventTime']) {
+      if (await page.locator(`#${id}`).count()) await page.locator(`#${id}`).fill('');
+    }
+    for (const id of requiredFields) await page.locator(`#${id}`).fill(id === 'date' ? '2026-09-20' : await page.locator(`#${id}`).inputValue());
+    await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
+    await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
+    await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+    if (await page.locator('[data-print="eventTime"]').count()) await expect(page.locator('[data-print="eventTime"]')).toHaveText('');
+    if (file !== 'forms/complaint-transport.html') await expect(page.locator('[data-print="eventDate"]')).toHaveText('');
+  }
 });
 
 test('notification preserves source text, p_* values, print interception, and clear', async ({ page }) => {
