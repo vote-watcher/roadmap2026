@@ -275,22 +275,22 @@ test('refusal prints with only applicant, polling station, and document date', a
   await expect(page.locator('[data-print="memberName"]')).toHaveText('');
 });
 
-test('complaint forms print with empty event details', async ({ page }) => {
+test('all complaint forms print with only polling station, applicant, and document date', async ({ page }) => {
   const cases = {
     'forms/complaint-access.html': ['applicant', 'uik', 'date'],
-    'forms/complaint-count.html': ['uik', 'applicant', 'violation', 'date'],
-    'forms/complaint-movement.html': ['uik', 'observer', 'memberName', 'date'],
-    'forms/complaint-paper-ballot.html': ['applicant', 'uik', 'memberName', 'voterName', 'date'],
+    'forms/complaint-count.html': ['uik', 'applicant', 'date'],
+    'forms/complaint-movement.html': ['uik', 'observer', 'date'],
+    'forms/complaint-paper-ballot.html': ['applicant', 'uik', 'date'],
+    'forms/complaint-refusal.html': ['uik', 'applicant', 'date'],
     'forms/complaint-transport.html': ['observer', 'date', 'transportUik'],
   };
 
   for (const [file, requiredFields] of Object.entries(cases)) {
     await page.goto(url(file));
-    await page.getByRole('button', { name: 'Заполнить примером' }).click();
-    for (const id of ['eventDate', 'eventTime', 'transportEventDate', 'transportEventTime']) {
-      if (await page.locator(`#${id}`).count()) await page.locator(`#${id}`).fill('');
-    }
-    for (const id of requiredFields) await page.locator(`#${id}`).fill(id === 'date' ? '2026-09-20' : await page.locator(`#${id}`).inputValue());
+    const required = await page.locator('body').getAttribute('data-print-required');
+    expect(required.split(',')).toEqual(requiredFields);
+    for (const input of await page.locator('input, textarea, select').all()) await input.fill('');
+    for (const id of requiredFields) await page.locator(`#${id}`).fill(id === 'date' ? '2026-09-20' : `Тест ${id}`);
     await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
     await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
     await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
