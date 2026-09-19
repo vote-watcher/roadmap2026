@@ -112,7 +112,7 @@ test('ordinary forms default document date to election day and keep event date e
 
   await page.goto(url('forms/complaint-refusal.html'));
   await expect(page.locator('#date')).toHaveValue('2026-09-20');
-  await expect(page.locator('#eventDate')).toHaveValue('');
+  await expect(page.locator('#eventDate')).toHaveValue('2026-09-20');
 
   await page.goto(url('forms/safepack-copy.html'));
   await expect(page.locator('#date')).toHaveValue('2026-09-20');
@@ -216,7 +216,8 @@ test('photo forms preserve fixed phrases and date constraints', async ({ page })
 test('new complaint forms print required fields and clear their values', async ({ page }) => {
   const cases = {
     'forms/complaint-refusal.html': {
-      fields: ['applicant', 'uik', 'eventDate', 'eventTime', 'memberName', 'date'],
+      fields: ['applicant', 'uik', 'date'],
+      optionalFields: ['eventDate', 'eventTime', 'memberName'],
       printed: { applicant: 'Сидорова Анна Сергеевна', uik: '1234', eventDate: '18.09.2026', eventTime: '12:10', memberName: 'Иванов И. И.', date: '18.09.2026' },
     },
     'forms/complaint-transport.html': {
@@ -228,11 +229,12 @@ test('new complaint forms print required fields and clear their values', async (
   for (const [file, expected] of Object.entries(cases)) {
     await page.goto(url(file));
     for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveAttribute('required', '');
+    for (const id of expected.optionalFields || []) await expect(page.locator(`#${id}`)).not.toHaveAttribute('required', '');
     await page.getByRole('button', { name: 'Заполнить примером' }).click();
     for (const [id, value] of Object.entries(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText(value);
     if (file === 'forms/complaint-transport.html') await expect(page.locator('#doc')).toContainText('18.09.2026');
     await page.getByRole('button', { name: 'Очистить' }).click();
-    for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveValue('');
+    for (const id of [...expected.fields, ...(expected.optionalFields || [])]) await expect(page.locator(`#${id}`)).toHaveValue('');
     for (const id of Object.keys(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText('');
   }
 });
@@ -255,6 +257,21 @@ test('empty required fields prevent printing', async ({ page }) => {
   expect(dialogMessage).toContain('Заполните обязательное поле');
   expect(await page.evaluate(() => window.__printed)).not.toBe(true);
   await expect(page.locator('#applicant')).toBeFocused();
+});
+
+test('refusal prints with only applicant, polling station, and document date', async ({ page }) => {
+  await page.goto(url('forms/complaint-refusal.html'));
+  await page.locator('#uik').fill('1234');
+  await page.locator('#applicant').fill('Сидорова Анна Сергеевна');
+  await page.locator('#date').fill('2026-09-20');
+  await page.locator('#eventDate').fill('');
+  await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
+  await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
+  await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+  await expect(page.locator('[data-event-time-prefix]')).toBeHidden();
+  await expect(page.locator('[data-print="eventDate"]')).toHaveText('');
+  await expect(page.locator('[data-print="eventTime"]')).toHaveText('');
+  await expect(page.locator('[data-print="memberName"]')).toHaveText('');
 });
 
 test('notification preserves source text, p_* values, print interception, and clear', async ({ page }) => {

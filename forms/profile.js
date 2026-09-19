@@ -10,6 +10,6 @@
   const initCatalog=()=>{const form=document.querySelector('[data-profile-form]');if(!form)return;const status=form.querySelector('[role="status"]');const message=text=>{status.textContent=text};const fields={fullName:form.querySelector('[data-profile-field="fullName"]'),uik:form.querySelector('[data-profile-field="uik"]')};const profile=getCookie();if(profile)Object.entries(fields).forEach(([key,field])=>{if(field)field.value=profile[key]||''});form.querySelector('[data-profile-save]').addEventListener('click',()=>{const next={};for(const key of Object.keys(fields)){const value=fields[key].value.trim();if(value&&value.length<=MAX_LENGTH[key])next[key]=value}if(!next.fullName&&!next.uik){message('Введите ФИО или УИК.');return}setCookie(next);message('Данные сохранены в этом браузере на 30 дней.')});form.querySelector('[data-profile-remove]').addEventListener('click',()=>{removeCookie();Object.values(fields).forEach(field=>{if(field)field.value=''});message('Сохранённые данные удалены.')})};
   window.VoteProfile={apply,get:getCookie,save:setCookie,remove:removeCookie};
   apply();
-  const date=document.querySelector('input#date');if(date&&!date.value)date.value=ELECTION_DATE;
+  const date=document.querySelector('input#date');if(date&&!date.value)date.value=ELECTION_DATE;const eventDate=document.querySelector('input#eventDate');if(eventDate&&!eventDate.value&&document.body.dataset.defaultEventDate==='election')eventDate.value=ELECTION_DATE;
   initCatalog();
 })();
