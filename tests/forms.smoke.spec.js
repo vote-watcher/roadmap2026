@@ -215,7 +215,7 @@ test('photo forms preserve fixed phrases and date constraints', async ({ page })
   }
 });
 
-test('new complaint forms print required fields and clear their values', async ({ page }) => {
+test('new complaint forms print fields and clear their values', async ({ page }) => {
   const cases = {
     'forms/complaint-refusal.html': {
       fields: ['applicant', 'uik', 'date'],
@@ -231,7 +231,6 @@ test('new complaint forms print required fields and clear their values', async (
 
   for (const [file, expected] of Object.entries(cases)) {
     await page.goto(url(file));
-    for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveAttribute('required', '');
     for (const id of expected.optionalFields || []) await expect(page.locator(`#${id}`)).not.toHaveAttribute('required', '');
     await page.getByRole('button', { name: 'Заполнить примером' }).click();
     for (const [id, value] of Object.entries(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText(value);
@@ -251,15 +250,14 @@ test('access keeps the confirmed addressee and header without unconfirmed offici
   for (const id of ['official', 'officialName']) expect(await page.locator(`#${id}`).count()).toBe(0);
 });
 
-test('empty required fields prevent printing', async ({ page }) => {
-  let dialogMessage = '';
-  page.on('dialog', async dialog => { dialogMessage = dialog.message(); await dialog.dismiss(); });
-  await page.goto(url('forms/complaint-paper-ballot.html'));
-  await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
-  await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
-  expect(dialogMessage).toContain('Заполните обязательное поле');
-  expect(await page.evaluate(() => window.__printed)).not.toBe(true);
-  await expect(page.locator('#applicant')).toBeFocused();
+test('all forms print with empty fields', async ({ page }) => {
+  for (const file of photoForms) {
+    await page.goto(url(file));
+    await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
+    await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
+    await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+    await expect(page.locator('#doc')).not.toContainText('Invalid Date');
+  }
 });
 
 test('safepack prints with only document date', async ({ page }) => {
