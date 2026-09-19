@@ -117,7 +117,7 @@ test('ordinary forms default document date to election day and keep event date e
   await page.goto(url('forms/safepack-copy.html'));
   await expect(page.locator('#date')).toHaveValue('2026-09-20');
   await expect(page.locator('#actDate')).toHaveValue('');
-  await expect(page.locator('body')).toHaveAttribute('data-print-required', 'date');
+  await expect(page.locator('body')).toHaveAttribute('data-print-required', 'uik,applicant,date');
   for (const id of ['boxType', 'actDate', 'serial']) await expect(page.locator(`#${id}`)).not.toHaveAttribute('required', '');
 });
 
@@ -264,6 +264,8 @@ test('empty required fields prevent printing', async ({ page }) => {
 
 test('safepack prints with only document date', async ({ page }) => {
   await page.goto(url('forms/safepack-copy.html'));
+  await page.locator('#uik').fill('1234');
+  await page.locator('#applicant').fill('Тестовый заявитель');
   await page.locator('#date').fill('2026-09-20');
   await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
   await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
