@@ -336,6 +336,16 @@ test('notification preserves source text, p_* values, print interception, and cl
   for (const id of Object.keys(expectedPrinted)) await expect(page.locator(`#${id}`)).toHaveText('');
 });
 
+test('notification prints with empty fields', async ({ page }) => {
+  await page.goto(url('uvedomlenie_form.html'));
+  await page.getByRole('button', { name: 'Очистить' }).click();
+  await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
+  await page.getByRole('button', { name: 'Скачать PDF' }).click();
+  await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
+  await expect(page.locator('#p_uik, #p_fio, #p_tech1, #p_tech2, #p_tech3, #p_date')).toHaveText(['', '', '', '', '', '']);
+  await expect(page.locator('#doc')).not.toContainText('Invalid Date');
+});
+
 test('notification refuses more than three equipment lines', async ({ page }) => {
   let dialogMessage = '';
   page.on('dialog', async dialog => { dialogMessage = dialog.message(); await dialog.dismiss(); });

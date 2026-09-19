@@ -203,9 +203,6 @@
     const g = id => (document.getElementById(id).value || "").trim();
     const set = (pid, val) => { document.getElementById(pid).textContent = val; };
 
-    const required = [["uik", "УИК"], ["fio", "ФИО наблюдателя"], ["date", "Дата составления документа"]];
-    const empty = required.find(([id]) => !g(id));
-    if (empty) { window.alert(`Заполните обязательное поле: ${empty[1]}`); document.getElementById(empty[0]).focus(); return; }
     const tech = g("tech").split("\n").map(s => s.trim().replace(/^\d+\.\s*/, "")).filter(Boolean);
     if (tech.length > 3) {
       window.alert("Укажите не более 3 строк аппаратуры.");
