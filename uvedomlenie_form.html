@@ -123,6 +123,7 @@
 
     <label for="tech">Аппаратура для съёмки (до 3 строк, по одной в строке)</label>
     <textarea id="tech" class="tech-area" placeholder="1.&#10;2.&#10;3."></textarea>
+    <label for="date">Дата составления документа</label><input id="date" type="date" min="2026-09-01" max="2026-09-30" required>
   </div>
 
   <div class="btn-row">
@@ -146,7 +147,9 @@
 
       <p>Настоящее уведомление составлено в двух экземплярах. Один экземпляр передаётся в участковую избирательную комиссию, второй остаётся у наблюдателя с отметкой о принятии.</p>
 
-      <div class="doc-sign">
+       <div class="doc-field">Дата составления: <span class="val" id="p_date"></span></div>
+
+       <div class="doc-sign">
         <div>
           <div class="doc-apos">(дата)</div>
           <div class="doc-underline"></div>
@@ -181,14 +184,17 @@
 <script>
   function setVal(id, val) { document.getElementById(id).value = val; }
 
+  function formatDate(value) { if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return ""; const [year, month, day] = value.split("-"); return `${day}.${month}.${year}`; }
+
   function fillExample() {
     setVal("uik", "1234");
     setVal("fio", "Иванов Иван Иванович");
     setVal("tech", "Смартфон Samsung Galaxy S23\nЭкшн-камера GoPro Hero 11\nДиктофон Zoom H1n");
+    setVal("date", "2026-09-20");
   }
 
   function clearForm() {
-    const ids = ["uik","fio","tech"];
+    const ids = ["uik","fio","tech","date"];
     ids.forEach(id => setVal(id, ""));
     document.querySelectorAll("[id^='p_']").forEach(element => { element.textContent = ""; });
   }
@@ -197,6 +203,9 @@
     const g = id => (document.getElementById(id).value || "").trim();
     const set = (pid, val) => { document.getElementById(pid).textContent = val; };
 
+    const required = [["uik", "УИК"], ["fio", "ФИО наблюдателя"], ["date", "Дата составления документа"]];
+    const empty = required.find(([id]) => !g(id));
+    if (empty) { window.alert(`Заполните обязательное поле: ${empty[1]}`); document.getElementById(empty[0]).focus(); return; }
     const tech = g("tech").split("\n").map(s => s.trim().replace(/^\d+\.\s*/, "")).filter(Boolean);
     if (tech.length > 3) {
       window.alert("Укажите не более 3 строк аппаратуры.");
@@ -207,6 +216,7 @@
     set("p_tech1", tech[0] ? `1. ${tech[0]}` : "");
     set("p_tech2", tech[1] ? `2. ${tech[1]}` : "");
     set("p_tech3", tech[2] ? `3. ${tech[2]}` : "");
+    set("p_date", formatDate(g("date")));
 
     window.print();
   }

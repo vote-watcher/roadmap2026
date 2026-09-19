@@ -6,10 +6,10 @@
   const setCookie=profile=>{document.cookie=`${COOKIE_NAME}=${encodeURIComponent(JSON.stringify(profile))}; ${attrs}`};
   const removeCookie=()=>{document.cookie=`${COOKIE_NAME}=; Max-Age=0; ${attrs}`};
   const apply=()=>{const profile=getCookie();if(!profile)return;document.querySelectorAll('[data-profile-field]').forEach(field=>{const key=field.dataset.profileField;if(profile[key]&&!(field.value||'').trim())field.value=profile[key]})};
-  const today=()=>{const date=new Date();return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`};
+  const ELECTION_DATE='2026-09-20';
   const initCatalog=()=>{const form=document.querySelector('[data-profile-form]');if(!form)return;const status=form.querySelector('[role="status"]');const message=text=>{status.textContent=text};const fields={fullName:form.querySelector('[data-profile-field="fullName"]'),uik:form.querySelector('[data-profile-field="uik"]')};const profile=getCookie();if(profile)Object.entries(fields).forEach(([key,field])=>{if(field)field.value=profile[key]||''});form.querySelector('[data-profile-save]').addEventListener('click',()=>{const next={};for(const key of Object.keys(fields)){const value=fields[key].value.trim();if(value&&value.length<=MAX_LENGTH[key])next[key]=value}if(!next.fullName&&!next.uik){message('Введите ФИО или УИК.');return}setCookie(next);message('Данные сохранены в этом браузере на 30 дней.')});form.querySelector('[data-profile-remove]').addEventListener('click',()=>{removeCookie();Object.values(fields).forEach(field=>{if(field)field.value=''});message('Сохранённые данные удалены.')})};
   window.VoteProfile={apply,get:getCookie,save:setCookie,remove:removeCookie};
   apply();
-  const date=document.querySelector('input#date');if(date&&!date.value)date.value=today();
+  const date=document.querySelector('input#date');if(date&&!date.value)date.value=ELECTION_DATE;
   initCatalog();
 })();

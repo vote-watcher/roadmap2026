@@ -105,21 +105,17 @@ test('invalid profile cookie is ignored without a page error', async ({ page }) 
   await expect(page.locator('#profile-uik')).toHaveValue('');
 });
 
-test('ordinary forms set only an empty application date to today', async ({ page }) => {
+test('ordinary forms default document date to election day and keep event date empty', async ({ page }) => {
   await page.goto(url('forms/complaint-count.html'));
-  const today = await page.evaluate(() => { const date = new Date(); return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; });
-  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#date')).toHaveValue('2026-09-20');
   await expect(page.locator('#eventDate')).toHaveValue('');
 
   await page.goto(url('forms/complaint-refusal.html'));
-  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#date')).toHaveValue('2026-09-20');
   await expect(page.locator('#eventDate')).toHaveValue('');
-  await page.locator('#date').fill('2026-09-12');
-  await page.reload();
-  await expect(page.locator('#date')).toHaveValue(today);
 
   await page.goto(url('forms/safepack-copy.html'));
-  await expect(page.locator('#date')).toHaveValue(today);
+  await expect(page.locator('#date')).toHaveValue('2026-09-20');
   await expect(page.locator('#actDate')).toHaveValue('');
 });
 
@@ -189,7 +185,7 @@ test('notification has labels, print acceptance block, and clears all printed va
   await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
   await expect(page.locator('#doc')).toContainText('ПРИНЯТО');
   await page.getByRole('button', { name: 'Очистить' }).click();
-  await expect(page.locator('#p_uik, #p_fio, #p_tech1, #p_tech2, #p_tech3')).toHaveText(['', '', '', '', '']);
+  await expect(page.locator('#p_uik, #p_fio, #p_tech1, #p_tech2, #p_tech3, #p_date')).toHaveText(['', '', '', '', '', '']);
 });
 
 test('photo forms preserve fixed phrases and date constraints', async ({ page }) => {
@@ -221,11 +217,11 @@ test('new complaint forms print required fields and clear their values', async (
   const cases = {
     'forms/complaint-refusal.html': {
       fields: ['applicant', 'uik', 'eventDate', 'eventTime', 'memberName', 'date'],
-      printed: { applicant: 'Сидорова Анна Сергеевна', uik: '1234', eventDate: '18', eventTime: '12:10', memberName: 'Иванов И. И.', date: '18' },
+      printed: { applicant: 'Сидорова Анна Сергеевна', uik: '1234', eventDate: '18.09.2026', eventTime: '12:10', memberName: 'Иванов И. И.', date: '18.09.2026' },
     },
     'forms/complaint-transport.html': {
-      fields: ['observer', 'date'],
-      printed: { observer: 'Орлова Мария Игоревна', date: '18' },
+      fields: ['observer', 'date', 'transportUik', 'transportEventDate', 'transportEventTime'],
+      printed: { observer: 'Орлова Мария Игоревна', date: '18.09.2026' },
     },
   };
 
@@ -234,6 +230,7 @@ test('new complaint forms print required fields and clear their values', async (
     for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveAttribute('required', '');
     await page.getByRole('button', { name: 'Заполнить примером' }).click();
     for (const [id, value] of Object.entries(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText(value);
+    if (file === 'forms/complaint-transport.html') await expect(page.locator('#doc')).toContainText('18.09.2026');
     await page.getByRole('button', { name: 'Очистить' }).click();
     for (const id of expected.fields) await expect(page.locator(`#${id}`)).toHaveValue('');
     for (const id of Object.keys(expected.printed)) await expect(page.locator(`[data-print="${id}"]`)).toHaveText('');
@@ -269,7 +266,7 @@ test('notification preserves source text, p_* values, print interception, and cl
   await page.getByRole('button', { name: 'Скачать PDF' }).click();
   await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
   const expectedPrinted = {
-    p_uik: '1234', p_fio: 'Иванов Иван Иванович',
+    p_uik: '1234', p_fio: 'Иванов Иван Иванович', p_date: '20.09.2026',
     p_tech1: '1. Смартфон Samsung Galaxy S23', p_tech2: '2. Экшн-камера GoPro Hero 11', p_tech3: '3. Диктофон Zoom H1n'
   };
   for (const [id, text] of Object.entries(expectedPrinted)) await expect(page.locator(`#${id}`)).toHaveText(text);
@@ -288,6 +285,9 @@ test('notification refuses more than three equipment lines', async ({ page }) =>
   let dialogMessage = '';
   page.on('dialog', async dialog => { dialogMessage = dialog.message(); await dialog.dismiss(); });
   await page.goto(url('uvedomlenie_form.html'));
+  await page.locator('#uik').fill('1234');
+  await page.locator('#fio').fill('Иванов Иван Иванович');
+  await page.locator('#date').fill('2026-09-20');
   await page.locator('#tech').fill('one\ntwo\nthree\nfour');
   await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
   await page.getByRole('button', { name: 'Скачать PDF' }).click();
