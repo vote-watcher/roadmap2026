@@ -46,6 +46,9 @@
   .row { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-row { display: flex; gap: 16px; margin-bottom: 16px; }
   .btn-row button { margin-bottom: 0; }
+  .print-ink-control { display: flex; flex: 1 1 280px; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .print-ink-option { width: auto; padding: 8px 10px; font-size: 13px; }
+  .print-ink-option[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--accent); }
   .row > div { flex: 1 1 200px; }
   button {
     width: 100%;
@@ -77,14 +80,17 @@
     .wrap > .card, .wrap > button, .hint, h1 { display: none !important; }
     .btn-row { display:none !important; }
     .nav { display:none !important; }
-    #doc { display: block !important; }
+     #doc { display: block !important; color: var(--print-ink, #000); -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; }
     #doc * { visibility: visible; }
   }
 
   .doc-body {
     font-family: "Times New Roman", Times, serif;
     font-size: 12.5pt;
-    color: #000;
+     color: var(--print-ink, #000);
+     -webkit-print-color-adjust: exact;
+     print-color-adjust: exact;
+     color-adjust: exact;
     line-height: 1.35;
   }
   .doc-center { text-align: center; }
@@ -129,6 +135,7 @@
   <div class="btn-row">
     <button type="button" class="secondary" onclick="fillExample()">Заполнить примером</button>
     <button type="button" class="secondary" onclick="clearForm()">Очистить</button>
+    <div class="print-ink-control" aria-label="Цвет текста при печати"><span>Цвет текста при печати</span><button type="button" class="print-ink-option secondary" data-print-ink="#000000">Чёрный</button><button type="button" class="print-ink-option secondary" data-print-ink="#0000cc">Синий</button><button type="button" class="print-ink-option secondary" data-print-ink="#008000">Зелёный</button></div>
   </div>
   <button onclick="generatePDF()">Скачать PDF</button>
   <p class="hint">Откроется окно печати — выберите «Сохранить как PDF».</p>
@@ -182,6 +189,12 @@
 
 <script src="forms/profile.js"></script>
 <script>
+  const printInkKey = "vote_print_ink_v1";
+  const printInkOptions = ["#000000", "#0000cc", "#008000"];
+  const applyPrintInk = value => { const color = printInkOptions.includes(value) ? value : "#000000"; document.getElementById("doc").style.setProperty("--print-ink", color); document.querySelectorAll("[data-print-ink]").forEach(option => option.setAttribute("aria-pressed", String(option.dataset.printInk === color))); };
+  document.querySelectorAll("[data-print-ink]").forEach(option => option.addEventListener("click", () => { localStorage.setItem(printInkKey, option.dataset.printInk); applyPrintInk(option.dataset.printInk); }));
+  applyPrintInk(localStorage.getItem(printInkKey) || "#000000");
+
   function setVal(id, val) { document.getElementById(id).value = val; }
 
   function formatDate(value) { if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return ""; const [year, month, day] = value.split("-"); return `${day}.${month}.${year}`; }

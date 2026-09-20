@@ -1,5 +1,10 @@
 document.write('<script src="profile.js"></script>');
 (function(){
+  const printInkKey='vote_print_ink_v1';
+  const printInkOptions=[['#000000','Чёрный'],['#0000cc','Синий'],['#008000','Зелёный']];
+  const applyPrintInk=ink=>{const color=printInkOptions.some(([value])=>value===ink)?ink:'#000000';document.querySelectorAll('#doc').forEach(doc=>doc.style.setProperty('--print-ink',color))};
+  document.querySelectorAll('.actions').forEach(actions=>{if(actions.querySelector('[data-print-ink]'))return;const control=document.createElement('div');control.className='print-ink-control';control.setAttribute('aria-label','Цвет текста при печати');const title=document.createElement('span');title.textContent='Цвет текста при печати';control.append(title);const saved=localStorage.getItem(printInkKey)||'#000000';printInkOptions.forEach(([value,text])=>{const button=document.createElement('button');button.type='button';button.className='button secondary print-ink-option';button.dataset.printInk=value;button.textContent=text;button.setAttribute('aria-pressed',String(value===saved));button.addEventListener('click',()=>{localStorage.setItem(printInkKey,value);applyPrintInk(value);control.querySelectorAll('[data-print-ink]').forEach(option=>option.setAttribute('aria-pressed',String(option===button)))});control.append(button)});actions.append(control)});
+  applyPrintInk(localStorage.getItem(printInkKey)||'#000000');
   const fields=[...document.querySelectorAll('[data-print]')];
   const inputs=[...document.querySelectorAll('input,textarea,select')];
   inputs.forEach(el=>el.removeAttribute('required'));
