@@ -12,8 +12,8 @@ const photoForms = [
   'forms/complaint-transport.html',
   'forms/safepack-copy.html',
 ];
-const documents = ['uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/pamyatka-podschet.html'];
-const htmlDocuments = ['forms.html', 'uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/pamyatka-podschet.html'];
+const documents = ['uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/tablichka-nablyudatel.html', 'forms/pamyatka-podschet.html'];
+const htmlDocuments = ['forms.html', 'uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/tablichka-nablyudatel.html', 'forms/pamyatka-podschet.html'];
 
 const url = file => `file://${path.join(root, file)}`;
 
@@ -42,6 +42,19 @@ test('navigation does not use the retired catalog name', async ({ page }) => {
     await page.goto(url(file));
     await expect(page.locator('body')).not.toContainText('Формы и памятка');
   }
+});
+
+test('observer sign supports landscape printing and shared ink color', async ({ page }) => {
+  await page.goto(url('forms/tablichka-nablyudatel.html'));
+  await expect(page.locator('#doc')).toContainText('НАБЛЮДАТЕЛЬ');
+  await expect(page.locator('#doc')).toContainText('МОГУ ПОМОЧЬ СОБЛЮСТИ ВАШИ ПРАВА');
+  await page.getByRole('button', { name: 'Синий' }).click();
+  await expect(page.locator('#doc')).toHaveCSS('--print-ink', '#0000cc');
+  const printCss = await page.locator('style').textContent();
+  expect(printCss).toContain('@page{size:landscape');
+  await page.evaluate(() => { window.print = () => { window.__printed = true; }; });
+  await page.getByRole('button', { name: 'Печать / сохранить PDF' }).click();
+  await expect.poll(() => page.evaluate(() => window.__printed)).toBe(true);
 });
 
 test('profile saves, restores, applies only to profile fields, and can be removed', async ({ page }) => {
