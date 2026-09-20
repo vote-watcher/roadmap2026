@@ -12,8 +12,8 @@ const photoForms = [
   'forms/complaint-transport.html',
   'forms/safepack-copy.html',
 ];
-const documents = ['uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html'];
-const htmlDocuments = ['forms.html', 'uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html'];
+const documents = ['uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/pamyatka-podschet.html'];
+const htmlDocuments = ['forms.html', 'uvedomlenie_form.html', ...photoForms, 'forms/pamyatka-nablyudatelya.html', 'forms/pamyatka-podschet.html'];
 
 const url = file => `file://${path.join(root, file)}`;
 
@@ -22,7 +22,7 @@ test('forms catalog contains every document and follows every HTML link', async 
   await expect(page).toHaveTitle('Формы');
   await expect(page.locator('h1')).toHaveText('Формы');
   const hrefs = await page.locator('main a').evaluateAll(links => links.map(link => link.getAttribute('href')));
-  await expect(page.locator('h2')).not.toContainText('Справочные документы');
+  await expect(page.locator('h2').filter({ hasText: 'Справочные документы' })).toHaveCount(0);
   await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
   for (const href of hrefs) {
     if (href.endsWith('.html')) {
@@ -33,6 +33,7 @@ test('forms catalog contains every document and follows every HTML link', async 
     }
   }
   expect(fs.existsSync(path.join(root, 'forms/pamyatka-nablyudatelya.html'))).toBe(true);
+  expect(fs.existsSync(path.join(root, 'forms/pamyatka-podschet.html'))).toBe(true);
   expect(fs.existsSync(path.join(root, 'docs', 'ТЕЛЕФОНЫ ШТАБА.pdf'))).toBe(false);
 });
 
@@ -377,5 +378,9 @@ test('catalog links to the static observer memo', async ({ page }) => {
   await page.goto(url('forms.html'));
   await page.locator('a[href="forms/pamyatka-nablyudatelya.html"]').click();
   await expect(page).toHaveURL(url('forms/pamyatka-nablyudatelya.html'));
+  await expect(page.locator('#doc')).toBeVisible();
+  await page.goto(url('forms.html'));
+  await page.locator('a[href="forms/pamyatka-podschet.html"]').click();
+  await expect(page).toHaveURL(url('forms/pamyatka-podschet.html'));
   await expect(page.locator('#doc')).toBeVisible();
 });
